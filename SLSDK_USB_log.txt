@@ -1,0 +1,1615 @@
+19-09-2025: 10:58:47.449: [INF] usbSDK: ----------**********----------
+19-09-2025: 10:58:47.449: [INF] usbSDK: Device constructor called
+19-09-2025: 10:58:47.449: [INF] usbSDK: SLSDK version number: 2.2.13.0
+19-09-2025: 10:58:47.450: [INF] usbSDK: SLDeviceLib.dll version: 2.2.13.0
+19-09-2025: 10:58:47.450: [INF] usbSDK: SLImage.dll version: 2.2.13.0
+19-09-2025: 10:58:47.450: [INF] usbSDK: SLHelperLibrary.dll version: 2.2.13.0
+19-09-2025: 10:58:47.450: [INF] usbSDK: SLDefectCorrection.dll version: 2.2.13.0
+19-09-2025: 10:58:47.450: [INF] usbSDK: SLInterfaceXDT.dll version: 2.2.13.0
+19-09-2025: 10:58:47.451: [INF] usbSDK: libxdtusb.dll version: 1.4.3.0
+19-09-2025: 10:58:47.451: [INF] usbSDK: libibdt.dll version: 1.0.2.0
+19-09-2025: 10:58:47.451: [INF] usbSDK: libusb-1.0.dll version: 1.0.24.11584
+19-09-2025: 10:58:47.451: [INF] usbSDK: libwinpthread-1.dll version: 1.0.0.0
+19-09-2025: 10:58:47.451: [INF] usbSDK: Opening camera
+19-09-2025: 10:58:47.471: [INF] usbSDK: Found 1 devices
+19-09-2025: 10:58:47.471: [INF] usbSDK: Connecting to device 1
+19-09-2025: 10:58:47.486: [INF] usbSDK: Device connected at USB speed: High
+19-09-2025: 10:58:47.489: [INF] usbSDK: Starting heartbeat thread
+19-09-2025: 10:58:47.497: [INF] usbSDK: Detector type: 1, variant: 5
+19-09-2025: 10:58:47.497: [INF] usbSDK: Model Code: EIO_LCY_IS1510M4
+19-09-2025: 10:58:47.497: [INF] usbSDK: Number of sensors in array: 1
+19-09-2025: 10:58:47.498: [INF] usbSDK: Number of temperature sensors: 1
+19-09-2025: 10:58:47.498: [INF] usbSDK: Device image rounder: 1
+19-09-2025: 10:58:47.498: [INF] usbSDK: Successfully configured as: 1510HS
+19-09-2025: 10:58:47.502: [INF] usbSDK: Device Model Number: 1510
+19-09-2025: 10:58:47.508: [INF] usbSDK: Device Serial Number: 123
+19-09-2025: 10:58:47.512: [INF] usbSDK: Device FW: 1.11.0
+19-09-2025: 10:58:47.512: [INF] usbSDK: Closing camera
+19-09-2025: 10:58:48.491: [INF] usbSDK: Finished heartbeat thread
+19-09-2025: 10:58:48.491: [INF] usbSDK: Closing device
+19-09-2025: 10:58:48.493: [INF] usbSDK: Successfully closed camera
+19-09-2025: 11:02:53.805: [INF] usbSDK: ----------**********----------
+19-09-2025: 11:02:53.806: [INF] usbSDK: Device constructor called
+19-09-2025: 11:02:53.807: [INF] usbSDK: SLSDK version number: 2.2.13.0
+19-09-2025: 11:02:53.807: [INF] usbSDK: SLDeviceLib.dll version: 2.2.13.0
+19-09-2025: 11:02:53.808: [INF] usbSDK: SLImage.dll version: 2.2.13.0
+19-09-2025: 11:02:53.808: [INF] usbSDK: SLHelperLibrary.dll version: 2.2.13.0
+19-09-2025: 11:02:53.808: [INF] usbSDK: SLDefectCorrection.dll version: 2.2.13.0
+19-09-2025: 11:02:53.809: [INF] usbSDK: SLInterfaceXDT.dll version: 2.2.13.0
+19-09-2025: 11:02:53.809: [INF] usbSDK: libxdtusb.dll version: 1.4.3.0
+19-09-2025: 11:02:53.810: [INF] usbSDK: libibdt.dll version: 1.0.2.0
+19-09-2025: 11:02:53.810: [INF] usbSDK: libusb-1.0.dll version: 1.0.24.11584
+19-09-2025: 11:02:53.811: [INF] usbSDK: libwinpthread-1.dll version: 1.0.0.0
+19-09-2025: 11:02:53.811: [INF] usbSDK: Opening camera
+19-09-2025: 11:02:53.831: [INF] usbSDK: Found 1 devices
+19-09-2025: 11:02:53.831: [INF] usbSDK: Connecting to device 1
+19-09-2025: 11:02:53.846: [INF] usbSDK: Device connected at USB speed: High
+19-09-2025: 11:02:53.849: [INF] usbSDK: Starting heartbeat thread
+19-09-2025: 11:02:53.879: [INF] usbSDK: Detector type: 1, variant: 5
+19-09-2025: 11:02:53.879: [INF] usbSDK: Model Code: EIO_LCY_IS1510M4
+19-09-2025: 11:02:53.880: [INF] usbSDK: Number of sensors in array: 1
+19-09-2025: 11:02:53.880: [INF] usbSDK: Number of temperature sensors: 1
+19-09-2025: 11:02:53.880: [INF] usbSDK: Device image rounder: 1
+19-09-2025: 11:02:53.880: [INF] usbSDK: Successfully configured as: 1510HS
+19-09-2025: 11:02:53.884: [INF] usbSDK: Device Model Number: 1510
+19-09-2025: 11:02:53.890: [INF] usbSDK: Device Serial Number: 123
+19-09-2025: 11:02:53.894: [INF] usbSDK: Device FW: 1.11.0
+19-09-2025: 11:02:53.894: [INF] usbSDK: Closing camera
+19-09-2025: 11:02:54.863: [INF] usbSDK: Finished heartbeat thread
+19-09-2025: 11:02:54.864: [INF] usbSDK: Closing device
+19-09-2025: 11:02:54.869: [INF] usbSDK: Successfully closed camera
+19-09-2025: 11:03:25.446: [INF] usbSDK: ----------**********----------
+19-09-2025: 11:03:25.446: [INF] usbSDK: Device constructor called
+19-09-2025: 11:03:25.446: [INF] usbSDK: SLSDK version number: 2.2.13.0
+19-09-2025: 11:03:25.446: [INF] usbSDK: SLDeviceLib.dll version: 2.2.13.0
+19-09-2025: 11:03:25.447: [INF] usbSDK: SLImage.dll version: 2.2.13.0
+19-09-2025: 11:03:25.447: [INF] usbSDK: SLHelperLibrary.dll version: 2.2.13.0
+19-09-2025: 11:03:25.447: [INF] usbSDK: SLDefectCorrection.dll version: 2.2.13.0
+19-09-2025: 11:03:25.447: [INF] usbSDK: SLInterfaceXDT.dll version: 2.2.13.0
+19-09-2025: 11:03:25.447: [INF] usbSDK: libxdtusb.dll version: 1.4.3.0
+19-09-2025: 11:03:25.447: [INF] usbSDK: libibdt.dll version: 1.0.2.0
+19-09-2025: 11:03:25.448: [INF] usbSDK: libusb-1.0.dll version: 1.0.24.11584
+19-09-2025: 11:03:25.448: [INF] usbSDK: libwinpthread-1.dll version: 1.0.0.0
+19-09-2025: 11:03:25.448: [INF] usbSDK: Opening camera
+19-09-2025: 11:03:25.469: [INF] usbSDK: Found 1 devices
+19-09-2025: 11:03:25.469: [INF] usbSDK: Connecting to device 1
+19-09-2025: 11:03:25.484: [INF] usbSDK: Device connected at USB speed: High
+19-09-2025: 11:03:25.487: [INF] usbSDK: Starting heartbeat thread
+19-09-2025: 11:03:25.493: [INF] usbSDK: Detector type: 1, variant: 5
+19-09-2025: 11:03:25.493: [INF] usbSDK: Model Code: EIO_LCY_IS1510M4
+19-09-2025: 11:03:25.494: [INF] usbSDK: Number of sensors in array: 1
+19-09-2025: 11:03:25.494: [INF] usbSDK: Number of temperature sensors: 1
+19-09-2025: 11:03:25.494: [INF] usbSDK: Device image rounder: 1
+19-09-2025: 11:03:25.494: [INF] usbSDK: Successfully configured as: 1510HS
+19-09-2025: 11:03:25.497: [INF] usbSDK: Device Model Number: 1510
+19-09-2025: 11:03:25.503: [INF] usbSDK: Device Serial Number: 123
+19-09-2025: 11:03:25.507: [INF] usbSDK: Device FW: 1.11.0
+19-09-2025: 11:03:25.508: [INF] usbSDK: Setting exposure mode to trig_mode
+19-09-2025: 11:03:25.511: [INF] usbSDK: Set register 0 to 64
+19-09-2025: 11:03:25.511: [INF] usbSDK: Resetting exposure time to 1000 us after changing exposure mode
+19-09-2025: 11:03:25.511: [INF] usbSDK: Setting exposure time
+19-09-2025: 11:03:25.512: [INF] usbSDK: Getting exposure mode
+19-09-2025: 11:03:25.513: [INF] usbSDK: Got exposure mode: trig_mode
+19-09-2025: 11:03:25.517: [INF] usbSDK: Set exposure time to 1000 us
+19-09-2025: 11:03:25.517: [INF] usbSDK: Setting DDS off
+19-09-2025: 11:03:25.522: [INF] usbSDK: Calling StartStream
+19-09-2025: 11:03:25.599: [INF] usbSDK: Device started streaming
+19-09-2025: 11:03:29.595: [INF] usbSDK: Sent software trigger
+19-09-2025: 11:03:48.025: [INF] usbSDK: Calling StopStream
+19-09-2025: 11:03:48.054: [INF] usbSDK: Stream stopped
+19-09-2025: 11:03:48.055: [INF] usbSDK: Closing camera
+19-09-2025: 11:03:48.891: [INF] usbSDK: Finished heartbeat thread
+19-09-2025: 11:03:48.891: [INF] usbSDK: Closing device
+19-09-2025: 11:03:48.893: [INF] usbSDK: Successfully closed camera
+19-09-2025: 11:03:56.860: [INF] usbSDK: ----------**********----------
+19-09-2025: 11:03:56.860: [INF] usbSDK: Device constructor called
+19-09-2025: 11:03:56.861: [INF] usbSDK: SLSDK version number: 2.2.13.0
+19-09-2025: 11:03:56.861: [INF] usbSDK: SLDeviceLib.dll version: 2.2.13.0
+19-09-2025: 11:03:56.861: [INF] usbSDK: SLImage.dll version: 2.2.13.0
+19-09-2025: 11:03:56.861: [INF] usbSDK: SLHelperLibrary.dll version: 2.2.13.0
+19-09-2025: 11:03:56.861: [INF] usbSDK: SLDefectCorrection.dll version: 2.2.13.0
+19-09-2025: 11:03:56.861: [INF] usbSDK: SLInterfaceXDT.dll version: 2.2.13.0
+19-09-2025: 11:03:56.862: [INF] usbSDK: libxdtusb.dll version: 1.4.3.0
+19-09-2025: 11:03:56.862: [INF] usbSDK: libibdt.dll version: 1.0.2.0
+19-09-2025: 11:03:56.862: [INF] usbSDK: libusb-1.0.dll version: 1.0.24.11584
+19-09-2025: 11:03:56.862: [INF] usbSDK: libwinpthread-1.dll version: 1.0.0.0
+19-09-2025: 11:03:56.862: [INF] usbSDK: Opening camera
+19-09-2025: 11:03:56.883: [INF] usbSDK: Found 1 devices
+19-09-2025: 11:03:56.883: [INF] usbSDK: Connecting to device 1
+19-09-2025: 11:03:56.898: [INF] usbSDK: Device connected at USB speed: High
+19-09-2025: 11:03:56.901: [INF] usbSDK: Starting heartbeat thread
+19-09-2025: 11:03:56.907: [INF] usbSDK: Detector type: 1, variant: 5
+19-09-2025: 11:03:56.907: [INF] usbSDK: Model Code: EIO_LCY_IS1510M4
+19-09-2025: 11:03:56.908: [INF] usbSDK: Number of sensors in array: 1
+19-09-2025: 11:03:56.908: [INF] usbSDK: Number of temperature sensors: 1
+19-09-2025: 11:03:56.908: [INF] usbSDK: Device image rounder: 1
+19-09-2025: 11:03:56.908: [INF] usbSDK: Successfully configured as: 1510HS
+19-09-2025: 11:03:56.911: [INF] usbSDK: Device Model Number: 1510
+19-09-2025: 11:03:56.917: [INF] usbSDK: Device Serial Number: 123
+19-09-2025: 11:03:56.921: [INF] usbSDK: Device FW: 1.11.0
+19-09-2025: 11:03:56.922: [INF] usbSDK: Setting exposure mode to trig_mode
+19-09-2025: 11:03:56.925: [INF] usbSDK: Set register 0 to 64
+19-09-2025: 11:03:56.925: [INF] usbSDK: Resetting exposure time to 1000 us after changing exposure mode
+19-09-2025: 11:03:56.925: [INF] usbSDK: Setting exposure time
+19-09-2025: 11:03:56.926: [INF] usbSDK: Getting exposure mode
+19-09-2025: 11:03:56.927: [INF] usbSDK: Got exposure mode: trig_mode
+19-09-2025: 11:03:56.931: [INF] usbSDK: Set exposure time to 1000 us
+19-09-2025: 11:03:56.932: [INF] usbSDK: Setting DDS off
+19-09-2025: 11:03:56.936: [INF] usbSDK: Calling StartStream
+19-09-2025: 11:03:56.995: [INF] usbSDK: Device started streaming
+19-09-2025: 11:04:42.601: [INF] usbSDK: Sent software trigger
+19-09-2025: 11:08:01.505: [INF] usbSDK: Calling StopStream
+19-09-2025: 11:08:01.539: [INF] usbSDK: Stream stopped
+19-09-2025: 11:08:01.540: [INF] usbSDK: Closing camera
+19-09-2025: 11:08:01.582: [INF] usbSDK: Finished heartbeat thread
+19-09-2025: 11:08:01.582: [INF] usbSDK: Closing device
+19-09-2025: 11:08:01.584: [INF] usbSDK: Successfully closed camera
+19-09-2025: 11:10:10.897: [INF] usbSDK: ----------**********----------
+19-09-2025: 11:10:10.899: [INF] usbSDK: Device constructor called
+19-09-2025: 11:10:10.899: [INF] usbSDK: SLSDK version number: 2.2.13.0
+19-09-2025: 11:10:10.900: [INF] usbSDK: SLDeviceLib.dll version: 2.2.13.0
+19-09-2025: 11:10:10.900: [INF] usbSDK: SLImage.dll version: 2.2.13.0
+19-09-2025: 11:10:10.900: [INF] usbSDK: SLHelperLibrary.dll version: 2.2.13.0
+19-09-2025: 11:10:10.900: [INF] usbSDK: SLDefectCorrection.dll version: 2.2.13.0
+19-09-2025: 11:10:10.900: [INF] usbSDK: SLInterfaceXDT.dll version: 2.2.13.0
+19-09-2025: 11:10:10.901: [INF] usbSDK: libxdtusb.dll version: 1.4.3.0
+19-09-2025: 11:10:10.901: [INF] usbSDK: libibdt.dll version: 1.0.2.0
+19-09-2025: 11:10:10.901: [INF] usbSDK: libusb-1.0.dll version: 1.0.24.11584
+19-09-2025: 11:10:10.901: [INF] usbSDK: libwinpthread-1.dll version: 1.0.0.0
+19-09-2025: 11:10:10.902: [INF] usbSDK: Opening camera
+19-09-2025: 11:10:10.929: [INF] usbSDK: Found 1 devices
+19-09-2025: 11:10:10.929: [INF] usbSDK: Connecting to device 1
+19-09-2025: 11:10:10.943: [INF] usbSDK: Device connected at USB speed: Super
+19-09-2025: 11:10:10.946: [INF] usbSDK: Starting heartbeat thread
+19-09-2025: 11:10:10.953: [INF] usbSDK: Detector type: 1, variant: 3
+19-09-2025: 11:10:10.953: [INF] usbSDK: Model Code: EIO_IS1510M4
+19-09-2025: 11:10:10.953: [INF] usbSDK: Number of sensors in array: 1
+19-09-2025: 11:10:10.953: [INF] usbSDK: Number of temperature sensors: 1
+19-09-2025: 11:10:10.953: [INF] usbSDK: Device image rounder: 1
+19-09-2025: 11:10:10.954: [INF] usbSDK: Successfully configured as: 1510HS
+19-09-2025: 11:10:10.958: [WRN] usbSDK: Registers 68 and 69 not set. Performing manual image dimension calculations
+19-09-2025: 11:10:10.960: [ERR] usbSDK: Failed to parse binning register value: 0
+19-09-2025: 11:10:10.966: [INF] usbSDK: Image dimensions set as 1031x1536
+19-09-2025: 11:10:10.968: [INF] usbSDK: Device Model Number: 1510
+19-09-2025: 11:10:10.974: [INF] usbSDK: Device Serial Number: 0
+19-09-2025: 11:10:10.978: [INF] usbSDK: Device FW: 1.10.13
+19-09-2025: 11:10:10.978: [INF] usbSDK: Setting exposure mode to trig_mode
+19-09-2025: 11:10:10.981: [INF] usbSDK: Set register 0 to 64
+19-09-2025: 11:10:10.982: [INF] usbSDK: Resetting exposure time to 1000 us after changing exposure mode
+19-09-2025: 11:10:10.982: [INF] usbSDK: Setting exposure time
+19-09-2025: 11:10:10.982: [INF] usbSDK: Getting exposure mode
+19-09-2025: 11:10:10.984: [INF] usbSDK: Got exposure mode: trig_mode
+19-09-2025: 11:10:10.987: [INF] usbSDK: Set exposure time to 1000 us
+19-09-2025: 11:10:10.988: [INF] usbSDK: Setting DDS off
+19-09-2025: 11:10:10.992: [INF] usbSDK: Calling StartStream
+19-09-2025: 11:10:10.996: [WRN] usbSDK: Registers 68 and 69 not set. Performing manual image dimension calculations
+19-09-2025: 11:10:10.998: [ERR] usbSDK: Failed to parse binning register value: 0
+19-09-2025: 11:10:11.004: [INF] usbSDK: Image dimensions set as 1031x1536
+19-09-2025: 11:10:11.037: [INF] usbSDK: Device started streaming
+19-09-2025: 11:10:16.817: [INF] usbSDK: Sent software trigger
+19-09-2025: 11:10:21.281: [INF] usbSDK: Sent software trigger
+19-09-2025: 11:10:54.809: [INF] usbSDK: Calling StopStream
+19-09-2025: 11:10:54.832: [INF] usbSDK: Stream stopped
+19-09-2025: 11:10:54.833: [INF] usbSDK: Closing camera
+19-09-2025: 11:10:55.295: [INF] usbSDK: Finished heartbeat thread
+19-09-2025: 11:10:55.295: [INF] usbSDK: Closing device
+19-09-2025: 11:10:55.299: [INF] usbSDK: Successfully closed camera
+19-09-2025: 14:34:39.982: [INF] usbSDK: ----------**********----------
+19-09-2025: 14:34:39.982: [INF] usbSDK: Device constructor called
+19-09-2025: 14:34:39.982: [INF] usbSDK: SLSDK version number: 2.2.13.0
+19-09-2025: 14:34:39.983: [INF] usbSDK: SLDeviceLib.dll version: 2.2.13.0
+19-09-2025: 14:34:39.983: [INF] usbSDK: SLImage.dll version: 2.2.13.0
+19-09-2025: 14:34:39.983: [INF] usbSDK: SLHelperLibrary.dll version: 2.2.13.0
+19-09-2025: 14:34:39.983: [INF] usbSDK: SLDefectCorrection.dll version: 2.2.13.0
+19-09-2025: 14:34:39.983: [INF] usbSDK: SLInterfaceXDT.dll version: 2.2.13.0
+19-09-2025: 14:34:39.984: [INF] usbSDK: libxdtusb.dll version: 1.4.3.0
+19-09-2025: 14:34:39.984: [INF] usbSDK: libibdt.dll version: 1.0.2.0
+19-09-2025: 14:34:39.984: [INF] usbSDK: libusb-1.0.dll version: 1.0.24.11584
+19-09-2025: 14:34:39.984: [INF] usbSDK: libwinpthread-1.dll version: 1.0.0.0
+19-09-2025: 14:34:39.984: [INF] usbSDK: Opening camera
+19-09-2025: 14:34:39.004: [INF] usbSDK: Found 1 devices
+19-09-2025: 14:34:39.005: [INF] usbSDK: Connecting to device 1
+19-09-2025: 14:34:40.020: [INF] usbSDK: Device connected at USB speed: Super
+19-09-2025: 14:34:40.022: [INF] usbSDK: Starting heartbeat thread
+19-09-2025: 14:34:40.041: [INF] usbSDK: Detector type: 1, variant: 3
+19-09-2025: 14:34:40.041: [INF] usbSDK: Model Code: EIO_IS1510M4
+19-09-2025: 14:34:40.041: [INF] usbSDK: Number of sensors in array: 1
+19-09-2025: 14:34:40.041: [INF] usbSDK: Number of temperature sensors: 1
+19-09-2025: 14:34:40.042: [INF] usbSDK: Device image rounder: 1
+19-09-2025: 14:34:40.042: [INF] usbSDK: Successfully configured as: 1510HS
+19-09-2025: 14:34:40.046: [WRN] usbSDK: Registers 68 and 69 not set. Performing manual image dimension calculations
+19-09-2025: 14:34:40.048: [ERR] usbSDK: Failed to parse binning register value: 0
+19-09-2025: 14:34:40.054: [INF] usbSDK: Image dimensions set as 1031x1536
+19-09-2025: 14:34:40.056: [INF] usbSDK: Device Model Number: 1510
+19-09-2025: 14:34:40.062: [INF] usbSDK: Device Serial Number: 0
+19-09-2025: 14:34:40.066: [INF] usbSDK: Device FW: 1.10.13
+19-09-2025: 14:34:40.066: [INF] usbSDK: Setting exposure mode to trig_mode
+19-09-2025: 14:34:40.069: [INF] usbSDK: Set register 0 to 64
+19-09-2025: 14:34:40.070: [INF] usbSDK: Resetting exposure time to 1000 us after changing exposure mode
+19-09-2025: 14:34:40.070: [INF] usbSDK: Setting exposure time
+19-09-2025: 14:34:40.070: [INF] usbSDK: Getting exposure mode
+19-09-2025: 14:34:40.072: [INF] usbSDK: Got exposure mode: trig_mode
+19-09-2025: 14:34:40.075: [INF] usbSDK: Set exposure time to 1000 us
+19-09-2025: 14:34:40.076: [INF] usbSDK: Setting DDS off
+19-09-2025: 14:34:40.080: [INF] usbSDK: Calling StartStream
+19-09-2025: 14:34:40.084: [WRN] usbSDK: Registers 68 and 69 not set. Performing manual image dimension calculations
+19-09-2025: 14:34:40.086: [ERR] usbSDK: Failed to parse binning register value: 0
+19-09-2025: 14:34:40.092: [INF] usbSDK: Image dimensions set as 1031x1536
+19-09-2025: 14:34:40.128: [INF] usbSDK: Device started streaming
+19-09-2025: 14:34:40.293: [INF] usbSDK: Sent software trigger
+19-09-2025: 14:34:40.318: [INF] usbSDK: Calling StopStream
+19-09-2025: 14:34:40.353: [INF] usbSDK: Stream stopped
+19-09-2025: 14:34:40.354: [INF] usbSDK: Closing camera
+19-09-2025: 14:34:41.039: [INF] usbSDK: Finished heartbeat thread
+19-09-2025: 14:34:41.040: [INF] usbSDK: Closing device
+19-09-2025: 14:34:41.046: [INF] usbSDK: Successfully closed camera
+19-09-2025: 14:34:44.208: [ERR] usbSDK: No device in SetExposureMode
+19-09-2025: 14:34:47.689: [ERR] usbSDK: No device in SetExposureMode
+19-09-2025: 14:34:48.232: [ERR] usbSDK: No device in SetExposureMode
+19-09-2025: 14:35:31.792: [INF] usbSDK: ----------**********----------
+19-09-2025: 14:35:31.792: [INF] usbSDK: Device constructor called
+19-09-2025: 14:35:31.792: [INF] usbSDK: SLSDK version number: 2.2.13.0
+19-09-2025: 14:35:31.792: [INF] usbSDK: SLDeviceLib.dll version: 2.2.13.0
+19-09-2025: 14:35:31.792: [INF] usbSDK: SLImage.dll version: 2.2.13.0
+19-09-2025: 14:35:31.792: [INF] usbSDK: SLHelperLibrary.dll version: 2.2.13.0
+19-09-2025: 14:35:31.793: [INF] usbSDK: SLDefectCorrection.dll version: 2.2.13.0
+19-09-2025: 14:35:31.793: [INF] usbSDK: SLInterfaceXDT.dll version: 2.2.13.0
+19-09-2025: 14:35:31.793: [INF] usbSDK: libxdtusb.dll version: 1.4.3.0
+19-09-2025: 14:35:31.793: [INF] usbSDK: libibdt.dll version: 1.0.2.0
+19-09-2025: 14:35:31.793: [INF] usbSDK: libusb-1.0.dll version: 1.0.24.11584
+19-09-2025: 14:35:31.793: [INF] usbSDK: libwinpthread-1.dll version: 1.0.0.0
+19-09-2025: 14:35:31.794: [INF] usbSDK: Opening camera
+19-09-2025: 14:35:31.813: [INF] usbSDK: Found 1 devices
+19-09-2025: 14:35:31.813: [INF] usbSDK: Connecting to device 1
+19-09-2025: 14:35:31.828: [INF] usbSDK: Device connected at USB speed: Super
+19-09-2025: 14:35:31.831: [INF] usbSDK: Starting heartbeat thread
+19-09-2025: 14:35:31.837: [INF] usbSDK: Detector type: 1, variant: 3
+19-09-2025: 14:35:31.838: [INF] usbSDK: Model Code: EIO_IS1510M4
+19-09-2025: 14:35:31.838: [INF] usbSDK: Number of sensors in array: 1
+19-09-2025: 14:35:31.838: [INF] usbSDK: Number of temperature sensors: 1
+19-09-2025: 14:35:31.838: [INF] usbSDK: Device image rounder: 1
+19-09-2025: 14:35:31.838: [INF] usbSDK: Successfully configured as: 1510HS
+19-09-2025: 14:35:31.841: [WRN] usbSDK: Registers 68 and 69 not set. Performing manual image dimension calculations
+19-09-2025: 14:35:31.843: [ERR] usbSDK: Failed to parse binning register value: 0
+19-09-2025: 14:35:31.849: [INF] usbSDK: Image dimensions set as 1031x1536
+19-09-2025: 14:35:31.851: [INF] usbSDK: Device Model Number: 1510
+19-09-2025: 14:35:31.857: [INF] usbSDK: Device Serial Number: 0
+19-09-2025: 14:35:31.861: [INF] usbSDK: Device FW: 1.10.13
+19-09-2025: 14:35:31.862: [INF] usbSDK: Setting exposure mode to trig_mode
+19-09-2025: 14:35:31.865: [INF] usbSDK: Set register 0 to 64
+19-09-2025: 14:35:31.865: [INF] usbSDK: Resetting exposure time to 1000 us after changing exposure mode
+19-09-2025: 14:35:31.865: [INF] usbSDK: Setting exposure time
+19-09-2025: 14:35:31.866: [INF] usbSDK: Getting exposure mode
+19-09-2025: 14:35:31.867: [INF] usbSDK: Got exposure mode: trig_mode
+19-09-2025: 14:35:31.871: [INF] usbSDK: Set exposure time to 1000 us
+19-09-2025: 14:35:31.871: [INF] usbSDK: Setting DDS off
+19-09-2025: 14:35:31.876: [INF] usbSDK: Calling StartStream
+19-09-2025: 14:35:31.879: [WRN] usbSDK: Registers 68 and 69 not set. Performing manual image dimension calculations
+19-09-2025: 14:35:31.881: [ERR] usbSDK: Failed to parse binning register value: 0
+19-09-2025: 14:35:31.887: [INF] usbSDK: Image dimensions set as 1031x1536
+19-09-2025: 14:35:31.920: [INF] usbSDK: Device started streaming
+19-09-2025: 14:35:32.086: [INF] usbSDK: Sent software trigger
+19-09-2025: 14:35:32.109: [INF] usbSDK: Calling StopStream
+19-09-2025: 14:35:32.145: [INF] usbSDK: Stream stopped
+19-09-2025: 14:35:32.146: [INF] usbSDK: Closing camera
+19-09-2025: 14:35:32.836: [INF] usbSDK: Finished heartbeat thread
+19-09-2025: 14:35:32.838: [INF] usbSDK: Closing device
+19-09-2025: 14:35:32.843: [INF] usbSDK: Successfully closed camera
+19-09-2025: 14:35:34.824: [ERR] usbSDK: No device in SetExposureMode
+19-09-2025: 14:37:31.894: [INF] usbSDK: ----------**********----------
+19-09-2025: 14:37:31.894: [INF] usbSDK: Device constructor called
+19-09-2025: 14:37:31.894: [INF] usbSDK: SLSDK version number: 2.2.13.0
+19-09-2025: 14:37:31.894: [INF] usbSDK: SLDeviceLib.dll version: 2.2.13.0
+19-09-2025: 14:37:31.894: [INF] usbSDK: SLImage.dll version: 2.2.13.0
+19-09-2025: 14:37:31.894: [INF] usbSDK: SLHelperLibrary.dll version: 2.2.13.0
+19-09-2025: 14:37:31.895: [INF] usbSDK: SLDefectCorrection.dll version: 2.2.13.0
+19-09-2025: 14:37:31.895: [INF] usbSDK: SLInterfaceXDT.dll version: 2.2.13.0
+19-09-2025: 14:37:31.895: [INF] usbSDK: libxdtusb.dll version: 1.4.3.0
+19-09-2025: 14:37:31.895: [INF] usbSDK: libibdt.dll version: 1.0.2.0
+19-09-2025: 14:37:31.895: [INF] usbSDK: libusb-1.0.dll version: 1.0.24.11584
+19-09-2025: 14:37:31.895: [INF] usbSDK: libwinpthread-1.dll version: 1.0.0.0
+19-09-2025: 14:37:31.896: [INF] usbSDK: Opening camera
+19-09-2025: 14:37:31.916: [INF] usbSDK: Found 1 devices
+19-09-2025: 14:37:31.916: [INF] usbSDK: Connecting to device 1
+19-09-2025: 14:37:31.931: [INF] usbSDK: Device connected at USB speed: High
+19-09-2025: 14:37:31.934: [INF] usbSDK: Starting heartbeat thread
+19-09-2025: 14:37:31.940: [INF] usbSDK: Detector type: 1, variant: 5
+19-09-2025: 14:37:31.941: [INF] usbSDK: Model Code: EIO_LCY_IS1510M4
+19-09-2025: 14:37:31.941: [INF] usbSDK: Number of sensors in array: 1
+19-09-2025: 14:37:31.941: [INF] usbSDK: Number of temperature sensors: 1
+19-09-2025: 14:37:31.941: [INF] usbSDK: Device image rounder: 1
+19-09-2025: 14:37:31.941: [INF] usbSDK: Successfully configured as: 1510HS
+19-09-2025: 14:37:31.944: [INF] usbSDK: Device Model Number: 1510
+19-09-2025: 14:37:31.950: [INF] usbSDK: Device Serial Number: 123
+19-09-2025: 14:37:31.955: [INF] usbSDK: Device FW: 1.11.0
+19-09-2025: 14:37:31.955: [INF] usbSDK: Setting exposure mode to trig_mode
+19-09-2025: 14:37:31.958: [INF] usbSDK: Set register 0 to 64
+19-09-2025: 14:37:31.958: [INF] usbSDK: Resetting exposure time to 1000 us after changing exposure mode
+19-09-2025: 14:37:31.959: [INF] usbSDK: Setting exposure time
+19-09-2025: 14:37:31.959: [INF] usbSDK: Getting exposure mode
+19-09-2025: 14:37:31.960: [INF] usbSDK: Got exposure mode: trig_mode
+19-09-2025: 14:37:31.964: [INF] usbSDK: Set exposure time to 1000 us
+19-09-2025: 14:37:31.964: [INF] usbSDK: Setting DDS off
+19-09-2025: 14:37:31.969: [INF] usbSDK: Calling StartStream
+19-09-2025: 14:37:32.030: [INF] usbSDK: Device started streaming
+19-09-2025: 14:37:32.180: [INF] usbSDK: Sent software trigger
+19-09-2025: 14:37:32.292: [INF] usbSDK: Calling StopStream
+19-09-2025: 14:37:32.322: [INF] usbSDK: Stream stopped
+19-09-2025: 14:37:32.323: [INF] usbSDK: Closing camera
+19-09-2025: 14:37:32.942: [INF] usbSDK: Finished heartbeat thread
+19-09-2025: 14:37:32.942: [INF] usbSDK: Closing device
+19-09-2025: 14:37:32.945: [INF] usbSDK: Successfully closed camera
+19-09-2025: 14:37:36.968: [ERR] usbSDK: No device in SetExposureMode
+19-09-2025: 14:37:37.920: [ERR] usbSDK: No device in SetExposureMode
+19-09-2025: 14:37:38.080: [ERR] usbSDK: No device in SetExposureMode
+19-09-2025: 14:47:26.486: [INF] usbSDK: ----------**********----------
+19-09-2025: 14:47:26.487: [INF] usbSDK: Device constructor called
+19-09-2025: 14:47:26.487: [INF] usbSDK: SLSDK version number: 2.2.13.0
+19-09-2025: 14:47:26.487: [INF] usbSDK: SLDeviceLib.dll version: 2.2.13.0
+19-09-2025: 14:47:26.487: [INF] usbSDK: SLImage.dll version: 2.2.13.0
+19-09-2025: 14:47:26.487: [INF] usbSDK: SLHelperLibrary.dll version: 2.2.13.0
+19-09-2025: 14:47:26.487: [INF] usbSDK: SLDefectCorrection.dll version: 2.2.13.0
+19-09-2025: 14:47:26.488: [INF] usbSDK: SLInterfaceXDT.dll version: 2.2.13.0
+19-09-2025: 14:47:26.488: [INF] usbSDK: libxdtusb.dll version: 1.4.3.0
+19-09-2025: 14:47:26.488: [INF] usbSDK: libibdt.dll version: 1.0.2.0
+19-09-2025: 14:47:26.488: [INF] usbSDK: libusb-1.0.dll version: 1.0.24.11584
+19-09-2025: 14:47:26.488: [INF] usbSDK: libwinpthread-1.dll version: 1.0.0.0
+19-09-2025: 14:47:26.488: [INF] usbSDK: Opening camera
+19-09-2025: 14:47:26.508: [INF] usbSDK: Found 1 devices
+19-09-2025: 14:47:26.508: [INF] usbSDK: Connecting to device 1
+19-09-2025: 14:47:26.523: [INF] usbSDK: Device connected at USB speed: High
+19-09-2025: 14:47:26.525: [INF] usbSDK: Starting heartbeat thread
+19-09-2025: 14:47:26.532: [INF] usbSDK: Detector type: 1, variant: 5
+19-09-2025: 14:47:26.532: [INF] usbSDK: Model Code: EIO_LCY_IS1510M4
+19-09-2025: 14:47:26.532: [INF] usbSDK: Number of sensors in array: 1
+19-09-2025: 14:47:26.533: [INF] usbSDK: Number of temperature sensors: 1
+19-09-2025: 14:47:26.533: [INF] usbSDK: Device image rounder: 1
+19-09-2025: 14:47:26.533: [INF] usbSDK: Successfully configured as: 1510HS
+19-09-2025: 14:47:26.536: [INF] usbSDK: Device Model Number: 1510
+19-09-2025: 14:47:26.542: [INF] usbSDK: Device Serial Number: 123
+19-09-2025: 14:47:26.546: [INF] usbSDK: Device FW: 1.11.0
+19-09-2025: 14:47:26.547: [INF] usbSDK: Setting exposure mode to trig_mode
+19-09-2025: 14:47:26.550: [INF] usbSDK: Set register 0 to 64
+19-09-2025: 14:47:26.550: [INF] usbSDK: Resetting exposure time to 1000 us after changing exposure mode
+19-09-2025: 14:47:26.550: [INF] usbSDK: Setting exposure time
+19-09-2025: 14:47:26.550: [INF] usbSDK: Getting exposure mode
+19-09-2025: 14:47:26.552: [INF] usbSDK: Got exposure mode: trig_mode
+19-09-2025: 14:47:26.556: [INF] usbSDK: Set exposure time to 1000 us
+19-09-2025: 14:47:26.556: [INF] usbSDK: Setting DDS off
+19-09-2025: 14:47:26.561: [INF] usbSDK: Calling StartStream
+19-09-2025: 14:47:26.615: [INF] usbSDK: Device started streaming
+19-09-2025: 14:47:26.766: [INF] usbSDK: Sent software trigger
+19-09-2025: 14:47:26.878: [INF] usbSDK: Calling StopStream
+19-09-2025: 14:47:26.909: [INF] usbSDK: Stream stopped
+19-09-2025: 14:47:26.916: [INF] usbSDK: Closing camera
+19-09-2025: 14:47:27.536: [INF] usbSDK: Finished heartbeat thread
+19-09-2025: 14:47:27.537: [INF] usbSDK: Closing device
+19-09-2025: 14:47:27.542: [INF] usbSDK: Successfully closed camera
+19-09-2025: 14:49:30.821: [INF] usbSDK: ----------**********----------
+19-09-2025: 14:49:30.821: [INF] usbSDK: Device constructor called
+19-09-2025: 14:49:30.821: [INF] usbSDK: SLSDK version number: 2.2.13.0
+19-09-2025: 14:49:30.821: [INF] usbSDK: SLDeviceLib.dll version: 2.2.13.0
+19-09-2025: 14:49:30.821: [INF] usbSDK: SLImage.dll version: 2.2.13.0
+19-09-2025: 14:49:30.822: [INF] usbSDK: SLHelperLibrary.dll version: 2.2.13.0
+19-09-2025: 14:49:30.822: [INF] usbSDK: SLDefectCorrection.dll version: 2.2.13.0
+19-09-2025: 14:49:30.822: [INF] usbSDK: SLInterfaceXDT.dll version: 2.2.13.0
+19-09-2025: 14:49:30.822: [INF] usbSDK: libxdtusb.dll version: 1.4.3.0
+19-09-2025: 14:49:30.822: [INF] usbSDK: libibdt.dll version: 1.0.2.0
+19-09-2025: 14:49:30.822: [INF] usbSDK: libusb-1.0.dll version: 1.0.24.11584
+19-09-2025: 14:49:30.823: [INF] usbSDK: libwinpthread-1.dll version: 1.0.0.0
+19-09-2025: 14:49:30.823: [INF] usbSDK: Opening camera
+19-09-2025: 14:49:30.843: [INF] usbSDK: Found 1 devices
+19-09-2025: 14:49:30.843: [INF] usbSDK: Connecting to device 1
+19-09-2025: 14:49:30.858: [INF] usbSDK: Device connected at USB speed: High
+19-09-2025: 14:49:30.860: [INF] usbSDK: Starting heartbeat thread
+19-09-2025: 14:49:30.867: [INF] usbSDK: Detector type: 1, variant: 5
+19-09-2025: 14:49:30.867: [INF] usbSDK: Model Code: EIO_LCY_IS1510M4
+19-09-2025: 14:49:30.867: [INF] usbSDK: Number of sensors in array: 1
+19-09-2025: 14:49:30.867: [INF] usbSDK: Number of temperature sensors: 1
+19-09-2025: 14:49:30.867: [INF] usbSDK: Device image rounder: 1
+19-09-2025: 14:49:30.868: [INF] usbSDK: Successfully configured as: 1510HS
+19-09-2025: 14:49:30.871: [INF] usbSDK: Device Model Number: 1510
+19-09-2025: 14:49:30.877: [INF] usbSDK: Device Serial Number: 123
+19-09-2025: 14:49:30.881: [INF] usbSDK: Device FW: 1.11.0
+19-09-2025: 14:49:30.881: [INF] usbSDK: Setting exposure mode to trig_mode
+19-09-2025: 14:49:30.885: [INF] usbSDK: Set register 0 to 64
+19-09-2025: 14:49:30.885: [INF] usbSDK: Resetting exposure time to 1000 us after changing exposure mode
+19-09-2025: 14:49:30.885: [INF] usbSDK: Setting exposure time
+19-09-2025: 14:49:30.885: [INF] usbSDK: Getting exposure mode
+19-09-2025: 14:49:30.887: [INF] usbSDK: Got exposure mode: trig_mode
+19-09-2025: 14:49:30.891: [INF] usbSDK: Set exposure time to 1000 us
+19-09-2025: 14:49:30.891: [INF] usbSDK: Setting DDS off
+19-09-2025: 14:49:30.895: [INF] usbSDK: Calling StartStream
+19-09-2025: 14:49:30.952: [INF] usbSDK: Device started streaming
+19-09-2025: 14:49:31.104: [INF] usbSDK: Sent software trigger
+19-09-2025: 14:49:31.222: [INF] usbSDK: Calling StopStream
+19-09-2025: 14:49:31.261: [INF] usbSDK: Stream stopped
+19-09-2025: 14:49:38.568: [INF] usbSDK: Setting exposure mode to trig_mode
+19-09-2025: 14:49:38.572: [INF] usbSDK: Set register 0 to 64
+19-09-2025: 14:49:38.572: [INF] usbSDK: Resetting exposure time to 1000 us after changing exposure mode
+19-09-2025: 14:49:38.572: [INF] usbSDK: Setting exposure time
+19-09-2025: 14:49:38.572: [INF] usbSDK: Getting exposure mode
+19-09-2025: 14:49:38.574: [INF] usbSDK: Got exposure mode: trig_mode
+19-09-2025: 14:49:38.577: [INF] usbSDK: Set exposure time to 1000 us
+19-09-2025: 14:49:38.578: [INF] usbSDK: Setting DDS off
+19-09-2025: 14:49:38.582: [INF] usbSDK: Calling StartStream
+19-09-2025: 14:49:38.639: [INF] usbSDK: Device started streaming
+19-09-2025: 14:49:38.792: [INF] usbSDK: Sent software trigger
+19-09-2025: 14:49:38.905: [INF] usbSDK: Calling StopStream
+19-09-2025: 14:49:38.948: [INF] usbSDK: Stream stopped
+19-09-2025: 14:49:54.328: [INF] usbSDK: Setting exposure mode to trig_mode
+19-09-2025: 14:49:54.331: [INF] usbSDK: Set register 0 to 64
+19-09-2025: 14:49:54.331: [INF] usbSDK: Resetting exposure time to 1000 us after changing exposure mode
+19-09-2025: 14:49:54.332: [INF] usbSDK: Setting exposure time
+19-09-2025: 14:49:54.332: [INF] usbSDK: Getting exposure mode
+19-09-2025: 14:49:54.333: [INF] usbSDK: Got exposure mode: trig_mode
+19-09-2025: 14:49:54.337: [INF] usbSDK: Set exposure time to 1000 us
+19-09-2025: 14:49:54.338: [INF] usbSDK: Setting DDS off
+19-09-2025: 14:49:54.342: [INF] usbSDK: Calling StartStream
+19-09-2025: 14:49:54.387: [INF] usbSDK: Device started streaming
+19-09-2025: 14:49:54.556: [INF] usbSDK: Sent software trigger
+19-09-2025: 14:49:54.672: [INF] usbSDK: Calling StopStream
+19-09-2025: 14:49:54.712: [INF] usbSDK: Stream stopped
+19-09-2025: 14:51:37.159: [INF] usbSDK: Closing camera
+19-09-2025: 14:51:38.028: [INF] usbSDK: Finished heartbeat thread
+19-09-2025: 14:51:38.029: [INF] usbSDK: Closing device
+19-09-2025: 14:51:38.031: [INF] usbSDK: Successfully closed camera
+19-09-2025: 14:51:40.509: [INF] usbSDK: ----------**********----------
+19-09-2025: 14:51:40.509: [INF] usbSDK: Device constructor called
+19-09-2025: 14:51:40.509: [INF] usbSDK: SLSDK version number: 2.2.13.0
+19-09-2025: 14:51:40.509: [INF] usbSDK: SLDeviceLib.dll version: 2.2.13.0
+19-09-2025: 14:51:40.510: [INF] usbSDK: SLImage.dll version: 2.2.13.0
+19-09-2025: 14:51:40.510: [INF] usbSDK: SLHelperLibrary.dll version: 2.2.13.0
+19-09-2025: 14:51:40.510: [INF] usbSDK: SLDefectCorrection.dll version: 2.2.13.0
+19-09-2025: 14:51:40.510: [INF] usbSDK: SLInterfaceXDT.dll version: 2.2.13.0
+19-09-2025: 14:51:40.510: [INF] usbSDK: libxdtusb.dll version: 1.4.3.0
+19-09-2025: 14:51:40.511: [INF] usbSDK: libibdt.dll version: 1.0.2.0
+19-09-2025: 14:51:40.511: [INF] usbSDK: libusb-1.0.dll version: 1.0.24.11584
+19-09-2025: 14:51:40.511: [INF] usbSDK: libwinpthread-1.dll version: 1.0.0.0
+19-09-2025: 14:51:40.511: [INF] usbSDK: Opening camera
+19-09-2025: 14:51:40.530: [INF] usbSDK: Found 1 devices
+19-09-2025: 14:51:40.530: [INF] usbSDK: Connecting to device 1
+19-09-2025: 14:51:40.545: [INF] usbSDK: Device connected at USB speed: High
+19-09-2025: 14:51:40.548: [INF] usbSDK: Starting heartbeat thread
+19-09-2025: 14:51:40.554: [INF] usbSDK: Detector type: 1, variant: 5
+19-09-2025: 14:51:40.554: [INF] usbSDK: Model Code: EIO_LCY_IS1510M4
+19-09-2025: 14:51:40.555: [INF] usbSDK: Number of sensors in array: 1
+19-09-2025: 14:51:40.555: [INF] usbSDK: Number of temperature sensors: 1
+19-09-2025: 14:51:40.555: [INF] usbSDK: Device image rounder: 1
+19-09-2025: 14:51:40.555: [INF] usbSDK: Successfully configured as: 1510HS
+19-09-2025: 14:51:40.558: [INF] usbSDK: Device Model Number: 1510
+19-09-2025: 14:51:40.564: [INF] usbSDK: Device Serial Number: 123
+19-09-2025: 14:51:40.568: [INF] usbSDK: Device FW: 1.11.0
+19-09-2025: 14:51:40.569: [INF] usbSDK: Setting exposure mode to trig_mode
+19-09-2025: 14:51:40.572: [INF] usbSDK: Set register 0 to 64
+19-09-2025: 14:51:40.572: [INF] usbSDK: Resetting exposure time to 1000 us after changing exposure mode
+19-09-2025: 14:51:40.572: [INF] usbSDK: Setting exposure time
+19-09-2025: 14:51:40.572: [INF] usbSDK: Getting exposure mode
+19-09-2025: 14:51:40.574: [INF] usbSDK: Got exposure mode: trig_mode
+19-09-2025: 14:51:40.578: [INF] usbSDK: Set exposure time to 1000 us
+19-09-2025: 14:51:40.578: [INF] usbSDK: Setting DDS off
+19-09-2025: 14:51:40.583: [INF] usbSDK: Calling StartStream
+19-09-2025: 14:51:40.640: [INF] usbSDK: Device started streaming
+19-09-2025: 14:51:40.792: [INF] usbSDK: Sent software trigger
+19-09-2025: 14:51:40.906: [INF] usbSDK: Calling StopStream
+19-09-2025: 14:51:40.948: [INF] usbSDK: Stream stopped
+19-09-2025: 14:51:49.638: [INF] usbSDK: Closing camera
+19-09-2025: 14:51:50.621: [INF] usbSDK: Finished heartbeat thread
+19-09-2025: 14:51:50.622: [INF] usbSDK: Closing device
+19-09-2025: 14:51:50.626: [INF] usbSDK: Successfully closed camera
+19-09-2025: 14:52:33.027: [INF] usbSDK: ----------**********----------
+19-09-2025: 14:52:33.027: [INF] usbSDK: Device constructor called
+19-09-2025: 14:52:33.027: [INF] usbSDK: SLSDK version number: 2.2.13.0
+19-09-2025: 14:52:33.028: [INF] usbSDK: SLDeviceLib.dll version: 2.2.13.0
+19-09-2025: 14:52:33.028: [INF] usbSDK: SLImage.dll version: 2.2.13.0
+19-09-2025: 14:52:33.028: [INF] usbSDK: SLHelperLibrary.dll version: 2.2.13.0
+19-09-2025: 14:52:33.028: [INF] usbSDK: SLDefectCorrection.dll version: 2.2.13.0
+19-09-2025: 14:52:33.028: [INF] usbSDK: SLInterfaceXDT.dll version: 2.2.13.0
+19-09-2025: 14:52:33.028: [INF] usbSDK: libxdtusb.dll version: 1.4.3.0
+19-09-2025: 14:52:33.028: [INF] usbSDK: libibdt.dll version: 1.0.2.0
+19-09-2025: 14:52:33.029: [INF] usbSDK: libusb-1.0.dll version: 1.0.24.11584
+19-09-2025: 14:52:33.029: [INF] usbSDK: libwinpthread-1.dll version: 1.0.0.0
+19-09-2025: 14:52:33.029: [INF] usbSDK: Opening camera
+19-09-2025: 14:52:33.049: [INF] usbSDK: Found 1 devices
+19-09-2025: 14:52:33.049: [INF] usbSDK: Connecting to device 1
+19-09-2025: 14:52:33.064: [INF] usbSDK: Device connected at USB speed: High
+19-09-2025: 14:52:33.066: [INF] usbSDK: Starting heartbeat thread
+19-09-2025: 14:52:33.073: [INF] usbSDK: Detector type: 1, variant: 5
+19-09-2025: 14:52:33.073: [INF] usbSDK: Model Code: EIO_LCY_IS1510M4
+19-09-2025: 14:52:33.073: [INF] usbSDK: Number of sensors in array: 1
+19-09-2025: 14:52:33.073: [INF] usbSDK: Number of temperature sensors: 1
+19-09-2025: 14:52:33.073: [INF] usbSDK: Device image rounder: 1
+19-09-2025: 14:52:33.073: [INF] usbSDK: Successfully configured as: 1510HS
+19-09-2025: 14:52:33.077: [INF] usbSDK: Device Model Number: 1510
+19-09-2025: 14:52:33.083: [INF] usbSDK: Device Serial Number: 123
+19-09-2025: 14:52:33.087: [INF] usbSDK: Device FW: 1.11.0
+19-09-2025: 14:52:33.087: [INF] usbSDK: Setting exposure mode to trig_mode
+19-09-2025: 14:52:33.091: [INF] usbSDK: Set register 0 to 64
+19-09-2025: 14:52:33.091: [INF] usbSDK: Resetting exposure time to 1000 us after changing exposure mode
+19-09-2025: 14:52:33.091: [INF] usbSDK: Setting exposure time
+19-09-2025: 14:52:33.091: [INF] usbSDK: Getting exposure mode
+19-09-2025: 14:52:33.093: [INF] usbSDK: Got exposure mode: trig_mode
+19-09-2025: 14:52:33.097: [INF] usbSDK: Set exposure time to 1000 us
+19-09-2025: 14:52:33.097: [INF] usbSDK: Setting DDS off
+19-09-2025: 14:52:33.101: [INF] usbSDK: Calling StartStream
+19-09-2025: 14:52:33.164: [INF] usbSDK: Device started streaming
+19-09-2025: 14:52:33.318: [INF] usbSDK: Sent software trigger
+19-09-2025: 14:52:33.432: [INF] usbSDK: Calling StopStream
+19-09-2025: 14:52:33.474: [INF] usbSDK: Stream stopped
+19-09-2025: 14:52:35.207: [INF] usbSDK: Opening camera
+19-09-2025: 14:52:35.207: [WRN] usbSDK: Device already open
+19-09-2025: 14:52:40.960: [INF] usbSDK: Closing camera
+19-09-2025: 14:52:41.159: [INF] usbSDK: Finished heartbeat thread
+19-09-2025: 14:52:41.160: [INF] usbSDK: Closing device
+19-09-2025: 14:52:41.165: [INF] usbSDK: Successfully closed camera
+19-09-2025: 14:52:53.093: [INF] usbSDK: ----------**********----------
+19-09-2025: 14:52:53.093: [INF] usbSDK: Device constructor called
+19-09-2025: 14:52:53.093: [INF] usbSDK: SLSDK version number: 2.2.13.0
+19-09-2025: 14:52:53.093: [INF] usbSDK: SLDeviceLib.dll version: 2.2.13.0
+19-09-2025: 14:52:53.093: [INF] usbSDK: SLImage.dll version: 2.2.13.0
+19-09-2025: 14:52:53.094: [INF] usbSDK: SLHelperLibrary.dll version: 2.2.13.0
+19-09-2025: 14:52:53.094: [INF] usbSDK: SLDefectCorrection.dll version: 2.2.13.0
+19-09-2025: 14:52:53.094: [INF] usbSDK: SLInterfaceXDT.dll version: 2.2.13.0
+19-09-2025: 14:52:53.094: [INF] usbSDK: libxdtusb.dll version: 1.4.3.0
+19-09-2025: 14:52:53.094: [INF] usbSDK: libibdt.dll version: 1.0.2.0
+19-09-2025: 14:52:53.094: [INF] usbSDK: libusb-1.0.dll version: 1.0.24.11584
+19-09-2025: 14:52:53.094: [INF] usbSDK: libwinpthread-1.dll version: 1.0.0.0
+19-09-2025: 14:52:53.095: [INF] usbSDK: Opening camera
+19-09-2025: 14:52:53.114: [INF] usbSDK: Found 1 devices
+19-09-2025: 14:52:53.114: [INF] usbSDK: Connecting to device 1
+19-09-2025: 14:52:53.129: [INF] usbSDK: Device connected at USB speed: High
+19-09-2025: 14:52:53.132: [INF] usbSDK: Starting heartbeat thread
+19-09-2025: 14:52:53.138: [INF] usbSDK: Detector type: 1, variant: 5
+19-09-2025: 14:52:53.138: [INF] usbSDK: Model Code: EIO_LCY_IS1510M4
+19-09-2025: 14:52:53.139: [INF] usbSDK: Number of sensors in array: 1
+19-09-2025: 14:52:53.139: [INF] usbSDK: Number of temperature sensors: 1
+19-09-2025: 14:52:53.139: [INF] usbSDK: Device image rounder: 1
+19-09-2025: 14:52:53.139: [INF] usbSDK: Successfully configured as: 1510HS
+19-09-2025: 14:52:53.142: [INF] usbSDK: Device Model Number: 1510
+19-09-2025: 14:52:53.148: [INF] usbSDK: Device Serial Number: 123
+19-09-2025: 14:52:53.152: [INF] usbSDK: Device FW: 1.11.0
+19-09-2025: 14:52:53.153: [INF] usbSDK: Setting exposure mode to trig_mode
+19-09-2025: 14:52:53.156: [INF] usbSDK: Set register 0 to 64
+19-09-2025: 14:52:53.156: [INF] usbSDK: Resetting exposure time to 1000 us after changing exposure mode
+19-09-2025: 14:52:53.156: [INF] usbSDK: Setting exposure time
+19-09-2025: 14:52:53.156: [INF] usbSDK: Getting exposure mode
+19-09-2025: 14:52:53.158: [INF] usbSDK: Got exposure mode: trig_mode
+19-09-2025: 14:52:53.162: [INF] usbSDK: Set exposure time to 1000 us
+19-09-2025: 14:52:53.162: [INF] usbSDK: Setting DDS off
+19-09-2025: 14:52:53.167: [INF] usbSDK: Calling StartStream
+19-09-2025: 14:52:53.231: [INF] usbSDK: Device started streaming
+19-09-2025: 14:52:53.384: [INF] usbSDK: Sent software trigger
+19-09-2025: 14:52:53.497: [INF] usbSDK: Calling StopStream
+19-09-2025: 14:52:53.540: [INF] usbSDK: Stream stopped
+19-09-2025: 14:53:00.479: [INF] usbSDK: Closing camera
+19-09-2025: 14:53:01.231: [INF] usbSDK: Finished heartbeat thread
+19-09-2025: 14:53:01.232: [INF] usbSDK: Closing device
+19-09-2025: 14:53:01.234: [INF] usbSDK: Successfully closed camera
+19-09-2025: 14:53:04.231: [INF] usbSDK: Opening camera
+19-09-2025: 14:53:04.245: [INF] usbSDK: Found 1 devices
+19-09-2025: 14:53:04.245: [INF] usbSDK: Connecting to device 1
+19-09-2025: 14:53:04.259: [INF] usbSDK: Device connected at USB speed: High
+19-09-2025: 14:53:04.261: [INF] usbSDK: Starting heartbeat thread
+19-09-2025: 14:53:04.268: [INF] usbSDK: Detector type: 1, variant: 5
+19-09-2025: 14:53:04.269: [INF] usbSDK: Model Code: EIO_LCY_IS1510M4
+19-09-2025: 14:53:04.269: [INF] usbSDK: Number of sensors in array: 1
+19-09-2025: 14:53:04.269: [INF] usbSDK: Number of temperature sensors: 1
+19-09-2025: 14:53:04.269: [INF] usbSDK: Device image rounder: 1
+19-09-2025: 14:53:04.269: [INF] usbSDK: Successfully configured as: 1510HS
+19-09-2025: 14:53:04.273: [INF] usbSDK: Device Model Number: 1510
+19-09-2025: 14:53:04.279: [INF] usbSDK: Device Serial Number: 123
+19-09-2025: 14:53:04.283: [INF] usbSDK: Device FW: 1.11.0
+19-09-2025: 14:53:05.360: [INF] usbSDK: Closing camera
+19-09-2025: 14:53:06.266: [INF] usbSDK: Finished heartbeat thread
+19-09-2025: 14:53:06.267: [INF] usbSDK: Closing device
+19-09-2025: 14:53:06.272: [INF] usbSDK: Successfully closed camera
+19-09-2025: 14:53:06.277: [INF] usbSDK: Opening camera
+19-09-2025: 14:53:06.292: [INF] usbSDK: Found 1 devices
+19-09-2025: 14:53:06.292: [INF] usbSDK: Connecting to device 1
+19-09-2025: 14:53:06.307: [INF] usbSDK: Device connected at USB speed: High
+19-09-2025: 14:53:06.309: [INF] usbSDK: Starting heartbeat thread
+19-09-2025: 14:53:06.316: [INF] usbSDK: Detector type: 1, variant: 5
+19-09-2025: 14:53:06.316: [INF] usbSDK: Model Code: EIO_LCY_IS1510M4
+19-09-2025: 14:53:06.316: [INF] usbSDK: Number of sensors in array: 1
+19-09-2025: 14:53:06.316: [INF] usbSDK: Number of temperature sensors: 1
+19-09-2025: 14:53:06.317: [INF] usbSDK: Device image rounder: 1
+19-09-2025: 14:53:06.317: [INF] usbSDK: Successfully configured as: 1510HS
+19-09-2025: 14:53:06.320: [INF] usbSDK: Device Model Number: 1510
+19-09-2025: 14:53:06.326: [INF] usbSDK: Device Serial Number: 123
+19-09-2025: 14:53:06.330: [INF] usbSDK: Device FW: 1.11.0
+19-09-2025: 14:53:09.615: [INF] usbSDK: Closing camera
+19-09-2025: 14:53:10.347: [INF] usbSDK: Finished heartbeat thread
+19-09-2025: 14:53:10.348: [INF] usbSDK: Closing device
+19-09-2025: 14:53:10.354: [INF] usbSDK: Successfully closed camera
+19-09-2025: 14:53:17.815: [INF] usbSDK: Opening camera
+19-09-2025: 14:53:17.828: [INF] usbSDK: Found 1 devices
+19-09-2025: 14:53:17.829: [INF] usbSDK: Connecting to device 1
+19-09-2025: 14:53:17.844: [INF] usbSDK: Device connected at USB speed: High
+19-09-2025: 14:53:17.846: [INF] usbSDK: Starting heartbeat thread
+19-09-2025: 14:53:17.853: [INF] usbSDK: Detector type: 1, variant: 5
+19-09-2025: 14:53:17.853: [INF] usbSDK: Model Code: EIO_LCY_IS1510M4
+19-09-2025: 14:53:17.853: [INF] usbSDK: Number of sensors in array: 1
+19-09-2025: 14:53:17.854: [INF] usbSDK: Number of temperature sensors: 1
+19-09-2025: 14:53:17.854: [INF] usbSDK: Device image rounder: 1
+19-09-2025: 14:53:17.854: [INF] usbSDK: Successfully configured as: 1510HS
+19-09-2025: 14:53:17.858: [INF] usbSDK: Device Model Number: 1510
+19-09-2025: 14:53:17.864: [INF] usbSDK: Device Serial Number: 123
+19-09-2025: 14:53:17.868: [INF] usbSDK: Device FW: 1.11.0
+19-09-2025: 14:53:22.047: [INF] usbSDK: Closing camera
+19-09-2025: 14:53:22.892: [INF] usbSDK: Finished heartbeat thread
+19-09-2025: 14:53:22.893: [INF] usbSDK: Closing device
+19-09-2025: 14:53:22.899: [INF] usbSDK: Successfully closed camera
+19-09-2025: 14:53:47.662: [INF] usbSDK: ----------**********----------
+19-09-2025: 14:53:47.663: [INF] usbSDK: Device constructor called
+19-09-2025: 14:53:47.663: [INF] usbSDK: SLSDK version number: 2.2.13.0
+19-09-2025: 14:53:47.663: [INF] usbSDK: SLDeviceLib.dll version: 2.2.13.0
+19-09-2025: 14:53:47.663: [INF] usbSDK: SLImage.dll version: 2.2.13.0
+19-09-2025: 14:53:47.663: [INF] usbSDK: SLHelperLibrary.dll version: 2.2.13.0
+19-09-2025: 14:53:47.664: [INF] usbSDK: SLDefectCorrection.dll version: 2.2.13.0
+19-09-2025: 14:53:47.664: [INF] usbSDK: SLInterfaceXDT.dll version: 2.2.13.0
+19-09-2025: 14:53:47.664: [INF] usbSDK: libxdtusb.dll version: 1.4.3.0
+19-09-2025: 14:53:47.664: [INF] usbSDK: libibdt.dll version: 1.0.2.0
+19-09-2025: 14:53:47.664: [INF] usbSDK: libusb-1.0.dll version: 1.0.24.11584
+19-09-2025: 14:53:47.664: [INF] usbSDK: libwinpthread-1.dll version: 1.0.0.0
+19-09-2025: 14:53:47.665: [INF] usbSDK: Opening camera
+19-09-2025: 14:53:47.685: [INF] usbSDK: Found 1 devices
+19-09-2025: 14:53:47.685: [INF] usbSDK: Connecting to device 1
+19-09-2025: 14:53:47.700: [INF] usbSDK: Device connected at USB speed: High
+19-09-2025: 14:53:47.702: [INF] usbSDK: Starting heartbeat thread
+19-09-2025: 14:53:47.709: [INF] usbSDK: Detector type: 1, variant: 5
+19-09-2025: 14:53:47.709: [INF] usbSDK: Model Code: EIO_LCY_IS1510M4
+19-09-2025: 14:53:47.709: [INF] usbSDK: Number of sensors in array: 1
+19-09-2025: 14:53:47.709: [INF] usbSDK: Number of temperature sensors: 1
+19-09-2025: 14:53:47.709: [INF] usbSDK: Device image rounder: 1
+19-09-2025: 14:53:47.709: [INF] usbSDK: Successfully configured as: 1510HS
+19-09-2025: 14:53:47.713: [INF] usbSDK: Device Model Number: 1510
+19-09-2025: 14:53:47.719: [INF] usbSDK: Device Serial Number: 123
+19-09-2025: 14:53:47.723: [INF] usbSDK: Device FW: 1.11.0
+19-09-2025: 14:53:47.723: [INF] usbSDK: Setting exposure mode to trig_mode
+19-09-2025: 14:53:47.727: [INF] usbSDK: Set register 0 to 64
+19-09-2025: 14:53:47.727: [INF] usbSDK: Resetting exposure time to 1000 us after changing exposure mode
+19-09-2025: 14:53:47.727: [INF] usbSDK: Setting exposure time
+19-09-2025: 14:53:47.727: [INF] usbSDK: Getting exposure mode
+19-09-2025: 14:53:47.729: [INF] usbSDK: Got exposure mode: trig_mode
+19-09-2025: 14:53:47.733: [INF] usbSDK: Set exposure time to 1000 us
+19-09-2025: 14:53:47.733: [INF] usbSDK: Setting DDS off
+19-09-2025: 14:53:47.737: [INF] usbSDK: Calling StartStream
+19-09-2025: 14:53:47.811: [INF] usbSDK: Device started streaming
+19-09-2025: 14:53:47.944: [INF] usbSDK: Sent software trigger
+19-09-2025: 14:53:48.057: [INF] usbSDK: Calling StopStream
+19-09-2025: 14:53:48.102: [INF] usbSDK: Stream stopped
+19-09-2025: 14:53:50.192: [INF] usbSDK: Closing camera
+19-09-2025: 14:53:50.722: [INF] usbSDK: Finished heartbeat thread
+19-09-2025: 14:53:50.723: [INF] usbSDK: Closing device
+19-09-2025: 14:53:50.729: [INF] usbSDK: Successfully closed camera
+19-09-2025: 14:53:52.703: [INF] usbSDK: Opening camera
+19-09-2025: 14:53:52.716: [INF] usbSDK: Found 1 devices
+19-09-2025: 14:53:52.717: [INF] usbSDK: Connecting to device 1
+19-09-2025: 14:53:52.732: [INF] usbSDK: Device connected at USB speed: High
+19-09-2025: 14:53:52.734: [INF] usbSDK: Starting heartbeat thread
+19-09-2025: 14:53:52.741: [INF] usbSDK: Detector type: 1, variant: 5
+19-09-2025: 14:53:52.741: [INF] usbSDK: Model Code: EIO_LCY_IS1510M4
+19-09-2025: 14:53:52.741: [INF] usbSDK: Number of sensors in array: 1
+19-09-2025: 14:53:52.742: [INF] usbSDK: Number of temperature sensors: 1
+19-09-2025: 14:53:52.742: [INF] usbSDK: Device image rounder: 1
+19-09-2025: 14:53:52.742: [INF] usbSDK: Successfully configured as: 1510HS
+19-09-2025: 14:53:52.746: [INF] usbSDK: Device Model Number: 1510
+19-09-2025: 14:53:52.752: [INF] usbSDK: Device Serial Number: 123
+19-09-2025: 14:53:52.756: [INF] usbSDK: Device FW: 1.11.0
+19-09-2025: 14:53:54.783: [INF] usbSDK: Closing camera
+19-09-2025: 14:53:55.766: [INF] usbSDK: Finished heartbeat thread
+19-09-2025: 14:53:55.766: [INF] usbSDK: Closing device
+19-09-2025: 14:53:55.769: [INF] usbSDK: Successfully closed camera
+19-09-2025: 14:54:11.966: [INF] usbSDK: ----------**********----------
+19-09-2025: 14:54:11.966: [INF] usbSDK: Device constructor called
+19-09-2025: 14:54:11.966: [INF] usbSDK: SLSDK version number: 2.2.13.0
+19-09-2025: 14:54:11.966: [INF] usbSDK: SLDeviceLib.dll version: 2.2.13.0
+19-09-2025: 14:54:11.966: [INF] usbSDK: SLImage.dll version: 2.2.13.0
+19-09-2025: 14:54:11.967: [INF] usbSDK: SLHelperLibrary.dll version: 2.2.13.0
+19-09-2025: 14:54:11.967: [INF] usbSDK: SLDefectCorrection.dll version: 2.2.13.0
+19-09-2025: 14:54:11.967: [INF] usbSDK: SLInterfaceXDT.dll version: 2.2.13.0
+19-09-2025: 14:54:11.967: [INF] usbSDK: libxdtusb.dll version: 1.4.3.0
+19-09-2025: 14:54:11.967: [INF] usbSDK: libibdt.dll version: 1.0.2.0
+19-09-2025: 14:54:11.967: [INF] usbSDK: libusb-1.0.dll version: 1.0.24.11584
+19-09-2025: 14:54:11.968: [INF] usbSDK: libwinpthread-1.dll version: 1.0.0.0
+19-09-2025: 14:54:11.968: [INF] usbSDK: Opening camera
+19-09-2025: 14:54:11.988: [INF] usbSDK: Found 1 devices
+19-09-2025: 14:54:11.989: [INF] usbSDK: Connecting to device 1
+19-09-2025: 14:54:12.003: [INF] usbSDK: Device connected at USB speed: High
+19-09-2025: 14:54:12.005: [INF] usbSDK: Starting heartbeat thread
+19-09-2025: 14:54:12.012: [INF] usbSDK: Detector type: 1, variant: 5
+19-09-2025: 14:54:12.012: [INF] usbSDK: Model Code: EIO_LCY_IS1510M4
+19-09-2025: 14:54:12.012: [INF] usbSDK: Number of sensors in array: 1
+19-09-2025: 14:54:12.013: [INF] usbSDK: Number of temperature sensors: 1
+19-09-2025: 14:54:12.013: [INF] usbSDK: Device image rounder: 1
+19-09-2025: 14:54:12.013: [INF] usbSDK: Successfully configured as: 1510HS
+19-09-2025: 14:54:12.016: [INF] usbSDK: Device Model Number: 1510
+19-09-2025: 14:54:12.022: [INF] usbSDK: Device Serial Number: 123
+19-09-2025: 14:54:12.026: [INF] usbSDK: Device FW: 1.11.0
+19-09-2025: 14:54:12.027: [INF] usbSDK: Setting exposure mode to trig_mode
+19-09-2025: 14:54:12.030: [INF] usbSDK: Set register 0 to 64
+19-09-2025: 14:54:12.030: [INF] usbSDK: Resetting exposure time to 1000 us after changing exposure mode
+19-09-2025: 14:54:12.030: [INF] usbSDK: Setting exposure time
+19-09-2025: 14:54:12.030: [INF] usbSDK: Getting exposure mode
+19-09-2025: 14:54:12.032: [INF] usbSDK: Got exposure mode: trig_mode
+19-09-2025: 14:54:12.036: [INF] usbSDK: Set exposure time to 1000 us
+19-09-2025: 14:54:12.036: [INF] usbSDK: Setting DDS off
+19-09-2025: 14:54:12.041: [INF] usbSDK: Calling StartStream
+19-09-2025: 14:54:12.096: [INF] usbSDK: Device started streaming
+19-09-2025: 14:54:12.248: [INF] usbSDK: Sent software trigger
+19-09-2025: 14:54:12.360: [INF] usbSDK: Calling StopStream
+19-09-2025: 14:54:12.405: [INF] usbSDK: Stream stopped
+19-09-2025: 14:54:33.861: [INF] usbSDK: Closing camera
+19-09-2025: 14:54:34.209: [INF] usbSDK: Finished heartbeat thread
+19-09-2025: 14:54:34.209: [INF] usbSDK: Closing device
+19-09-2025: 14:54:34.211: [INF] usbSDK: Successfully closed camera
+19-09-2025: 14:54:37.260: [INF] usbSDK: ----------**********----------
+19-09-2025: 14:54:37.260: [INF] usbSDK: Device constructor called
+19-09-2025: 14:54:37.260: [INF] usbSDK: SLSDK version number: 2.2.13.0
+19-09-2025: 14:54:37.260: [INF] usbSDK: SLDeviceLib.dll version: 2.2.13.0
+19-09-2025: 14:54:37.261: [INF] usbSDK: SLImage.dll version: 2.2.13.0
+19-09-2025: 14:54:37.261: [INF] usbSDK: SLHelperLibrary.dll version: 2.2.13.0
+19-09-2025: 14:54:37.261: [INF] usbSDK: SLDefectCorrection.dll version: 2.2.13.0
+19-09-2025: 14:54:37.261: [INF] usbSDK: SLInterfaceXDT.dll version: 2.2.13.0
+19-09-2025: 14:54:37.261: [INF] usbSDK: libxdtusb.dll version: 1.4.3.0
+19-09-2025: 14:54:37.261: [INF] usbSDK: libibdt.dll version: 1.0.2.0
+19-09-2025: 14:54:37.261: [INF] usbSDK: libusb-1.0.dll version: 1.0.24.11584
+19-09-2025: 14:54:37.262: [INF] usbSDK: libwinpthread-1.dll version: 1.0.0.0
+19-09-2025: 14:54:37.262: [ERR] usbSDK: No device in SetExposureMode
+19-09-2025: 14:54:49.608: [INF] usbSDK: Closing camera
+19-09-2025: 14:54:54.064: [INF] usbSDK: Opening camera
+19-09-2025: 14:54:54.084: [INF] usbSDK: Found 1 devices
+19-09-2025: 14:54:54.084: [INF] usbSDK: Connecting to device 1
+19-09-2025: 14:54:54.099: [INF] usbSDK: Device connected at USB speed: High
+19-09-2025: 14:54:54.101: [INF] usbSDK: Starting heartbeat thread
+19-09-2025: 14:54:54.108: [INF] usbSDK: Detector type: 1, variant: 5
+19-09-2025: 14:54:54.109: [INF] usbSDK: Model Code: EIO_LCY_IS1510M4
+19-09-2025: 14:54:54.109: [INF] usbSDK: Number of sensors in array: 1
+19-09-2025: 14:54:54.109: [INF] usbSDK: Number of temperature sensors: 1
+19-09-2025: 14:54:54.109: [INF] usbSDK: Device image rounder: 1
+19-09-2025: 14:54:54.109: [INF] usbSDK: Successfully configured as: 1510HS
+19-09-2025: 14:54:54.113: [INF] usbSDK: Device Model Number: 1510
+19-09-2025: 14:54:54.119: [INF] usbSDK: Device Serial Number: 123
+19-09-2025: 14:54:54.123: [INF] usbSDK: Device FW: 1.11.0
+19-09-2025: 14:54:59.440: [INF] usbSDK: Setting exposure mode to trig_mode
+19-09-2025: 14:54:59.444: [INF] usbSDK: Set register 0 to 64
+19-09-2025: 14:54:59.444: [INF] usbSDK: Resetting exposure time to 1000 us after changing exposure mode
+19-09-2025: 14:54:59.444: [INF] usbSDK: Setting exposure time
+19-09-2025: 14:54:59.444: [INF] usbSDK: Getting exposure mode
+19-09-2025: 14:54:59.446: [INF] usbSDK: Got exposure mode: trig_mode
+19-09-2025: 14:54:59.450: [INF] usbSDK: Set exposure time to 1000 us
+19-09-2025: 14:54:59.450: [INF] usbSDK: Setting DDS off
+19-09-2025: 14:54:59.454: [INF] usbSDK: Calling StartStream
+19-09-2025: 14:54:59.518: [INF] usbSDK: Device started streaming
+19-09-2025: 14:54:59.658: [INF] usbSDK: Sent software trigger
+19-09-2025: 14:54:59.771: [INF] usbSDK: Calling StopStream
+19-09-2025: 14:54:59.810: [INF] usbSDK: Stream stopped
+19-09-2025: 14:55:15.231: [INF] usbSDK: Setting exposure mode to trig_mode
+19-09-2025: 14:55:15.234: [INF] usbSDK: Set register 0 to 64
+19-09-2025: 14:55:15.234: [INF] usbSDK: Resetting exposure time to 1000 us after changing exposure mode
+19-09-2025: 14:55:15.235: [INF] usbSDK: Setting exposure time
+19-09-2025: 14:55:15.235: [INF] usbSDK: Getting exposure mode
+19-09-2025: 14:55:15.236: [INF] usbSDK: Got exposure mode: trig_mode
+19-09-2025: 14:55:15.240: [INF] usbSDK: Set exposure time to 1000 us
+19-09-2025: 14:55:15.240: [INF] usbSDK: Setting DDS off
+19-09-2025: 14:55:15.245: [INF] usbSDK: Calling StartStream
+19-09-2025: 14:55:15.297: [INF] usbSDK: Device started streaming
+19-09-2025: 14:55:15.452: [INF] usbSDK: Sent software trigger
+19-09-2025: 14:55:15.563: [INF] usbSDK: Calling StopStream
+19-09-2025: 14:55:15.594: [INF] usbSDK: Stream stopped
+19-09-2025: 14:56:00.614: [INF] usbSDK: Closing camera
+19-09-2025: 14:56:00.740: [INF] usbSDK: Finished heartbeat thread
+19-09-2025: 14:56:00.741: [INF] usbSDK: Closing device
+19-09-2025: 14:56:00.743: [INF] usbSDK: Successfully closed camera
+19-09-2025: 14:56:02.557: [INF] usbSDK: ----------**********----------
+19-09-2025: 14:56:02.557: [INF] usbSDK: Device constructor called
+19-09-2025: 14:56:02.557: [INF] usbSDK: SLSDK version number: 2.2.13.0
+19-09-2025: 14:56:02.558: [INF] usbSDK: SLDeviceLib.dll version: 2.2.13.0
+19-09-2025: 14:56:02.558: [INF] usbSDK: SLImage.dll version: 2.2.13.0
+19-09-2025: 14:56:02.558: [INF] usbSDK: SLHelperLibrary.dll version: 2.2.13.0
+19-09-2025: 14:56:02.558: [INF] usbSDK: SLDefectCorrection.dll version: 2.2.13.0
+19-09-2025: 14:56:02.558: [INF] usbSDK: SLInterfaceXDT.dll version: 2.2.13.0
+19-09-2025: 14:56:02.558: [INF] usbSDK: libxdtusb.dll version: 1.4.3.0
+19-09-2025: 14:56:02.559: [INF] usbSDK: libibdt.dll version: 1.0.2.0
+19-09-2025: 14:56:02.559: [INF] usbSDK: libusb-1.0.dll version: 1.0.24.11584
+19-09-2025: 14:56:02.559: [INF] usbSDK: libwinpthread-1.dll version: 1.0.0.0
+19-09-2025: 14:56:02.559: [ERR] usbSDK: No device in SetExposureMode
+19-09-2025: 14:56:04.375: [INF] usbSDK: Closing camera
+19-09-2025: 14:56:08.279: [INF] usbSDK: Opening camera
+19-09-2025: 14:56:08.300: [INF] usbSDK: Found 1 devices
+19-09-2025: 14:56:08.300: [INF] usbSDK: Connecting to device 1
+19-09-2025: 14:56:08.315: [INF] usbSDK: Device connected at USB speed: High
+19-09-2025: 14:56:08.318: [INF] usbSDK: Starting heartbeat thread
+19-09-2025: 14:56:08.324: [INF] usbSDK: Detector type: 1, variant: 5
+19-09-2025: 14:56:08.324: [INF] usbSDK: Model Code: EIO_LCY_IS1510M4
+19-09-2025: 14:56:08.325: [INF] usbSDK: Number of sensors in array: 1
+19-09-2025: 14:56:08.325: [INF] usbSDK: Number of temperature sensors: 1
+19-09-2025: 14:56:08.325: [INF] usbSDK: Device image rounder: 1
+19-09-2025: 14:56:08.325: [INF] usbSDK: Successfully configured as: 1510HS
+19-09-2025: 14:56:08.329: [INF] usbSDK: Device Model Number: 1510
+19-09-2025: 14:56:08.335: [INF] usbSDK: Device Serial Number: 123
+19-09-2025: 14:56:08.339: [INF] usbSDK: Device FW: 1.11.0
+19-09-2025: 14:56:09.816: [INF] usbSDK: Setting exposure mode to trig_mode
+19-09-2025: 14:56:09.819: [INF] usbSDK: Set register 0 to 64
+19-09-2025: 14:56:09.819: [INF] usbSDK: Resetting exposure time to 1000 us after changing exposure mode
+19-09-2025: 14:56:09.820: [INF] usbSDK: Setting exposure time
+19-09-2025: 14:56:09.820: [INF] usbSDK: Getting exposure mode
+19-09-2025: 14:56:09.821: [INF] usbSDK: Got exposure mode: trig_mode
+19-09-2025: 14:56:09.825: [INF] usbSDK: Set exposure time to 1000 us
+19-09-2025: 14:56:09.825: [INF] usbSDK: Setting DDS off
+19-09-2025: 14:56:09.829: [INF] usbSDK: Calling StartStream
+19-09-2025: 14:56:09.883: [INF] usbSDK: Device started streaming
+19-09-2025: 14:56:10.030: [INF] usbSDK: Sent software trigger
+19-09-2025: 14:56:10.150: [INF] usbSDK: Calling StopStream
+19-09-2025: 14:56:10.189: [INF] usbSDK: Stream stopped
+19-09-2025: 14:56:18.896: [INF] usbSDK: Setting exposure mode to trig_mode
+19-09-2025: 14:56:18.899: [INF] usbSDK: Set register 0 to 64
+19-09-2025: 14:56:18.899: [INF] usbSDK: Resetting exposure time to 1000 us after changing exposure mode
+19-09-2025: 14:56:18.899: [INF] usbSDK: Setting exposure time
+19-09-2025: 14:56:18.899: [INF] usbSDK: Getting exposure mode
+19-09-2025: 14:56:18.901: [INF] usbSDK: Got exposure mode: trig_mode
+19-09-2025: 14:56:18.905: [INF] usbSDK: Set exposure time to 1000 us
+19-09-2025: 14:56:18.905: [INF] usbSDK: Setting DDS off
+19-09-2025: 14:56:18.910: [INF] usbSDK: Calling StartStream
+19-09-2025: 14:56:18.966: [INF] usbSDK: Device started streaming
+19-09-2025: 14:56:19.120: [INF] usbSDK: Sent software trigger
+19-09-2025: 14:56:19.229: [INF] usbSDK: Calling StopStream
+19-09-2025: 14:56:19.275: [INF] usbSDK: Stream stopped
+19-09-2025: 14:56:26.824: [INF] usbSDK: Setting exposure mode to trig_mode
+19-09-2025: 14:56:26.827: [INF] usbSDK: Set register 0 to 64
+19-09-2025: 14:56:26.828: [INF] usbSDK: Resetting exposure time to 1000 us after changing exposure mode
+19-09-2025: 14:56:26.828: [INF] usbSDK: Setting exposure time
+19-09-2025: 14:56:26.828: [INF] usbSDK: Getting exposure mode
+19-09-2025: 14:56:26.829: [INF] usbSDK: Got exposure mode: trig_mode
+19-09-2025: 14:56:26.833: [INF] usbSDK: Set exposure time to 1000 us
+19-09-2025: 14:56:26.833: [INF] usbSDK: Setting DDS off
+19-09-2025: 14:56:26.838: [INF] usbSDK: Calling StartStream
+19-09-2025: 14:56:26.889: [INF] usbSDK: Device started streaming
+19-09-2025: 14:56:27.043: [INF] usbSDK: Sent software trigger
+19-09-2025: 14:56:27.156: [INF] usbSDK: Calling StopStream
+19-09-2025: 14:56:27.197: [INF] usbSDK: Stream stopped
+19-09-2025: 14:56:27.199: [INF] usbSDK: Setting exposure mode to trig_mode
+19-09-2025: 14:56:27.202: [INF] usbSDK: Set register 0 to 64
+19-09-2025: 14:56:27.202: [INF] usbSDK: Resetting exposure time to 1000 us after changing exposure mode
+19-09-2025: 14:56:27.203: [INF] usbSDK: Setting exposure time
+19-09-2025: 14:56:27.203: [INF] usbSDK: Getting exposure mode
+19-09-2025: 14:56:27.205: [INF] usbSDK: Got exposure mode: trig_mode
+19-09-2025: 14:56:27.208: [INF] usbSDK: Set exposure time to 1000 us
+19-09-2025: 14:56:27.209: [INF] usbSDK: Setting DDS off
+19-09-2025: 14:56:27.213: [INF] usbSDK: Calling StartStream
+19-09-2025: 14:56:27.273: [INF] usbSDK: Device started streaming
+19-09-2025: 14:56:27.426: [INF] usbSDK: Sent software trigger
+19-09-2025: 14:56:27.537: [INF] usbSDK: Calling StopStream
+19-09-2025: 14:56:27.581: [INF] usbSDK: Stream stopped
+19-09-2025: 14:57:07.875: [INF] usbSDK: Closing camera
+19-09-2025: 14:57:07.927: [INF] usbSDK: Finished heartbeat thread
+19-09-2025: 14:57:07.928: [INF] usbSDK: Closing device
+19-09-2025: 14:57:07.930: [INF] usbSDK: Successfully closed camera
+19-09-2025: 14:57:09.843: [INF] usbSDK: ----------**********----------
+19-09-2025: 14:57:09.844: [INF] usbSDK: Device constructor called
+19-09-2025: 14:57:09.844: [INF] usbSDK: SLSDK version number: 2.2.13.0
+19-09-2025: 14:57:09.844: [INF] usbSDK: SLDeviceLib.dll version: 2.2.13.0
+19-09-2025: 14:57:09.844: [INF] usbSDK: SLImage.dll version: 2.2.13.0
+19-09-2025: 14:57:09.844: [INF] usbSDK: SLHelperLibrary.dll version: 2.2.13.0
+19-09-2025: 14:57:09.845: [INF] usbSDK: SLDefectCorrection.dll version: 2.2.13.0
+19-09-2025: 14:57:09.845: [INF] usbSDK: SLInterfaceXDT.dll version: 2.2.13.0
+19-09-2025: 14:57:09.845: [INF] usbSDK: libxdtusb.dll version: 1.4.3.0
+19-09-2025: 14:57:09.845: [INF] usbSDK: libibdt.dll version: 1.0.2.0
+19-09-2025: 14:57:09.845: [INF] usbSDK: libusb-1.0.dll version: 1.0.24.11584
+19-09-2025: 14:57:09.845: [INF] usbSDK: libwinpthread-1.dll version: 1.0.0.0
+19-09-2025: 14:57:09.846: [ERR] usbSDK: No device in SetExposureMode
+19-09-2025: 14:57:12.088: [ERR] usbSDK: No device in SetExposureMode
+19-09-2025: 14:57:13.287: [ERR] usbSDK: No device in SetExposureMode
+19-09-2025: 14:57:16.672: [INF] usbSDK: Closing camera
+19-09-2025: 14:57:18.000: [ERR] usbSDK: No device in SetExposureMode
+19-09-2025: 14:57:19.943: [INF] usbSDK: Opening camera
+19-09-2025: 14:57:19.964: [INF] usbSDK: Found 1 devices
+19-09-2025: 14:57:19.964: [INF] usbSDK: Connecting to device 1
+19-09-2025: 14:57:19.979: [INF] usbSDK: Device connected at USB speed: High
+19-09-2025: 14:57:19.982: [INF] usbSDK: Starting heartbeat thread
+19-09-2025: 14:57:19.988: [INF] usbSDK: Detector type: 1, variant: 5
+19-09-2025: 14:57:19.988: [INF] usbSDK: Model Code: EIO_LCY_IS1510M4
+19-09-2025: 14:57:19.988: [INF] usbSDK: Number of sensors in array: 1
+19-09-2025: 14:57:19.989: [INF] usbSDK: Number of temperature sensors: 1
+19-09-2025: 14:57:19.989: [INF] usbSDK: Device image rounder: 1
+19-09-2025: 14:57:19.989: [INF] usbSDK: Successfully configured as: 1510HS
+19-09-2025: 14:57:19.993: [INF] usbSDK: Device Model Number: 1510
+19-09-2025: 14:57:19.999: [INF] usbSDK: Device Serial Number: 123
+19-09-2025: 14:57:20.003: [INF] usbSDK: Device FW: 1.11.0
+19-09-2025: 14:57:21.648: [INF] usbSDK: Setting exposure mode to trig_mode
+19-09-2025: 14:57:21.651: [INF] usbSDK: Set register 0 to 64
+19-09-2025: 14:57:21.651: [INF] usbSDK: Resetting exposure time to 1000 us after changing exposure mode
+19-09-2025: 14:57:21.651: [INF] usbSDK: Setting exposure time
+19-09-2025: 14:57:21.652: [INF] usbSDK: Getting exposure mode
+19-09-2025: 14:57:21.653: [INF] usbSDK: Got exposure mode: trig_mode
+19-09-2025: 14:57:21.657: [INF] usbSDK: Set exposure time to 1000 us
+19-09-2025: 14:57:21.657: [INF] usbSDK: Setting DDS off
+19-09-2025: 14:57:21.662: [INF] usbSDK: Calling StartStream
+19-09-2025: 14:57:21.717: [INF] usbSDK: Device started streaming
+19-09-2025: 14:57:21.871: [INF] usbSDK: Sent software trigger
+19-09-2025: 14:57:21.984: [INF] usbSDK: Calling StopStream
+19-09-2025: 14:57:22.027: [INF] usbSDK: Stream stopped
+19-09-2025: 14:58:04.387: [INF] usbSDK: Closing camera
+19-09-2025: 14:58:05.380: [INF] usbSDK: Finished heartbeat thread
+19-09-2025: 14:58:05.380: [INF] usbSDK: Closing device
+19-09-2025: 14:58:05.382: [INF] usbSDK: Successfully closed camera
+19-09-2025: 14:58:07.171: [INF] usbSDK: ----------**********----------
+19-09-2025: 14:58:07.172: [INF] usbSDK: Device constructor called
+19-09-2025: 14:58:07.172: [INF] usbSDK: SLSDK version number: 2.2.13.0
+19-09-2025: 14:58:07.172: [INF] usbSDK: SLDeviceLib.dll version: 2.2.13.0
+19-09-2025: 14:58:07.172: [INF] usbSDK: SLImage.dll version: 2.2.13.0
+19-09-2025: 14:58:07.173: [INF] usbSDK: SLHelperLibrary.dll version: 2.2.13.0
+19-09-2025: 14:58:07.173: [INF] usbSDK: SLDefectCorrection.dll version: 2.2.13.0
+19-09-2025: 14:58:07.173: [INF] usbSDK: SLInterfaceXDT.dll version: 2.2.13.0
+19-09-2025: 14:58:07.173: [INF] usbSDK: libxdtusb.dll version: 1.4.3.0
+19-09-2025: 14:58:07.173: [INF] usbSDK: libibdt.dll version: 1.0.2.0
+19-09-2025: 14:58:07.174: [INF] usbSDK: libusb-1.0.dll version: 1.0.24.11584
+19-09-2025: 14:58:07.174: [INF] usbSDK: libwinpthread-1.dll version: 1.0.0.0
+19-09-2025: 14:58:07.174: [ERR] usbSDK: No device in SetExposureMode
+19-09-2025: 14:58:09.439: [INF] usbSDK: Closing camera
+19-09-2025: 14:58:10.359: [INF] usbSDK: Opening camera
+19-09-2025: 14:58:10.380: [INF] usbSDK: Found 1 devices
+19-09-2025: 14:58:10.380: [INF] usbSDK: Connecting to device 1
+19-09-2025: 14:58:10.394: [INF] usbSDK: Device connected at USB speed: High
+19-09-2025: 14:58:10.397: [INF] usbSDK: Starting heartbeat thread
+19-09-2025: 14:58:10.404: [INF] usbSDK: Detector type: 1, variant: 5
+19-09-2025: 14:58:10.404: [INF] usbSDK: Model Code: EIO_LCY_IS1510M4
+19-09-2025: 14:58:10.404: [INF] usbSDK: Number of sensors in array: 1
+19-09-2025: 14:58:10.404: [INF] usbSDK: Number of temperature sensors: 1
+19-09-2025: 14:58:10.404: [INF] usbSDK: Device image rounder: 1
+19-09-2025: 14:58:10.404: [INF] usbSDK: Successfully configured as: 1510HS
+19-09-2025: 14:58:10.408: [INF] usbSDK: Device Model Number: 1510
+19-09-2025: 14:58:10.413: [INF] usbSDK: Device Serial Number: 123
+19-09-2025: 14:58:10.418: [INF] usbSDK: Device FW: 1.11.0
+19-09-2025: 14:58:11.880: [INF] usbSDK: Setting exposure mode to trig_mode
+19-09-2025: 14:58:11.883: [INF] usbSDK: Set register 0 to 64
+19-09-2025: 14:58:11.884: [INF] usbSDK: Resetting exposure time to 1000 us after changing exposure mode
+19-09-2025: 14:58:11.884: [INF] usbSDK: Setting exposure time
+19-09-2025: 14:58:11.884: [INF] usbSDK: Getting exposure mode
+19-09-2025: 14:58:11.886: [INF] usbSDK: Got exposure mode: trig_mode
+19-09-2025: 14:58:11.889: [INF] usbSDK: Set exposure time to 1000 us
+19-09-2025: 14:58:11.890: [INF] usbSDK: Setting DDS off
+19-09-2025: 14:58:11.894: [INF] usbSDK: Calling StartStream
+19-09-2025: 14:58:11.958: [INF] usbSDK: Device started streaming
+19-09-2025: 14:58:12.095: [INF] usbSDK: Sent software trigger
+19-09-2025: 14:58:12.211: [INF] usbSDK: Calling StopStream
+19-09-2025: 14:58:12.251: [INF] usbSDK: Stream stopped
+19-09-2025: 14:58:40.434: [INF] usbSDK: Closing camera
+19-09-2025: 14:58:40.673: [INF] usbSDK: Finished heartbeat thread
+19-09-2025: 14:58:40.674: [INF] usbSDK: Closing device
+19-09-2025: 14:58:40.676: [INF] usbSDK: Successfully closed camera
+19-09-2025: 14:59:05.727: [INF] usbSDK: ----------**********----------
+19-09-2025: 14:59:05.727: [INF] usbSDK: Device constructor called
+19-09-2025: 14:59:05.727: [INF] usbSDK: SLSDK version number: 2.2.13.0
+19-09-2025: 14:59:05.727: [INF] usbSDK: SLDeviceLib.dll version: 2.2.13.0
+19-09-2025: 14:59:05.728: [INF] usbSDK: SLImage.dll version: 2.2.13.0
+19-09-2025: 14:59:05.728: [INF] usbSDK: SLHelperLibrary.dll version: 2.2.13.0
+19-09-2025: 14:59:05.728: [INF] usbSDK: SLDefectCorrection.dll version: 2.2.13.0
+19-09-2025: 14:59:05.728: [INF] usbSDK: SLInterfaceXDT.dll version: 2.2.13.0
+19-09-2025: 14:59:05.728: [INF] usbSDK: libxdtusb.dll version: 1.4.3.0
+19-09-2025: 14:59:05.728: [INF] usbSDK: libibdt.dll version: 1.0.2.0
+19-09-2025: 14:59:05.729: [INF] usbSDK: libusb-1.0.dll version: 1.0.24.11584
+19-09-2025: 14:59:05.729: [INF] usbSDK: libwinpthread-1.dll version: 1.0.0.0
+19-09-2025: 14:59:05.729: [ERR] usbSDK: No device in SetExposureMode
+19-09-2025: 14:59:12.023: [INF] usbSDK: Closing camera
+19-09-2025: 14:59:17.880: [INF] usbSDK: Opening camera
+19-09-2025: 14:59:17.900: [INF] usbSDK: Found 1 devices
+19-09-2025: 14:59:17.900: [INF] usbSDK: Connecting to device 1
+19-09-2025: 14:59:17.916: [INF] usbSDK: Device connected at USB speed: High
+19-09-2025: 14:59:17.918: [INF] usbSDK: Starting heartbeat thread
+19-09-2025: 14:59:17.925: [INF] usbSDK: Detector type: 1, variant: 5
+19-09-2025: 14:59:17.925: [INF] usbSDK: Model Code: EIO_LCY_IS1510M4
+19-09-2025: 14:59:17.925: [INF] usbSDK: Number of sensors in array: 1
+19-09-2025: 14:59:17.926: [INF] usbSDK: Number of temperature sensors: 1
+19-09-2025: 14:59:17.926: [INF] usbSDK: Device image rounder: 1
+19-09-2025: 14:59:17.926: [INF] usbSDK: Successfully configured as: 1510HS
+19-09-2025: 14:59:17.930: [INF] usbSDK: Device Model Number: 1510
+19-09-2025: 14:59:17.936: [INF] usbSDK: Device Serial Number: 123
+19-09-2025: 14:59:17.940: [INF] usbSDK: Device FW: 1.11.0
+19-09-2025: 14:59:18.725: [INF] usbSDK: Closing camera
+19-09-2025: 14:59:18.921: [INF] usbSDK: Finished heartbeat thread
+19-09-2025: 14:59:18.921: [INF] usbSDK: Closing device
+19-09-2025: 14:59:18.923: [INF] usbSDK: Successfully closed camera
+19-09-2025: 14:59:42.829: [INF] usbSDK: ----------**********----------
+19-09-2025: 14:59:42.830: [INF] usbSDK: Device constructor called
+19-09-2025: 14:59:42.830: [INF] usbSDK: SLSDK version number: 2.2.13.0
+19-09-2025: 14:59:42.830: [INF] usbSDK: SLDeviceLib.dll version: 2.2.13.0
+19-09-2025: 14:59:42.830: [INF] usbSDK: SLImage.dll version: 2.2.13.0
+19-09-2025: 14:59:42.830: [INF] usbSDK: SLHelperLibrary.dll version: 2.2.13.0
+19-09-2025: 14:59:42.830: [INF] usbSDK: SLDefectCorrection.dll version: 2.2.13.0
+19-09-2025: 14:59:42.831: [INF] usbSDK: SLInterfaceXDT.dll version: 2.2.13.0
+19-09-2025: 14:59:42.831: [INF] usbSDK: libxdtusb.dll version: 1.4.3.0
+19-09-2025: 14:59:42.831: [INF] usbSDK: libibdt.dll version: 1.0.2.0
+19-09-2025: 14:59:42.831: [INF] usbSDK: libusb-1.0.dll version: 1.0.24.11584
+19-09-2025: 14:59:42.831: [INF] usbSDK: libwinpthread-1.dll version: 1.0.0.0
+19-09-2025: 14:59:42.831: [ERR] usbSDK: No device in SetExposureMode
+19-09-2025: 14:59:44.927: [INF] usbSDK: Opening camera
+19-09-2025: 14:59:44.948: [INF] usbSDK: Found 1 devices
+19-09-2025: 14:59:44.948: [INF] usbSDK: Connecting to device 1
+19-09-2025: 14:59:44.963: [INF] usbSDK: Device connected at USB speed: High
+19-09-2025: 14:59:44.966: [INF] usbSDK: Starting heartbeat thread
+19-09-2025: 14:59:44.972: [INF] usbSDK: Detector type: 1, variant: 5
+19-09-2025: 14:59:44.972: [INF] usbSDK: Model Code: EIO_LCY_IS1510M4
+19-09-2025: 14:59:44.972: [INF] usbSDK: Number of sensors in array: 1
+19-09-2025: 14:59:44.973: [INF] usbSDK: Number of temperature sensors: 1
+19-09-2025: 14:59:44.973: [INF] usbSDK: Device image rounder: 1
+19-09-2025: 14:59:44.973: [INF] usbSDK: Successfully configured as: 1510HS
+19-09-2025: 14:59:44.977: [INF] usbSDK: Device Model Number: 1510
+19-09-2025: 14:59:44.983: [INF] usbSDK: Device Serial Number: 123
+19-09-2025: 14:59:44.987: [INF] usbSDK: Device FW: 1.11.0
+19-09-2025: 14:59:47.896: [INF] usbSDK: Setting exposure mode to trig_mode
+19-09-2025: 14:59:47.899: [INF] usbSDK: Set register 0 to 64
+19-09-2025: 14:59:47.899: [INF] usbSDK: Resetting exposure time to 1000 us after changing exposure mode
+19-09-2025: 14:59:47.899: [INF] usbSDK: Setting exposure time
+19-09-2025: 14:59:47.900: [INF] usbSDK: Getting exposure mode
+19-09-2025: 14:59:47.901: [INF] usbSDK: Got exposure mode: trig_mode
+19-09-2025: 14:59:47.905: [INF] usbSDK: Set exposure time to 1000 us
+19-09-2025: 14:59:47.905: [INF] usbSDK: Setting DDS off
+19-09-2025: 14:59:47.910: [INF] usbSDK: Calling StartStream
+19-09-2025: 14:59:47.970: [INF] usbSDK: Device started streaming
+19-09-2025: 14:59:48.124: [INF] usbSDK: Sent software trigger
+19-09-2025: 14:59:48.238: [INF] usbSDK: Calling StopStream
+19-09-2025: 14:59:48.279: [INF] usbSDK: Stream stopped
+19-09-2025: 14:59:49.472: [INF] usbSDK: Setting exposure mode to trig_mode
+19-09-2025: 14:59:49.475: [INF] usbSDK: Set register 0 to 64
+19-09-2025: 14:59:49.475: [INF] usbSDK: Resetting exposure time to 1000 us after changing exposure mode
+19-09-2025: 14:59:49.475: [INF] usbSDK: Setting exposure time
+19-09-2025: 14:59:49.476: [INF] usbSDK: Getting exposure mode
+19-09-2025: 14:59:49.477: [INF] usbSDK: Got exposure mode: trig_mode
+19-09-2025: 14:59:49.481: [INF] usbSDK: Set exposure time to 1000 us
+19-09-2025: 14:59:49.481: [INF] usbSDK: Setting DDS off
+19-09-2025: 14:59:49.486: [INF] usbSDK: Calling StartStream
+19-09-2025: 14:59:49.537: [INF] usbSDK: Device started streaming
+19-09-2025: 14:59:49.692: [INF] usbSDK: Sent software trigger
+19-09-2025: 14:59:49.807: [INF] usbSDK: Calling StopStream
+19-09-2025: 14:59:49.848: [INF] usbSDK: Stream stopped
+19-09-2025: 14:59:52.398: [INF] usbSDK: Closing camera
+19-09-2025: 14:59:53.047: [INF] usbSDK: Finished heartbeat thread
+19-09-2025: 14:59:53.047: [INF] usbSDK: Closing device
+19-09-2025: 14:59:53.049: [INF] usbSDK: Successfully closed camera
+19-09-2025: 15:15:46.348: [INF] usbSDK: ----------**********----------
+19-09-2025: 15:15:46.348: [INF] usbSDK: Device constructor called
+19-09-2025: 15:15:46.348: [INF] usbSDK: SLSDK version number: 2.2.13.0
+19-09-2025: 15:15:46.349: [INF] usbSDK: SLDeviceLib.dll version: 2.2.13.0
+19-09-2025: 15:15:46.349: [INF] usbSDK: SLImage.dll version: 2.2.13.0
+19-09-2025: 15:15:46.349: [INF] usbSDK: SLHelperLibrary.dll version: 2.2.13.0
+19-09-2025: 15:15:46.349: [INF] usbSDK: SLDefectCorrection.dll version: 2.2.13.0
+19-09-2025: 15:15:46.349: [INF] usbSDK: SLInterfaceXDT.dll version: 2.2.13.0
+19-09-2025: 15:15:46.349: [INF] usbSDK: libxdtusb.dll version: 1.4.3.0
+19-09-2025: 15:15:46.349: [INF] usbSDK: libibdt.dll version: 1.0.2.0
+19-09-2025: 15:15:46.350: [INF] usbSDK: libusb-1.0.dll version: 1.0.24.11584
+19-09-2025: 15:15:46.350: [INF] usbSDK: libwinpthread-1.dll version: 1.0.0.0
+19-09-2025: 15:15:59.948: [INF] usbSDK: ----------**********----------
+19-09-2025: 15:15:59.948: [INF] usbSDK: Device constructor called
+19-09-2025: 15:15:59.948: [INF] usbSDK: SLSDK version number: 2.2.13.0
+19-09-2025: 15:15:59.949: [INF] usbSDK: SLDeviceLib.dll version: 2.2.13.0
+19-09-2025: 15:15:59.949: [INF] usbSDK: SLImage.dll version: 2.2.13.0
+19-09-2025: 15:15:59.949: [INF] usbSDK: SLHelperLibrary.dll version: 2.2.13.0
+19-09-2025: 15:15:59.949: [INF] usbSDK: SLDefectCorrection.dll version: 2.2.13.0
+19-09-2025: 15:15:59.949: [INF] usbSDK: SLInterfaceXDT.dll version: 2.2.13.0
+19-09-2025: 15:15:59.949: [INF] usbSDK: libxdtusb.dll version: 1.4.3.0
+19-09-2025: 15:15:59.949: [INF] usbSDK: libibdt.dll version: 1.0.2.0
+19-09-2025: 15:15:59.950: [INF] usbSDK: libusb-1.0.dll version: 1.0.24.11584
+19-09-2025: 15:15:59.950: [INF] usbSDK: libwinpthread-1.dll version: 1.0.0.0
+19-09-2025: 15:15:59.950: [ERR] usbSDK: No device connected in GetImageXDim
+19-09-2025: 15:15:59.951: [ERR] usbSDK: No device connected in GetImageYDim
+19-09-2025: 15:18:04.365: [INF] usbSDK: ----------**********----------
+19-09-2025: 15:18:04.366: [INF] usbSDK: Device constructor called
+19-09-2025: 15:18:04.366: [INF] usbSDK: SLSDK version number: 2.2.13.0
+19-09-2025: 15:18:04.366: [INF] usbSDK: SLDeviceLib.dll version: 2.2.13.0
+19-09-2025: 15:18:04.366: [INF] usbSDK: SLImage.dll version: 2.2.13.0
+19-09-2025: 15:18:04.366: [INF] usbSDK: SLHelperLibrary.dll version: 2.2.13.0
+19-09-2025: 15:18:04.366: [INF] usbSDK: SLDefectCorrection.dll version: 2.2.13.0
+19-09-2025: 15:18:04.367: [INF] usbSDK: SLInterfaceXDT.dll version: 2.2.13.0
+19-09-2025: 15:18:04.367: [INF] usbSDK: libxdtusb.dll version: 1.4.3.0
+19-09-2025: 15:18:04.367: [INF] usbSDK: libibdt.dll version: 1.0.2.0
+19-09-2025: 15:18:04.367: [INF] usbSDK: libusb-1.0.dll version: 1.0.24.11584
+19-09-2025: 15:18:04.367: [INF] usbSDK: libwinpthread-1.dll version: 1.0.0.0
+19-09-2025: 15:18:04.368: [ERR] usbSDK: No device connected in GetImageXDim
+19-09-2025: 15:18:04.368: [ERR] usbSDK: No device connected in GetImageYDim
+19-09-2025: 15:20:15.241: [INF] usbSDK: ----------**********----------
+19-09-2025: 15:20:15.241: [INF] usbSDK: Device constructor called
+19-09-2025: 15:20:15.241: [INF] usbSDK: SLSDK version number: 2.2.13.0
+19-09-2025: 15:20:15.242: [INF] usbSDK: SLDeviceLib.dll version: 2.2.13.0
+19-09-2025: 15:20:15.242: [INF] usbSDK: SLImage.dll version: 2.2.13.0
+19-09-2025: 15:20:15.242: [INF] usbSDK: SLHelperLibrary.dll version: 2.2.13.0
+19-09-2025: 15:20:15.242: [INF] usbSDK: SLDefectCorrection.dll version: 2.2.13.0
+19-09-2025: 15:20:15.242: [INF] usbSDK: SLInterfaceXDT.dll version: 2.2.13.0
+19-09-2025: 15:20:15.242: [INF] usbSDK: libxdtusb.dll version: 1.4.3.0
+19-09-2025: 15:20:15.243: [INF] usbSDK: libibdt.dll version: 1.0.2.0
+19-09-2025: 15:20:15.243: [INF] usbSDK: libusb-1.0.dll version: 1.0.24.11584
+19-09-2025: 15:20:15.243: [INF] usbSDK: libwinpthread-1.dll version: 1.0.0.0
+19-09-2025: 15:20:52.565: [INF] usbSDK: ----------**********----------
+19-09-2025: 15:20:52.565: [INF] usbSDK: Device constructor called
+19-09-2025: 15:20:52.565: [INF] usbSDK: SLSDK version number: 2.2.13.0
+19-09-2025: 15:20:52.566: [INF] usbSDK: SLDeviceLib.dll version: 2.2.13.0
+19-09-2025: 15:20:52.566: [INF] usbSDK: SLImage.dll version: 2.2.13.0
+19-09-2025: 15:20:52.566: [INF] usbSDK: SLHelperLibrary.dll version: 2.2.13.0
+19-09-2025: 15:20:52.566: [INF] usbSDK: SLDefectCorrection.dll version: 2.2.13.0
+19-09-2025: 15:20:52.566: [INF] usbSDK: SLInterfaceXDT.dll version: 2.2.13.0
+19-09-2025: 15:20:52.566: [INF] usbSDK: libxdtusb.dll version: 1.4.3.0
+19-09-2025: 15:20:52.567: [INF] usbSDK: libibdt.dll version: 1.0.2.0
+19-09-2025: 15:20:52.567: [INF] usbSDK: libusb-1.0.dll version: 1.0.24.11584
+19-09-2025: 15:20:52.567: [INF] usbSDK: libwinpthread-1.dll version: 1.0.0.0
+19-09-2025: 15:20:57.719: [INF] usbSDK: Opening camera
+19-09-2025: 15:20:57.740: [INF] usbSDK: Found 1 devices
+19-09-2025: 15:20:57.740: [INF] usbSDK: Connecting to device 1
+19-09-2025: 15:20:57.755: [INF] usbSDK: Device connected at USB speed: High
+19-09-2025: 15:20:57.758: [INF] usbSDK: Starting heartbeat thread
+19-09-2025: 15:20:57.764: [INF] usbSDK: Detector type: 1, variant: 5
+19-09-2025: 15:20:57.764: [INF] usbSDK: Model Code: EIO_LCY_IS1510M4
+19-09-2025: 15:20:57.765: [INF] usbSDK: Number of sensors in array: 1
+19-09-2025: 15:20:57.765: [INF] usbSDK: Number of temperature sensors: 1
+19-09-2025: 15:20:57.765: [INF] usbSDK: Device image rounder: 1
+19-09-2025: 15:20:57.765: [INF] usbSDK: Successfully configured as: 1510HS
+19-09-2025: 15:20:57.769: [INF] usbSDK: Device Model Number: 1510
+19-09-2025: 15:20:57.775: [INF] usbSDK: Device Serial Number: 123
+19-09-2025: 15:20:57.779: [INF] usbSDK: Device FW: 1.11.0
+19-09-2025: 15:20:57.780: [INF] usbSDK: Setting exposure mode to trig_mode
+19-09-2025: 15:20:57.783: [INF] usbSDK: Set register 0 to 64
+19-09-2025: 15:20:57.783: [INF] usbSDK: Resetting exposure time to 1000 us after changing exposure mode
+19-09-2025: 15:20:57.783: [INF] usbSDK: Setting exposure time
+19-09-2025: 15:20:57.783: [INF] usbSDK: Getting exposure mode
+19-09-2025: 15:20:57.785: [INF] usbSDK: Got exposure mode: trig_mode
+19-09-2025: 15:20:57.789: [INF] usbSDK: Set exposure time to 1000 us
+19-09-2025: 15:20:57.789: [INF] usbSDK: Setting DDS off
+19-09-2025: 15:20:59.664: [INF] usbSDK: Sent software trigger
+19-09-2025: 15:21:02.040: [INF] usbSDK: Closing camera
+19-09-2025: 15:21:02.802: [INF] usbSDK: Finished heartbeat thread
+19-09-2025: 15:21:02.803: [INF] usbSDK: Closing device
+19-09-2025: 15:21:02.808: [INF] usbSDK: Successfully closed camera
+19-09-2025: 15:21:28.276: [INF] usbSDK: ----------**********----------
+19-09-2025: 15:21:28.276: [INF] usbSDK: Device constructor called
+19-09-2025: 15:21:28.277: [INF] usbSDK: SLSDK version number: 2.2.13.0
+19-09-2025: 15:21:28.277: [INF] usbSDK: SLDeviceLib.dll version: 2.2.13.0
+19-09-2025: 15:21:28.277: [INF] usbSDK: SLImage.dll version: 2.2.13.0
+19-09-2025: 15:21:28.277: [INF] usbSDK: SLHelperLibrary.dll version: 2.2.13.0
+19-09-2025: 15:21:28.277: [INF] usbSDK: SLDefectCorrection.dll version: 2.2.13.0
+19-09-2025: 15:21:28.277: [INF] usbSDK: SLInterfaceXDT.dll version: 2.2.13.0
+19-09-2025: 15:21:28.278: [INF] usbSDK: libxdtusb.dll version: 1.4.3.0
+19-09-2025: 15:21:28.278: [INF] usbSDK: libibdt.dll version: 1.0.2.0
+19-09-2025: 15:21:28.278: [INF] usbSDK: libusb-1.0.dll version: 1.0.24.11584
+19-09-2025: 15:21:28.278: [INF] usbSDK: libwinpthread-1.dll version: 1.0.0.0
+19-09-2025: 15:21:30.519: [INF] usbSDK: Opening camera
+19-09-2025: 15:21:30.539: [INF] usbSDK: Found 1 devices
+19-09-2025: 15:21:30.539: [INF] usbSDK: Connecting to device 1
+19-09-2025: 15:21:30.554: [INF] usbSDK: Device connected at USB speed: High
+19-09-2025: 15:21:30.557: [INF] usbSDK: Starting heartbeat thread
+19-09-2025: 15:21:30.563: [INF] usbSDK: Detector type: 1, variant: 5
+19-09-2025: 15:21:30.564: [INF] usbSDK: Model Code: EIO_LCY_IS1510M4
+19-09-2025: 15:21:30.564: [INF] usbSDK: Number of sensors in array: 1
+19-09-2025: 15:21:30.564: [INF] usbSDK: Number of temperature sensors: 1
+19-09-2025: 15:21:30.564: [INF] usbSDK: Device image rounder: 1
+19-09-2025: 15:21:30.564: [INF] usbSDK: Successfully configured as: 1510HS
+19-09-2025: 15:21:30.568: [INF] usbSDK: Device Model Number: 1510
+19-09-2025: 15:21:30.574: [INF] usbSDK: Device Serial Number: 123
+19-09-2025: 15:21:30.578: [INF] usbSDK: Device FW: 1.11.0
+19-09-2025: 15:21:30.579: [INF] usbSDK: Setting exposure mode to trig_mode
+19-09-2025: 15:21:30.582: [INF] usbSDK: Set register 0 to 64
+19-09-2025: 15:21:30.582: [INF] usbSDK: Resetting exposure time to 1000 us after changing exposure mode
+19-09-2025: 15:21:30.582: [INF] usbSDK: Setting exposure time
+19-09-2025: 15:21:30.582: [INF] usbSDK: Getting exposure mode
+19-09-2025: 15:21:30.584: [INF] usbSDK: Got exposure mode: trig_mode
+19-09-2025: 15:21:30.588: [INF] usbSDK: Set exposure time to 1000 us
+19-09-2025: 15:21:30.588: [INF] usbSDK: Setting DDS off
+19-09-2025: 15:21:50.268: [INF] usbSDK: Closing camera
+19-09-2025: 15:21:50.789: [INF] usbSDK: Finished heartbeat thread
+19-09-2025: 15:21:50.789: [INF] usbSDK: Closing device
+19-09-2025: 15:21:50.792: [INF] usbSDK: Successfully closed camera
+19-09-2025: 15:22:10.681: [INF] usbSDK: ----------**********----------
+19-09-2025: 15:22:10.682: [INF] usbSDK: Device constructor called
+19-09-2025: 15:22:10.682: [INF] usbSDK: SLSDK version number: 2.2.13.0
+19-09-2025: 15:22:10.682: [INF] usbSDK: SLDeviceLib.dll version: 2.2.13.0
+19-09-2025: 15:22:10.682: [INF] usbSDK: SLImage.dll version: 2.2.13.0
+19-09-2025: 15:22:10.682: [INF] usbSDK: SLHelperLibrary.dll version: 2.2.13.0
+19-09-2025: 15:22:10.682: [INF] usbSDK: SLDefectCorrection.dll version: 2.2.13.0
+19-09-2025: 15:22:10.683: [INF] usbSDK: SLInterfaceXDT.dll version: 2.2.13.0
+19-09-2025: 15:22:10.683: [INF] usbSDK: libxdtusb.dll version: 1.4.3.0
+19-09-2025: 15:22:10.683: [INF] usbSDK: libibdt.dll version: 1.0.2.0
+19-09-2025: 15:22:10.683: [INF] usbSDK: libusb-1.0.dll version: 1.0.24.11584
+19-09-2025: 15:22:10.683: [INF] usbSDK: libwinpthread-1.dll version: 1.0.0.0
+19-09-2025: 15:22:17.839: [INF] usbSDK: Opening camera
+19-09-2025: 15:22:17.860: [INF] usbSDK: Found 1 devices
+19-09-2025: 15:22:17.860: [INF] usbSDK: Connecting to device 1
+19-09-2025: 15:22:17.876: [INF] usbSDK: Device connected at USB speed: High
+19-09-2025: 15:22:17.878: [INF] usbSDK: Starting heartbeat thread
+19-09-2025: 15:22:17.885: [INF] usbSDK: Detector type: 1, variant: 5
+19-09-2025: 15:22:17.885: [INF] usbSDK: Model Code: EIO_LCY_IS1510M4
+19-09-2025: 15:22:17.885: [INF] usbSDK: Number of sensors in array: 1
+19-09-2025: 15:22:17.886: [INF] usbSDK: Number of temperature sensors: 1
+19-09-2025: 15:22:17.886: [INF] usbSDK: Device image rounder: 1
+19-09-2025: 15:22:17.886: [INF] usbSDK: Successfully configured as: 1510HS
+19-09-2025: 15:22:17.890: [INF] usbSDK: Device Model Number: 1510
+19-09-2025: 15:22:17.896: [INF] usbSDK: Device Serial Number: 123
+19-09-2025: 15:22:17.900: [INF] usbSDK: Device FW: 1.11.0
+19-09-2025: 15:22:17.900: [INF] usbSDK: Setting exposure mode to trig_mode
+19-09-2025: 15:22:17.904: [INF] usbSDK: Set register 0 to 64
+19-09-2025: 15:22:17.904: [INF] usbSDK: Resetting exposure time to 1000 us after changing exposure mode
+19-09-2025: 15:22:17.904: [INF] usbSDK: Setting exposure time
+19-09-2025: 15:22:17.904: [INF] usbSDK: Getting exposure mode
+19-09-2025: 15:22:17.906: [INF] usbSDK: Got exposure mode: trig_mode
+19-09-2025: 15:22:17.909: [INF] usbSDK: Set exposure time to 1000 us
+19-09-2025: 15:22:17.910: [INF] usbSDK: Setting DDS off
+19-09-2025: 15:23:23.664: [INF] usbSDK: Closing camera
+19-09-2025: 15:23:24.448: [INF] usbSDK: Finished heartbeat thread
+19-09-2025: 15:23:24.449: [INF] usbSDK: Closing device
+19-09-2025: 15:23:24.452: [INF] usbSDK: Successfully closed camera
+19-09-2025: 15:24:09.429: [INF] usbSDK: ----------**********----------
+19-09-2025: 15:24:09.429: [INF] usbSDK: Device constructor called
+19-09-2025: 15:24:09.430: [INF] usbSDK: SLSDK version number: 2.2.13.0
+19-09-2025: 15:24:09.430: [INF] usbSDK: SLDeviceLib.dll version: 2.2.13.0
+19-09-2025: 15:24:09.430: [INF] usbSDK: SLImage.dll version: 2.2.13.0
+19-09-2025: 15:24:09.430: [INF] usbSDK: SLHelperLibrary.dll version: 2.2.13.0
+19-09-2025: 15:24:09.430: [INF] usbSDK: SLDefectCorrection.dll version: 2.2.13.0
+19-09-2025: 15:24:09.430: [INF] usbSDK: SLInterfaceXDT.dll version: 2.2.13.0
+19-09-2025: 15:24:09.431: [INF] usbSDK: libxdtusb.dll version: 1.4.3.0
+19-09-2025: 15:24:09.431: [INF] usbSDK: libibdt.dll version: 1.0.2.0
+19-09-2025: 15:24:09.431: [INF] usbSDK: libusb-1.0.dll version: 1.0.24.11584
+19-09-2025: 15:24:09.431: [INF] usbSDK: libwinpthread-1.dll version: 1.0.0.0
+19-09-2025: 15:24:11.695: [INF] usbSDK: Opening camera
+19-09-2025: 15:24:11.716: [INF] usbSDK: Found 1 devices
+19-09-2025: 15:24:11.716: [INF] usbSDK: Connecting to device 1
+19-09-2025: 15:24:11.730: [INF] usbSDK: Device connected at USB speed: High
+19-09-2025: 15:24:11.733: [INF] usbSDK: Starting heartbeat thread
+19-09-2025: 15:24:11.740: [INF] usbSDK: Detector type: 1, variant: 5
+19-09-2025: 15:24:11.740: [INF] usbSDK: Model Code: EIO_LCY_IS1510M4
+19-09-2025: 15:24:11.740: [INF] usbSDK: Number of sensors in array: 1
+19-09-2025: 15:24:11.740: [INF] usbSDK: Number of temperature sensors: 1
+19-09-2025: 15:24:11.741: [INF] usbSDK: Device image rounder: 1
+19-09-2025: 15:24:11.741: [INF] usbSDK: Successfully configured as: 1510HS
+19-09-2025: 15:24:11.745: [INF] usbSDK: Device Model Number: 1510
+19-09-2025: 15:24:11.750: [INF] usbSDK: Device Serial Number: 123
+19-09-2025: 15:24:11.755: [INF] usbSDK: Device FW: 1.11.0
+19-09-2025: 15:24:11.755: [INF] usbSDK: Setting exposure mode to trig_mode
+19-09-2025: 15:24:11.758: [INF] usbSDK: Set register 0 to 64
+19-09-2025: 15:24:11.759: [INF] usbSDK: Resetting exposure time to 1000 us after changing exposure mode
+19-09-2025: 15:24:11.759: [INF] usbSDK: Setting exposure time
+19-09-2025: 15:24:11.759: [INF] usbSDK: Getting exposure mode
+19-09-2025: 15:24:11.761: [INF] usbSDK: Got exposure mode: trig_mode
+19-09-2025: 15:24:11.764: [INF] usbSDK: Set exposure time to 1000 us
+19-09-2025: 15:24:11.765: [INF] usbSDK: Setting DDS off
+19-09-2025: 15:24:13.296: [INF] usbSDK: Calling StartStream
+19-09-2025: 15:24:13.357: [INF] usbSDK: Device started streaming
+19-09-2025: 15:24:14.783: [INF] usbSDK: Sent software trigger
+19-09-2025: 15:24:16.735: [INF] usbSDK: Calling StopStream
+19-09-2025: 15:24:16.769: [INF] usbSDK: Stream stopped
+19-09-2025: 15:24:19.423: [INF] usbSDK: Closing camera
+19-09-2025: 15:24:19.833: [INF] usbSDK: Finished heartbeat thread
+19-09-2025: 15:24:19.834: [INF] usbSDK: Closing device
+19-09-2025: 15:24:19.839: [INF] usbSDK: Successfully closed camera
+19-09-2025: 15:26:18.360: [INF] usbSDK: ----------**********----------
+19-09-2025: 15:26:18.360: [INF] usbSDK: Device constructor called
+19-09-2025: 15:26:18.361: [INF] usbSDK: SLSDK version number: 2.2.13.0
+19-09-2025: 15:26:18.361: [INF] usbSDK: SLDeviceLib.dll version: 2.2.13.0
+19-09-2025: 15:26:18.361: [INF] usbSDK: SLImage.dll version: 2.2.13.0
+19-09-2025: 15:26:18.361: [INF] usbSDK: SLHelperLibrary.dll version: 2.2.13.0
+19-09-2025: 15:26:18.361: [INF] usbSDK: SLDefectCorrection.dll version: 2.2.13.0
+19-09-2025: 15:26:18.362: [INF] usbSDK: SLInterfaceXDT.dll version: 2.2.13.0
+19-09-2025: 15:26:18.362: [INF] usbSDK: libxdtusb.dll version: 1.4.3.0
+19-09-2025: 15:26:18.362: [INF] usbSDK: libibdt.dll version: 1.0.2.0
+19-09-2025: 15:26:18.362: [INF] usbSDK: libusb-1.0.dll version: 1.0.24.11584
+19-09-2025: 15:26:18.362: [INF] usbSDK: libwinpthread-1.dll version: 1.0.0.0
+19-09-2025: 15:26:20.479: [INF] usbSDK: Opening camera
+19-09-2025: 15:26:20.499: [INF] usbSDK: Found 1 devices
+19-09-2025: 15:26:20.499: [INF] usbSDK: Connecting to device 1
+19-09-2025: 15:26:20.514: [INF] usbSDK: Device connected at USB speed: High
+19-09-2025: 15:26:20.516: [INF] usbSDK: Starting heartbeat thread
+19-09-2025: 15:26:20.523: [INF] usbSDK: Detector type: 1, variant: 5
+19-09-2025: 15:26:20.524: [INF] usbSDK: Model Code: EIO_LCY_IS1510M4
+19-09-2025: 15:26:20.524: [INF] usbSDK: Number of sensors in array: 1
+19-09-2025: 15:26:20.524: [INF] usbSDK: Number of temperature sensors: 1
+19-09-2025: 15:26:20.524: [INF] usbSDK: Device image rounder: 1
+19-09-2025: 15:26:20.524: [INF] usbSDK: Successfully configured as: 1510HS
+19-09-2025: 15:26:20.528: [INF] usbSDK: Device Model Number: 1510
+19-09-2025: 15:26:20.534: [INF] usbSDK: Device Serial Number: 123
+19-09-2025: 15:26:20.538: [INF] usbSDK: Device FW: 1.11.0
+19-09-2025: 15:26:20.539: [INF] usbSDK: Setting exposure mode to trig_mode
+19-09-2025: 15:26:20.542: [INF] usbSDK: Set register 0 to 64
+19-09-2025: 15:26:20.542: [INF] usbSDK: Resetting exposure time to 1000 us after changing exposure mode
+19-09-2025: 15:26:20.542: [INF] usbSDK: Setting exposure time
+19-09-2025: 15:26:20.543: [INF] usbSDK: Getting exposure mode
+19-09-2025: 15:26:20.544: [INF] usbSDK: Got exposure mode: trig_mode
+19-09-2025: 15:26:20.548: [INF] usbSDK: Set exposure time to 1000 us
+19-09-2025: 15:26:20.548: [INF] usbSDK: Setting DDS off
+19-09-2025: 15:26:21.751: [INF] usbSDK: Calling StartStream
+19-09-2025: 15:26:21.819: [INF] usbSDK: Device started streaming
+19-09-2025: 15:26:23.015: [INF] usbSDK: Sent software trigger
+19-09-2025: 15:26:28.247: [INF] usbSDK: Sent software trigger
+19-09-2025: 15:26:32.383: [INF] usbSDK: Calling StopStream
+19-09-2025: 15:26:32.414: [INF] usbSDK: Stream stopped
+19-09-2025: 15:26:33.911: [INF] usbSDK: Closing camera
+19-09-2025: 15:26:34.784: [INF] usbSDK: Finished heartbeat thread
+19-09-2025: 15:26:34.785: [INF] usbSDK: Closing device
+19-09-2025: 15:26:34.791: [INF] usbSDK: Successfully closed camera
+19-09-2025: 15:26:35.999: [ERR] usbSDK: No device connected in GetImageXDim
+19-09-2025: 15:26:35.999: [ERR] usbSDK: No device connected in GetImageYDim
+19-09-2025: 15:26:38.519: [ERR] usbSDK: No device in StopStream
+19-09-2025: 15:26:39.767: [ERR] usbSDK: No device to send software trigger
+19-09-2025: 15:26:40.775: [ERR] usbSDK: No device to send software trigger
+19-09-2025: 15:26:41.318: [ERR] usbSDK: No device to send software trigger
+19-09-2025: 15:26:44.679: [INF] usbSDK: Opening camera
+19-09-2025: 15:26:44.692: [INF] usbSDK: Found 1 devices
+19-09-2025: 15:26:44.692: [INF] usbSDK: Connecting to device 1
+19-09-2025: 15:26:44.707: [INF] usbSDK: Device connected at USB speed: High
+19-09-2025: 15:26:44.710: [INF] usbSDK: Starting heartbeat thread
+19-09-2025: 15:26:44.717: [INF] usbSDK: Detector type: 1, variant: 5
+19-09-2025: 15:26:44.717: [INF] usbSDK: Model Code: EIO_LCY_IS1510M4
+19-09-2025: 15:26:44.717: [INF] usbSDK: Number of sensors in array: 1
+19-09-2025: 15:26:44.717: [INF] usbSDK: Number of temperature sensors: 1
+19-09-2025: 15:26:44.718: [INF] usbSDK: Device image rounder: 1
+19-09-2025: 15:26:44.718: [INF] usbSDK: Successfully configured as: 1510HS
+19-09-2025: 15:26:44.722: [INF] usbSDK: Device Model Number: 1510
+19-09-2025: 15:26:44.727: [INF] usbSDK: Device Serial Number: 123
+19-09-2025: 15:26:44.732: [INF] usbSDK: Device FW: 1.11.0
+19-09-2025: 15:26:44.732: [INF] usbSDK: Setting exposure mode to trig_mode
+19-09-2025: 15:26:44.735: [INF] usbSDK: Set register 0 to 64
+19-09-2025: 15:26:44.736: [INF] usbSDK: Resetting exposure time to 1000 us after changing exposure mode
+19-09-2025: 15:26:44.736: [INF] usbSDK: Setting exposure time
+19-09-2025: 15:26:44.736: [INF] usbSDK: Getting exposure mode
+19-09-2025: 15:26:44.738: [INF] usbSDK: Got exposure mode: trig_mode
+19-09-2025: 15:26:44.741: [INF] usbSDK: Set exposure time to 1000 us
+19-09-2025: 15:26:44.741: [INF] usbSDK: Setting DDS off
+19-09-2025: 15:26:45.576: [INF] usbSDK: Sent software trigger
+19-09-2025: 15:26:46.679: [INF] usbSDK: Sent software trigger
+19-09-2025: 15:26:49.439: [INF] usbSDK: Closing camera
+19-09-2025: 15:26:49.770: [INF] usbSDK: Finished heartbeat thread
+19-09-2025: 15:26:49.771: [INF] usbSDK: Closing device
+19-09-2025: 15:26:49.776: [INF] usbSDK: Successfully closed camera
+19-09-2025: 15:31:48.757: [INF] usbSDK: ----------**********----------
+19-09-2025: 15:31:48.757: [INF] usbSDK: Device constructor called
+19-09-2025: 15:31:48.757: [INF] usbSDK: SLSDK version number: 2.2.13.0
+19-09-2025: 15:31:48.757: [INF] usbSDK: SLDeviceLib.dll version: 2.2.13.0
+19-09-2025: 15:31:48.757: [INF] usbSDK: SLImage.dll version: 2.2.13.0
+19-09-2025: 15:31:48.758: [INF] usbSDK: SLHelperLibrary.dll version: 2.2.13.0
+19-09-2025: 15:31:48.758: [INF] usbSDK: SLDefectCorrection.dll version: 2.2.13.0
+19-09-2025: 15:31:48.758: [INF] usbSDK: SLInterfaceXDT.dll version: 2.2.13.0
+19-09-2025: 15:31:48.758: [INF] usbSDK: libxdtusb.dll version: 1.4.3.0
+19-09-2025: 15:31:48.758: [INF] usbSDK: libibdt.dll version: 1.0.2.0
+19-09-2025: 15:31:48.758: [INF] usbSDK: libusb-1.0.dll version: 1.0.24.11584
+19-09-2025: 15:31:48.759: [INF] usbSDK: libwinpthread-1.dll version: 1.0.0.0
+19-09-2025: 15:31:51.159: [INF] usbSDK: Opening camera
+19-09-2025: 15:31:51.179: [INF] usbSDK: Found 1 devices
+19-09-2025: 15:31:51.179: [INF] usbSDK: Connecting to device 1
+19-09-2025: 15:31:51.194: [INF] usbSDK: Device connected at USB speed: High
+19-09-2025: 15:31:51.196: [INF] usbSDK: Starting heartbeat thread
+19-09-2025: 15:31:51.203: [INF] usbSDK: Detector type: 1, variant: 5
+19-09-2025: 15:31:51.203: [INF] usbSDK: Model Code: EIO_LCY_IS1510M4
+19-09-2025: 15:31:51.204: [INF] usbSDK: Number of sensors in array: 1
+19-09-2025: 15:31:51.204: [INF] usbSDK: Number of temperature sensors: 1
+19-09-2025: 15:31:51.204: [INF] usbSDK: Device image rounder: 1
+19-09-2025: 15:31:51.204: [INF] usbSDK: Successfully configured as: 1510HS
+19-09-2025: 15:31:51.208: [INF] usbSDK: Device Model Number: 1510
+19-09-2025: 15:31:51.214: [INF] usbSDK: Device Serial Number: 123
+19-09-2025: 15:31:51.218: [INF] usbSDK: Device FW: 1.11.0
+19-09-2025: 15:31:51.219: [INF] usbSDK: Setting exposure mode to trig_mode
+19-09-2025: 15:31:51.222: [INF] usbSDK: Set register 0 to 64
+19-09-2025: 15:31:51.222: [INF] usbSDK: Resetting exposure time to 1000 us after changing exposure mode
+19-09-2025: 15:31:51.222: [INF] usbSDK: Setting exposure time
+19-09-2025: 15:31:51.222: [INF] usbSDK: Getting exposure mode
+19-09-2025: 15:31:51.224: [INF] usbSDK: Got exposure mode: trig_mode
+19-09-2025: 15:31:51.228: [INF] usbSDK: Set exposure time to 1000 us
+19-09-2025: 15:31:51.228: [INF] usbSDK: Setting DDS off
+19-09-2025: 15:31:52.375: [INF] usbSDK: Calling StartStream
+19-09-2025: 15:31:52.428: [INF] usbSDK: Device started streaming
+19-09-2025: 15:31:54.687: [INF] usbSDK: Closing camera
+19-09-2025: 15:31:54.687: [INF] usbSDK: Calling StopStream
+19-09-2025: 15:31:54.730: [INF] usbSDK: Stream stopped
+19-09-2025: 15:31:55.273: [INF] usbSDK: Finished heartbeat thread
+19-09-2025: 15:31:55.274: [INF] usbSDK: Closing device
+19-09-2025: 15:31:55.279: [INF] usbSDK: Successfully closed camera
+19-09-2025: 15:34:26.886: [INF] usbSDK: ----------**********----------
+19-09-2025: 15:34:26.886: [INF] usbSDK: Device constructor called
+19-09-2025: 15:34:26.886: [INF] usbSDK: SLSDK version number: 2.2.13.0
+19-09-2025: 15:34:26.886: [INF] usbSDK: SLDeviceLib.dll version: 2.2.13.0
+19-09-2025: 15:34:26.887: [INF] usbSDK: SLImage.dll version: 2.2.13.0
+19-09-2025: 15:34:26.887: [INF] usbSDK: SLHelperLibrary.dll version: 2.2.13.0
+19-09-2025: 15:34:26.887: [INF] usbSDK: SLDefectCorrection.dll version: 2.2.13.0
+19-09-2025: 15:34:26.887: [INF] usbSDK: SLInterfaceXDT.dll version: 2.2.13.0
+19-09-2025: 15:34:26.887: [INF] usbSDK: libxdtusb.dll version: 1.4.3.0
+19-09-2025: 15:34:26.887: [INF] usbSDK: libibdt.dll version: 1.0.2.0
+19-09-2025: 15:34:26.888: [INF] usbSDK: libusb-1.0.dll version: 1.0.24.11584
+19-09-2025: 15:34:26.888: [INF] usbSDK: libwinpthread-1.dll version: 1.0.0.0
+19-09-2025: 15:34:30.679: [INF] usbSDK: Opening camera
+19-09-2025: 15:34:30.699: [INF] usbSDK: Found 1 devices
+19-09-2025: 15:34:30.700: [INF] usbSDK: Connecting to device 1
+19-09-2025: 15:34:30.714: [INF] usbSDK: Device connected at USB speed: High
+19-09-2025: 15:34:30.717: [INF] usbSDK: Starting heartbeat thread
+19-09-2025: 15:34:30.724: [INF] usbSDK: Detector type: 1, variant: 5
+19-09-2025: 15:34:30.724: [INF] usbSDK: Model Code: EIO_LCY_IS1510M4
+19-09-2025: 15:34:30.724: [INF] usbSDK: Number of sensors in array: 1
+19-09-2025: 15:34:30.724: [INF] usbSDK: Number of temperature sensors: 1
+19-09-2025: 15:34:30.725: [INF] usbSDK: Device image rounder: 1
+19-09-2025: 15:34:30.725: [INF] usbSDK: Successfully configured as: 1510HS
+19-09-2025: 15:34:30.729: [INF] usbSDK: Device Model Number: 1510
+19-09-2025: 15:34:30.735: [INF] usbSDK: Device Serial Number: 123
+19-09-2025: 15:34:30.738: [INF] usbSDK: Device FW: 1.11.0
+19-09-2025: 15:34:30.739: [INF] usbSDK: Setting exposure mode to trig_mode
+19-09-2025: 15:34:30.742: [INF] usbSDK: Set register 0 to 64
+19-09-2025: 15:34:30.743: [INF] usbSDK: Resetting exposure time to 1000 us after changing exposure mode
+19-09-2025: 15:34:30.743: [INF] usbSDK: Setting exposure time
+19-09-2025: 15:34:30.743: [INF] usbSDK: Getting exposure mode
+19-09-2025: 15:34:30.745: [INF] usbSDK: Got exposure mode: trig_mode
+19-09-2025: 15:34:30.748: [INF] usbSDK: Set exposure time to 1000 us
+19-09-2025: 15:34:30.748: [INF] usbSDK: Setting DDS off
+19-09-2025: 15:34:33.711: [INF] usbSDK: Calling StartStream
+19-09-2025: 15:34:33.765: [INF] usbSDK: Device started streaming
+19-09-2025: 15:34:36.263: [INF] usbSDK: Calling StopStream
+19-09-2025: 15:34:36.305: [INF] usbSDK: Stream stopped
+19-09-2025: 15:34:40.695: [INF] usbSDK: Closing camera
+19-09-2025: 15:34:40.860: [INF] usbSDK: Finished heartbeat thread
+19-09-2025: 15:34:40.861: [INF] usbSDK: Closing device
+19-09-2025: 15:34:40.866: [INF] usbSDK: Successfully closed camera
+19-09-2025: 15:34:41.591: [ERR] usbSDK: No device in StopStream
+19-09-2025: 15:34:41.927: [ERR] usbSDK: No device in StopStream
+19-09-2025: 15:34:44.031: [ERR] usbSDK: No device in StopStream
+19-09-2025: 15:34:47.551: [ERR] usbSDK: No device in StopStream
+19-09-2025: 15:35:48.603: [INF] usbSDK: ----------**********----------
+19-09-2025: 15:35:48.603: [INF] usbSDK: Device constructor called
+19-09-2025: 15:35:48.603: [INF] usbSDK: SLSDK version number: 2.2.13.0
+19-09-2025: 15:35:48.604: [INF] usbSDK: SLDeviceLib.dll version: 2.2.13.0
+19-09-2025: 15:35:48.604: [INF] usbSDK: SLImage.dll version: 2.2.13.0
+19-09-2025: 15:35:48.604: [INF] usbSDK: SLHelperLibrary.dll version: 2.2.13.0
+19-09-2025: 15:35:48.604: [INF] usbSDK: SLDefectCorrection.dll version: 2.2.13.0
+19-09-2025: 15:35:48.604: [INF] usbSDK: SLInterfaceXDT.dll version: 2.2.13.0
+19-09-2025: 15:35:48.604: [INF] usbSDK: libxdtusb.dll version: 1.4.3.0
+19-09-2025: 15:35:48.604: [INF] usbSDK: libibdt.dll version: 1.0.2.0
+19-09-2025: 15:35:48.605: [INF] usbSDK: libusb-1.0.dll version: 1.0.24.11584
+19-09-2025: 15:35:48.605: [INF] usbSDK: libwinpthread-1.dll version: 1.0.0.0
+19-09-2025: 15:36:15.612: [INF] usbSDK: ----------**********----------
+19-09-2025: 15:36:15.613: [INF] usbSDK: Device constructor called
+19-09-2025: 15:36:15.613: [INF] usbSDK: SLSDK version number: 2.2.13.0
+19-09-2025: 15:36:15.613: [INF] usbSDK: SLDeviceLib.dll version: 2.2.13.0
+19-09-2025: 15:36:15.613: [INF] usbSDK: SLImage.dll version: 2.2.13.0
+19-09-2025: 15:36:15.613: [INF] usbSDK: SLHelperLibrary.dll version: 2.2.13.0
+19-09-2025: 15:36:15.613: [INF] usbSDK: SLDefectCorrection.dll version: 2.2.13.0
+19-09-2025: 15:36:15.614: [INF] usbSDK: SLInterfaceXDT.dll version: 2.2.13.0
+19-09-2025: 15:36:15.614: [INF] usbSDK: libxdtusb.dll version: 1.4.3.0
+19-09-2025: 15:36:15.614: [INF] usbSDK: libibdt.dll version: 1.0.2.0
+19-09-2025: 15:36:15.614: [INF] usbSDK: libusb-1.0.dll version: 1.0.24.11584
+19-09-2025: 15:36:15.614: [INF] usbSDK: libwinpthread-1.dll version: 1.0.0.0
+19-09-2025: 15:36:16.695: [INF] usbSDK: Opening camera
+19-09-2025: 15:36:16.715: [INF] usbSDK: Found 1 devices
+19-09-2025: 15:36:16.716: [INF] usbSDK: Connecting to device 1
+19-09-2025: 15:36:16.730: [INF] usbSDK: Device connected at USB speed: High
+19-09-2025: 15:36:16.733: [INF] usbSDK: Starting heartbeat thread
+19-09-2025: 15:36:16.740: [INF] usbSDK: Detector type: 1, variant: 5
+19-09-2025: 15:36:16.740: [INF] usbSDK: Model Code: EIO_LCY_IS1510M4
+19-09-2025: 15:36:16.740: [INF] usbSDK: Number of sensors in array: 1
+19-09-2025: 15:36:16.740: [INF] usbSDK: Number of temperature sensors: 1
+19-09-2025: 15:36:16.740: [INF] usbSDK: Device image rounder: 1
+19-09-2025: 15:36:16.740: [INF] usbSDK: Successfully configured as: 1510HS
+19-09-2025: 15:36:16.745: [INF] usbSDK: Device Model Number: 1510
+19-09-2025: 15:36:16.751: [INF] usbSDK: Device Serial Number: 123
+19-09-2025: 15:36:16.754: [INF] usbSDK: Device FW: 1.11.0
+19-09-2025: 15:36:16.755: [INF] usbSDK: Setting exposure mode to trig_mode
+19-09-2025: 15:36:16.758: [INF] usbSDK: Set register 0 to 64
+19-09-2025: 15:36:16.758: [INF] usbSDK: Resetting exposure time to 1000 us after changing exposure mode
+19-09-2025: 15:36:16.759: [INF] usbSDK: Setting exposure time
+19-09-2025: 15:36:16.759: [INF] usbSDK: Getting exposure mode
+19-09-2025: 15:36:16.760: [INF] usbSDK: Got exposure mode: trig_mode
+19-09-2025: 15:36:16.764: [INF] usbSDK: Set exposure time to 1000 us
+19-09-2025: 15:36:16.764: [INF] usbSDK: Setting DDS off
+19-09-2025: 15:36:17.951: [INF] usbSDK: Calling StartStream
+19-09-2025: 15:36:17.006: [INF] usbSDK: Device started streaming
+19-09-2025: 15:36:18.655: [INF] usbSDK: Sent software trigger
+19-09-2025: 15:36:20.615: [INF] usbSDK: Sent software trigger
+19-09-2025: 15:36:20.823: [INF] usbSDK: Sent software trigger
+19-09-2025: 15:36:20.999: [INF] usbSDK: Sent software trigger
+19-09-2025: 15:36:21.175: [INF] usbSDK: Sent software trigger
+19-09-2025: 15:36:24.398: [INF] usbSDK: Calling StopStream
+19-09-2025: 15:36:24.441: [INF] usbSDK: Stream stopped
+19-09-2025: 15:36:25.679: [INF] usbSDK: Closing camera
+19-09-2025: 15:36:25.869: [INF] usbSDK: Finished heartbeat thread
+19-09-2025: 15:36:25.870: [INF] usbSDK: Closing device
+19-09-2025: 15:36:25.878: [INF] usbSDK: Successfully closed camera
+19-09-2025: 15:36:28.886: [ERR] usbSDK: No device in StopStream
+19-09-2025: 15:36:30.423: [INF] usbSDK: Opening camera
+19-09-2025: 15:36:30.436: [INF] usbSDK: Found 1 devices
+19-09-2025: 15:36:30.436: [INF] usbSDK: Connecting to device 1
+19-09-2025: 15:36:30.450: [INF] usbSDK: Device connected at USB speed: High
+19-09-2025: 15:36:30.452: [INF] usbSDK: Starting heartbeat thread
+19-09-2025: 15:36:30.459: [INF] usbSDK: Detector type: 1, variant: 5
+19-09-2025: 15:36:30.459: [INF] usbSDK: Model Code: EIO_LCY_IS1510M4
+19-09-2025: 15:36:30.460: [INF] usbSDK: Number of sensors in array: 1
+19-09-2025: 15:36:30.460: [INF] usbSDK: Number of temperature sensors: 1
+19-09-2025: 15:36:30.460: [INF] usbSDK: Device image rounder: 1
+19-09-2025: 15:36:30.460: [INF] usbSDK: Successfully configured as: 1510HS
+19-09-2025: 15:36:30.464: [INF] usbSDK: Device Model Number: 1510
+19-09-2025: 15:36:30.470: [INF] usbSDK: Device Serial Number: 123
+19-09-2025: 15:36:30.474: [INF] usbSDK: Device FW: 1.11.0
+19-09-2025: 15:36:30.475: [INF] usbSDK: Setting exposure mode to trig_mode
+19-09-2025: 15:36:30.478: [INF] usbSDK: Set register 0 to 64
+19-09-2025: 15:36:30.479: [INF] usbSDK: Resetting exposure time to 1000 us after changing exposure mode
+19-09-2025: 15:36:30.479: [INF] usbSDK: Setting exposure time
+19-09-2025: 15:36:30.479: [INF] usbSDK: Getting exposure mode
+19-09-2025: 15:36:30.480: [INF] usbSDK: Got exposure mode: trig_mode
+19-09-2025: 15:36:30.484: [INF] usbSDK: Set exposure time to 1000 us
+19-09-2025: 15:36:30.484: [INF] usbSDK: Setting DDS off
+19-09-2025: 15:36:31.110: [INF] usbSDK: Closing camera
+19-09-2025: 15:36:31.456: [INF] usbSDK: Finished heartbeat thread
+19-09-2025: 15:36:31.457: [INF] usbSDK: Closing device
+19-09-2025: 15:36:31.462: [INF] usbSDK: Successfully closed camera
+19-09-2025: 15:37:46.006: [INF] usbSDK: ----------**********----------
+19-09-2025: 15:37:46.006: [INF] usbSDK: Device constructor called
+19-09-2025: 15:37:46.006: [INF] usbSDK: SLSDK version number: 2.2.13.0
+19-09-2025: 15:37:46.006: [INF] usbSDK: SLDeviceLib.dll version: 2.2.13.0
+19-09-2025: 15:37:46.007: [INF] usbSDK: SLImage.dll version: 2.2.13.0
+19-09-2025: 15:37:46.007: [INF] usbSDK: SLHelperLibrary.dll version: 2.2.13.0
+19-09-2025: 15:37:46.007: [INF] usbSDK: SLDefectCorrection.dll version: 2.2.13.0
+19-09-2025: 15:37:46.007: [INF] usbSDK: SLInterfaceXDT.dll version: 2.2.13.0
+19-09-2025: 15:37:46.007: [INF] usbSDK: libxdtusb.dll version: 1.4.3.0
+19-09-2025: 15:37:46.007: [INF] usbSDK: libibdt.dll version: 1.0.2.0
+19-09-2025: 15:37:46.007: [INF] usbSDK: libusb-1.0.dll version: 1.0.24.11584
+19-09-2025: 15:37:46.008: [INF] usbSDK: libwinpthread-1.dll version: 1.0.0.0
+19-09-2025: 15:37:48.151: [INF] usbSDK: Opening camera
+19-09-2025: 15:37:48.171: [INF] usbSDK: Found 1 devices
+19-09-2025: 15:37:48.171: [INF] usbSDK: Connecting to device 1
+19-09-2025: 15:37:48.186: [INF] usbSDK: Device connected at USB speed: High
+19-09-2025: 15:37:48.188: [INF] usbSDK: Starting heartbeat thread
+19-09-2025: 15:37:48.195: [INF] usbSDK: Detector type: 1, variant: 5
+19-09-2025: 15:37:48.195: [INF] usbSDK: Model Code: EIO_LCY_IS1510M4
+19-09-2025: 15:37:48.196: [INF] usbSDK: Number of sensors in array: 1
+19-09-2025: 15:37:48.196: [INF] usbSDK: Number of temperature sensors: 1
+19-09-2025: 15:37:48.196: [INF] usbSDK: Device image rounder: 1
+19-09-2025: 15:37:48.196: [INF] usbSDK: Successfully configured as: 1510HS
+19-09-2025: 15:37:48.200: [INF] usbSDK: Device Model Number: 1510
+19-09-2025: 15:37:48.206: [INF] usbSDK: Device Serial Number: 123
+19-09-2025: 15:37:48.210: [INF] usbSDK: Device FW: 1.11.0
+19-09-2025: 15:37:48.211: [INF] usbSDK: Setting exposure mode to trig_mode
+19-09-2025: 15:37:48.214: [INF] usbSDK: Set register 0 to 64
+19-09-2025: 15:37:48.214: [INF] usbSDK: Resetting exposure time to 1000 us after changing exposure mode
+19-09-2025: 15:37:48.214: [INF] usbSDK: Setting exposure time
+19-09-2025: 15:37:48.214: [INF] usbSDK: Getting exposure mode
+19-09-2025: 15:37:48.216: [INF] usbSDK: Got exposure mode: trig_mode
+19-09-2025: 15:37:48.220: [INF] usbSDK: Set exposure time to 1000 us
+19-09-2025: 15:37:48.220: [INF] usbSDK: Setting DDS off
+19-09-2025: 15:37:49.607: [INF] usbSDK: Calling StartStream
+19-09-2025: 15:37:49.663: [INF] usbSDK: Device started streaming
+19-09-2025: 15:37:51.158: [INF] usbSDK: Calling StopStream
+19-09-2025: 15:37:51.202: [INF] usbSDK: Stream stopped
+19-09-2025: 15:37:52.695: [INF] usbSDK: Closing camera
+19-09-2025: 15:37:53.249: [INF] usbSDK: Finished heartbeat thread
+19-09-2025: 15:37:53.250: [INF] usbSDK: Closing device
+19-09-2025: 15:37:53.256: [INF] usbSDK: Successfully closed camera
+19-09-2025: 15:37:55.471: [INF] usbSDK: Opening camera
+19-09-2025: 15:37:55.484: [INF] usbSDK: Found 1 devices
+19-09-2025: 15:37:55.484: [INF] usbSDK: Connecting to device 1
+19-09-2025: 15:37:55.500: [INF] usbSDK: Device connected at USB speed: High
+19-09-2025: 15:37:55.502: [INF] usbSDK: Starting heartbeat thread
+19-09-2025: 15:37:55.509: [INF] usbSDK: Detector type: 1, variant: 5
+19-09-2025: 15:37:55.509: [INF] usbSDK: Model Code: EIO_LCY_IS1510M4
+19-09-2025: 15:37:55.509: [INF] usbSDK: Number of sensors in array: 1
+19-09-2025: 15:37:55.509: [INF] usbSDK: Number of temperature sensors: 1
+19-09-2025: 15:37:55.510: [INF] usbSDK: Device image rounder: 1
+19-09-2025: 15:37:55.510: [INF] usbSDK: Successfully configured as: 1510HS
+19-09-2025: 15:37:55.514: [INF] usbSDK: Device Model Number: 1510
+19-09-2025: 15:37:55.520: [INF] usbSDK: Device Serial Number: 123
+19-09-2025: 15:37:55.524: [INF] usbSDK: Device FW: 1.11.0
+19-09-2025: 15:37:55.524: [INF] usbSDK: Setting exposure mode to trig_mode
+19-09-2025: 15:37:55.528: [INF] usbSDK: Set register 0 to 64
+19-09-2025: 15:37:55.528: [INF] usbSDK: Resetting exposure time to 1000 us after changing exposure mode
+19-09-2025: 15:37:55.528: [INF] usbSDK: Setting exposure time
+19-09-2025: 15:37:55.528: [INF] usbSDK: Getting exposure mode
+19-09-2025: 15:37:55.530: [INF] usbSDK: Got exposure mode: trig_mode
+19-09-2025: 15:37:55.534: [INF] usbSDK: Set exposure time to 1000 us
+19-09-2025: 15:37:55.534: [INF] usbSDK: Setting DDS off
+19-09-2025: 15:37:56.095: [INF] usbSDK: Calling StartStream
+19-09-2025: 15:37:56.153: [INF] usbSDK: Device started streaming
+19-09-2025: 15:37:57.079: [INF] usbSDK: Sent software trigger
+19-09-2025: 15:37:57.783: [INF] usbSDK: Sent software trigger
+19-09-2025: 15:37:58.191: [INF] usbSDK: Sent software trigger
+19-09-2025: 15:37:58.623: [INF] usbSDK: Sent software trigger
+19-09-2025: 15:37:58.863: [INF] usbSDK: Sent software trigger
+19-09-2025: 15:37:59.039: [INF] usbSDK: Sent software trigger
+19-09-2025: 15:37:59.207: [INF] usbSDK: Sent software trigger
+19-09-2025: 15:37:59.543: [INF] usbSDK: Sent software trigger
+19-09-2025: 15:37:59.719: [INF] usbSDK: Sent software trigger
+19-09-2025: 15:37:59.895: [INF] usbSDK: Sent software trigger
+19-09-2025: 15:38:00.071: [INF] usbSDK: Sent software trigger
+19-09-2025: 15:38:00.223: [INF] usbSDK: Sent software trigger
+19-09-2025: 15:38:03.621: [INF] usbSDK: Closing camera
+19-09-2025: 15:38:03.621: [INF] usbSDK: Calling StopStream
+19-09-2025: 15:38:03.658: [INF] usbSDK: Stream stopped
+19-09-2025: 15:38:03.666: [INF] usbSDK: Finished heartbeat thread
+19-09-2025: 15:38:03.667: [INF] usbSDK: Closing device
+19-09-2025: 15:38:03.670: [INF] usbSDK: Successfully closed camera
