@@ -1,12 +1,18 @@
 import sys
+import os
+
+import numpy as np
 
 from PySide6.QtWidgets import (
     QMainWindow, 
     QApplication, 
     QPushButton,
     QVBoxLayout,
-    QWidget
+    QWidget,
+    QErrorMessage,
+    QLabel
 )
+from PySide6.QtGui import QPixmap, QImage
 
 from SLDevicePythonWrapper import (
     SLDevice,
@@ -16,8 +22,6 @@ from SLDevicePythonWrapper import (
     SLImage,
     SLBufferInfo
 )
-
-# from gui_functions import capture_image
 
 deviceInterface = DeviceInterface.USB
 imageSaveDirectory = "L:\\SLDevice\\Examples\\Example_Code\\Python\\captured_images\\"
@@ -42,7 +46,8 @@ class MainWindow(QMainWindow):
         self.capture_button = QPushButton("Capture Image")
         self.capture_button.setEnabled(False)
 
-       
+        self.image_label = QLabel()
+        self.image_label.setFixedSize(640, 480)       
 
         self.camera_on_button.clicked.connect(lambda checked: self.on_button_toggled(checked, device))
         self.stream_button.clicked.connect(lambda checked: self.stream_button_toggled(checked, device))
@@ -51,10 +56,10 @@ class MainWindow(QMainWindow):
         layout.addWidget(self.camera_on_button)
         layout.addWidget(self.stream_button)
         layout.addWidget(self.capture_button)
+        layout.addWidget(self.image_label)
         central_widget = QWidget()
         central_widget.setLayout(layout)
         self.setCentralWidget(central_widget)
-
         
 
     def on_button_toggled(self, checked, device):
@@ -175,17 +180,43 @@ class MainWindow(QMainWindow):
         if bufferInfo.error == SLError.SL_ERROR_SUCCESS:
             # Frame acquired successfully
             print(f"Read new frame #{bufferInfo.frameCount} with dims: {bufferInfo.width}x{bufferInfo.height}")
+
+            # Convert the image to QPixmap and display it
+            pixmap = self.convert_image_to_pixmap(self.image)
+            if pixmap:
+                self.image_label.setPixmap(pixmap)
+            else:
+                print("Failed to convert image to QPixmap")
+
             if self.image.WriteTiffImage(filename) is False:
                 print("Failed to save image")
+
         elif bufferInfo.error == SLError.SL_ERROR_MISSING_PACKETS:
             # Frame aquired with missing packets
             print(f"Read new frame #{bufferInfo.frameCount} with dims: {bufferInfo.width}x{bufferInfo.height}")
+
             if self.image.WriteTiffImage(filename) is False:
                 print('Failed to save image')
+
         elif bufferInfo.error == SLError.SL_ERROR_TIMEOUT:
             print("Timed out whilst waiting for frame")
         else:
             print(f'Failed to acquire image with error: {bufferInfo.error}')
+
+
+    def convert_image_to_pixmap(self, sl_image: SLImage):
+        # Assume sl_image.GetImageData() returns a NumPy array of shape (height, width) or (height, width, 3)
+        img_array_16bit = sl_image.Frame2Array(0)
+
+        print(img_array_16bit)
+
+        img_array = (img_array_16bit / 256).astype(np.uint8)
+
+        height, width = img_array.shape[:2]
+
+        q_image = QImage(img_array.data, width, height, width, QImage.Format_Grayscale8)
+
+        return QPixmap.fromImage(q_image)
 
 
 if __name__ == '__main__':
