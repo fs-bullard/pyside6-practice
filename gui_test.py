@@ -1,8 +1,12 @@
 import sys
 import os
+import time
 
 import numpy as np
+import matplotlib.pyplot as plt
 
+from PySide6.QtCore import QSize
+from PySide6.QtCore import Qt
 from PySide6.QtWidgets import (
     QMainWindow, 
     QApplication, 
@@ -36,6 +40,9 @@ class MainWindow(QMainWindow):
 
         # Identify device
         self.device = SLDevice(deviceInterface)
+        self.exposureTime = 10
+        self.exposureMode = ExposureModes.seq_mode
+        self.dds = False
                 
         layout = QVBoxLayout()
         self.camera_on_button = QPushButton('Camera off')
@@ -47,7 +54,8 @@ class MainWindow(QMainWindow):
         self.capture_button.setEnabled(False)
 
         self.image_label = QLabel()
-        self.image_label.setFixedSize(640, 480)       
+        self.image_label.setFixedSize(700, 800)       
+        self.image_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.camera_on_button.clicked.connect(self.on_button_toggled)
         self.stream_button.clicked.connect(self.stream_button_toggled)
@@ -60,7 +68,6 @@ class MainWindow(QMainWindow):
         central_widget = QWidget()
         central_widget.setLayout(layout)
         self.setCentralWidget(central_widget)
-        
 
     def on_button_toggled(self, checked):
         if checked:
@@ -81,23 +88,27 @@ class MainWindow(QMainWindow):
         print('Successfuly opened camera')
         self.camera_open = True
 
-        dds = False
-        exposureMode = ExposureModes.trig_mode
-
         print('Intialising Software Trigger')
 
         # Configure the device
-        err = self.device.SetExposureMode(exposureMode)
+        err = self.device.SetExposureMode(self.exposureMode)
         if err != SLError.SL_ERROR_SUCCESS:
-            print(f'Failed to set exposure mode to {exposureMode} with error: {err}')
-            return
+            print(f'Failed to set exposure mode to {self.exposureMode} with error: {err}')
+            return  
+        
+        # Set Exposure time
+        err = self.device.SetExposureTime(self.exposureTime)
+        if err != SLError.SL_ERROR_SUCCESS:
+            print(f'Failed to set exposure time to {self.exposureTime} with error: {err}')
+
+        print(f'Set exposure time to {self.exposureTime}ms')
     
-        err = self.device.SetDDS(dds)
+        err = self.device.SetDDS(self.dds)
         if err != SLError.SL_ERROR_SUCCESS:
-            print(f'Failed to set DDS to {dds} with error: {err}')
+            print(f'Failed to set DDS to {self.dds} with error: {err}')
             return
         
-        print(f'Set DDS to {dds}')
+        print(f'Set DDS to {self.dds}')
     
     def close_camera(self):
         # Close camera
@@ -173,6 +184,8 @@ class MainWindow(QMainWindow):
         if not hasattr(self, "image"):
             print("Image buffer not initialized. Start the stream first.")
             return
+        
+        time.sleep(self.exposureTime / 1000)
 
         bufferInfo = self.device.AcquireImage(self.image)
         filename = f"{imageSaveDirectory}SoftwareTriggerCapture{bufferInfo.frameCount}.tif"
@@ -183,8 +196,10 @@ class MainWindow(QMainWindow):
 
             # Convert the image to QPixmap and display it
             pixmap = self.convert_image_to_pixmap(self.image)
+            # Scale pixmap to match window dimensions 
             if pixmap:
-                self.image_label.setPixmap(pixmap)
+                self.original_pixmap = pixmap
+                self.update_image_label()
             else:
                 print("Failed to convert image to QPixmap")
 
@@ -208,15 +223,25 @@ class MainWindow(QMainWindow):
         # Assume sl_image.GetImageData() returns a NumPy array of shape (height, width) or (height, width, 3)
         img_array_16bit = sl_image.Frame2Array(0)
 
-        print(img_array_16bit)
-
-        img_array = (img_array_16bit / 256).astype(np.uint8)
+        img_array = np.around(img_array_16bit.astype(np.float32) * (2**8 - 1) / (2**14 - 1)).astype(np.uint8)
 
         height, width = img_array.shape[:2]
-
         q_image = QImage(img_array.data, width, height, width, QImage.Format_Grayscale8).copy()
 
         return QPixmap.fromImage(q_image)
+    
+    def resizeEvent(self, event):
+        super().resizeEvent(event)
+        self.update_image_label()        
+    
+    def update_image_label(self):
+        if hasattr(self, "original_pixmap"):
+            scaled_pixmap = self.original_pixmap.scaled(
+                self.image_label.size(),
+                Qt.AspectRatioMode.KeepAspectRatio,
+                Qt.TransformationMode.SmoothTransformation
+            )
+            self.image_label.setPixmap(scaled_pixmap)
     
     def closeEvent(self, event):
         if self.streaming:
