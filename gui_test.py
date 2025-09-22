@@ -1,5 +1,6 @@
 import sys
 import time
+import os
 
 import numpy as np
 
@@ -15,7 +16,7 @@ from PySide6.QtWidgets import (
     QLineEdit,
     QHBoxLayout
 )
-from PySide6.QtGui import QPixmap, QImage, QIntValidator
+from PySide6.QtGui import QPixmap, QImage, QIntValidator, QIcon
 
 from SLDevicePythonWrapper import (
     SLDevice,
@@ -27,7 +28,16 @@ from SLDevicePythonWrapper import (
 )
 
 deviceInterface = DeviceInterface.USB
-imageSaveDirectory = "L:\\SLDevice\\Examples\\Example_Code\\Python\\captured_images\\"
+basedir = os.path.dirname(__file__)
+imageSaveDirectory = os.path.join(basedir, "\\SLDevice\\Examples\\Example_Code\\Python\\captured_images\\") 
+
+try:
+    from ctypes import windll  # Only exists on Windows.
+    myappid = 'com.spectrumlogic.westernblot.imager.1'
+    windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
+except ImportError:
+    pass
+
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -41,7 +51,7 @@ class MainWindow(QMainWindow):
 
         # Identify device
         self.device = SLDevice(deviceInterface)
-        self.exposureTime = 5000
+        self.exposureTime = 10
         self.exposureMode = ExposureModes.seq_mode
         self.dds = False
                 
@@ -114,11 +124,23 @@ class MainWindow(QMainWindow):
             self.exposure_time_input.setEnabled(True)
             self.exposure_time_button.setEnabled(True)
         else:
-            self.camera_on_button.setText('Camera off')
-            self.close_camera()
+            # Turn off stream first
+            self.stream_button.setText('Start stream')
+            if self.streaming:
+                self.stop_stream()
+            self.streaming = False
+            self.capture_button.setEnabled(False)
+            self.stream_button.setChecked(False)
             self.stream_button.setEnabled(False)
+
+            # Turn off camera
+            self.close_camera()
+            self.camera_on_button.setText('Camera off')
+
             self.exposure_time_input.setEnabled(False)
             self.exposure_time_button.setEnabled(False)
+
+            
 
     def open_camera(self):
         # Open camera
@@ -262,7 +284,6 @@ class MainWindow(QMainWindow):
 
 
     def convert_image_to_pixmap(self, sl_image: SLImage):
-        # Assume sl_image.GetImageData() returns a NumPy array of shape (height, width) or (height, width, 3)
         img_array_16bit = sl_image.Frame2Array(0)
 
         img_array = np.around(img_array_16bit.astype(np.float32) * (2**8 - 1) / (2**14 - 1)).astype(np.uint8)
@@ -295,6 +316,7 @@ class MainWindow(QMainWindow):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
+    app.setWindowIcon(QIcon(os.path.join(basedir, 'favicon.ico')))
 
     window = MainWindow()
     window.show()
