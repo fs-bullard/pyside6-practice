@@ -1,9 +1,7 @@
 import sys
-import os
 import time
 
 import numpy as np
-import matplotlib.pyplot as plt
 
 from PySide6.QtCore import Qt
 from PySide6.QtWidgets import (
@@ -12,12 +10,12 @@ from PySide6.QtWidgets import (
     QPushButton,
     QVBoxLayout,
     QWidget,
-    QErrorMessage,
     QLabel, 
-    QHBoxLayout,
-    QSizePolicy
+    QSizePolicy,
+    QLineEdit,
+    QHBoxLayout
 )
-from PySide6.QtGui import QPixmap, QImage
+from PySide6.QtGui import QPixmap, QImage, QIntValidator
 
 from SLDevicePythonWrapper import (
     SLDevice,
@@ -43,16 +41,27 @@ class MainWindow(QMainWindow):
 
         # Identify device
         self.device = SLDevice(deviceInterface)
-        self.exposureTime = 10
+        self.exposureTime = 5000
         self.exposureMode = ExposureModes.seq_mode
         self.dds = False
                 
         layout = QVBoxLayout()
+
         self.camera_on_button = QPushButton('Camera off')
         self.camera_on_button.setCheckable(True)
+
+        self.exposure_time_label = QLabel('Exposure Time (ms):')
+        self.exposure_time_input = QLineEdit(self, text=str(self.exposureTime))
+        et_validator = QIntValidator(10, 30000, self)
+        self.exposure_time_input.setValidator(et_validator)
+        self.exposure_time_input.setEnabled(False)
+        self.exposure_time_button = QPushButton('Set')
+        self.exposure_time_button.setEnabled(False)
+
         self.stream_button = QPushButton('Start stream')
         self.stream_button.setEnabled(False)
         self.stream_button.setCheckable(True)
+
         self.capture_button = QPushButton("Capture Image")
         self.capture_button.setEnabled(False)
 
@@ -65,27 +74,51 @@ class MainWindow(QMainWindow):
         self.image_label.setMinimumSize(1, 1)
 
         self.camera_on_button.clicked.connect(self.on_button_toggled)
+        self.exposure_time_input.returnPressed.connect(self.exposure_set)
+        self.exposure_time_button.clicked.connect(self.exposure_set)
         self.stream_button.clicked.connect(self.stream_button_toggled)
         self.capture_button.clicked.connect(self.button_clicked)
 
         layout.addWidget(self.camera_on_button)
+
+        exposure_controls = QHBoxLayout()
+        exposure_controls.addWidget(self.exposure_time_label)
+        exposure_controls.addWidget(self.exposure_time_input)
+        exposure_controls.addWidget(self.exposure_time_button)
+        layout.addLayout(exposure_controls)
+
         layout.addWidget(self.stream_button)
+
         layout.addWidget(self.capture_button)
 
         layout.addWidget(self.image_label, stretch=1)  
         central_widget = QWidget()
         central_widget.setLayout(layout)
         self.setCentralWidget(central_widget)
+    
+    def exposure_set(self):
+        if self.camera_open and not self.streaming:
+            # Set Exposure time
+            self.exposureTime = int(self.exposure_time_input.text())
+            err = self.device.SetExposureTime(self.exposureTime)
+            print(f'Exposure time set to {self.exposureTime}ms')
+            if err != SLError.SL_ERROR_SUCCESS:
+                print(f'Failed to set exposure time to {self.exposureTime} with error: {err}')
+
 
     def on_button_toggled(self, checked):
         if checked:
             self.camera_on_button.setText('Camera on')
             self.open_camera()
             self.stream_button.setEnabled(True)
+            self.exposure_time_input.setEnabled(True)
+            self.exposure_time_button.setEnabled(True)
         else:
             self.camera_on_button.setText('Camera off')
             self.close_camera()
             self.stream_button.setEnabled(False)
+            self.exposure_time_input.setEnabled(False)
+            self.exposure_time_button.setEnabled(False)
 
     def open_camera(self):
         # Open camera
@@ -128,20 +161,21 @@ class MainWindow(QMainWindow):
         print('Successfully closed camera')
         self.camera_open = False
 
-        # TODO: should also toggle streaming
-
     def stream_button_toggled(self, checked):
         if checked:
             self.start_stream()
             self.stream_button.setText('Stop stream')
             self.streaming = True
             self.capture_button.setEnabled(True)
+            self.exposure_time_input.setEnabled(False)
+            self.exposure_time_button.setEnabled(False)
         else:
             self.stop_stream()
             self.stream_button.setText('Start stream')
             self.streaming = False
             self.capture_button.setEnabled(False)
-
+            self.exposure_time_input.setEnabled(True)
+            self.exposure_time_button.setEnabled(True)
         
     def start_stream(self):
         if not self.camera_open:
