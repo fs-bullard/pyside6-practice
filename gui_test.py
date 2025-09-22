@@ -5,7 +5,6 @@ import time
 import numpy as np
 import matplotlib.pyplot as plt
 
-from PySide6.QtCore import QSize
 from PySide6.QtCore import Qt
 from PySide6.QtWidgets import (
     QMainWindow, 
@@ -14,7 +13,9 @@ from PySide6.QtWidgets import (
     QVBoxLayout,
     QWidget,
     QErrorMessage,
-    QLabel
+    QLabel, 
+    QHBoxLayout,
+    QSizePolicy
 )
 from PySide6.QtGui import QPixmap, QImage
 
@@ -35,6 +36,8 @@ class MainWindow(QMainWindow):
         super().__init__()
 
         self.setWindowTitle("Better XView")
+        self.resize(700, 800)       
+
         self.camera_open = False
         self.streaming = False
 
@@ -54,8 +57,12 @@ class MainWindow(QMainWindow):
         self.capture_button.setEnabled(False)
 
         self.image_label = QLabel()
-        self.image_label.setFixedSize(700, 800)       
         self.image_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.image_label.setSizePolicy(
+            QSizePolicy.Policy.Ignored,
+            QSizePolicy.Policy.Ignored
+        )
+        self.image_label.setMinimumSize(1, 1)
 
         self.camera_on_button.clicked.connect(self.on_button_toggled)
         self.stream_button.clicked.connect(self.stream_button_toggled)
@@ -64,7 +71,8 @@ class MainWindow(QMainWindow):
         layout.addWidget(self.camera_on_button)
         layout.addWidget(self.stream_button)
         layout.addWidget(self.capture_button)
-        layout.addWidget(self.image_label)
+
+        layout.addWidget(self.image_label, stretch=1)  
         central_widget = QWidget()
         central_widget.setLayout(layout)
         self.setCentralWidget(central_widget)
@@ -242,6 +250,7 @@ class MainWindow(QMainWindow):
                 Qt.TransformationMode.SmoothTransformation
             )
             self.image_label.setPixmap(scaled_pixmap)
+            self.image_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
     
     def closeEvent(self, event):
         if self.streaming:
