@@ -35,7 +35,7 @@ class MainWindow(QMainWindow):
         self.streaming = False
 
         # Identify device
-        device = SLDevice(deviceInterface)
+        self.device = SLDevice(deviceInterface)
                 
         layout = QVBoxLayout()
         self.camera_on_button = QPushButton('Camera off')
@@ -49,9 +49,9 @@ class MainWindow(QMainWindow):
         self.image_label = QLabel()
         self.image_label.setFixedSize(640, 480)       
 
-        self.camera_on_button.clicked.connect(lambda checked: self.on_button_toggled(checked, device))
-        self.stream_button.clicked.connect(lambda checked: self.stream_button_toggled(checked, device))
-        self.capture_button.clicked.connect(lambda: self.button_clicked(device))
+        self.camera_on_button.clicked.connect(self.on_button_toggled)
+        self.stream_button.clicked.connect(self.stream_button_toggled)
+        self.capture_button.clicked.connect(self.button_clicked)
 
         layout.addWidget(self.camera_on_button)
         layout.addWidget(self.stream_button)
@@ -62,19 +62,19 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(central_widget)
         
 
-    def on_button_toggled(self, checked, device):
+    def on_button_toggled(self, checked):
         if checked:
             self.camera_on_button.setText('Camera on')
-            self.open_camera(device)
+            self.open_camera()
             self.stream_button.setEnabled(True)
         else:
             self.camera_on_button.setText('Camera off')
-            self.close_camera(device)
+            self.close_camera()
             self.stream_button.setEnabled(False)
 
-    def open_camera(self, device):
+    def open_camera(self):
         # Open camera
-        err = device.OpenCamera()
+        err = self.device.OpenCamera()
         if err != SLError.SL_ERROR_SUCCESS:
             print('Failed to open camera with error: ', err)
             return -1
@@ -87,21 +87,21 @@ class MainWindow(QMainWindow):
         print('Intialising Software Trigger')
 
         # Configure the device
-        err = device.SetExposureMode(exposureMode)
+        err = self.device.SetExposureMode(exposureMode)
         if err != SLError.SL_ERROR_SUCCESS:
             print(f'Failed to set exposure mode to {exposureMode} with error: {err}')
             return
     
-        err = device.SetDDS(dds)
+        err = self.device.SetDDS(dds)
         if err != SLError.SL_ERROR_SUCCESS:
             print(f'Failed to set DDS to {dds} with error: {err}')
             return
         
         print(f'Set DDS to {dds}')
     
-    def close_camera(self, device):
+    def close_camera(self):
         # Close camera
-        err = device.CloseCamera()
+        err = self.device.CloseCamera()
         if err != SLError.SL_ERROR_SUCCESS:
             print('Failed to CloseCamera with error: ', err)
             return -2
@@ -111,30 +111,30 @@ class MainWindow(QMainWindow):
 
         # TODO: should also toggle streaming
 
-    def stream_button_toggled(self, checked, device):
+    def stream_button_toggled(self, checked):
         if checked:
-            self.start_stream(device)
+            self.start_stream()
             self.stream_button.setText('Stop stream')
             self.streaming = True
             self.capture_button.setEnabled(True)
         else:
-            self.stop_stream(device)
+            self.stop_stream()
             self.stream_button.setText('Start stream')
             self.streaming = False
             self.capture_button.setEnabled(False)
 
         
-    def start_stream(self, device):
+    def start_stream(self):
         if not self.camera_open:
             print('Open camera before starting stream')
             return
 
          # Build SLImage object to read frames into
-        self.image = SLImage(device.GetImageXDim(), device.GetImageYDim())
+        self.image = SLImage(self.device.GetImageXDim(), self.device.GetImageYDim())
         self.bufferInfo: SLBufferInfo = None
         
         # Start Stream
-        err = device.StartStream()
+        err = self.device.StartStream()
         if err != SLError.SL_ERROR_SUCCESS:
             print(f'Failed to start stream with error: {err}')
             return
@@ -143,9 +143,9 @@ class MainWindow(QMainWindow):
         self.streaming = True
 
     
-    def stop_stream(self, device):
+    def stop_stream(self):
         # Stop stream
-        err = device.StopStream()
+        err = self.device.StopStream()
         if err != SLError.SL_ERROR_SUCCESS:
             print(f'Failed to stop stream with error: {err}')
             return
@@ -153,7 +153,7 @@ class MainWindow(QMainWindow):
         print('Stopped stream')
         self.streaming = False
 
-    def button_clicked(self, device):
+    def button_clicked(self):
         if not self.camera_open:
             print("Camera must be on to capture an image")
             return
@@ -163,7 +163,7 @@ class MainWindow(QMainWindow):
         
         print("Capturing Image")
 
-        err = device.SoftwareTrigger()
+        err = self.device.SoftwareTrigger()
         if err != SLError.SL_ERROR_SUCCESS:
             print(f'Failed to send software trigger with error: {err}')
             return
@@ -174,7 +174,7 @@ class MainWindow(QMainWindow):
             print("Image buffer not initialized. Start the stream first.")
             return
 
-        bufferInfo = device.AcquireImage(self.image)
+        bufferInfo = self.device.AcquireImage(self.image)
         filename = f"{imageSaveDirectory}SoftwareTriggerCapture{bufferInfo.frameCount}.tif"
 
         if bufferInfo.error == SLError.SL_ERROR_SUCCESS:
@@ -214,10 +214,16 @@ class MainWindow(QMainWindow):
 
         height, width = img_array.shape[:2]
 
-        q_image = QImage(img_array.data, width, height, width, QImage.Format_Grayscale8)
+        q_image = QImage(img_array.data, width, height, width, QImage.Format_Grayscale8).copy()
 
         return QPixmap.fromImage(q_image)
-
+    
+    def closeEvent(self, event):
+        if self.streaming:
+            self.stop_stream()
+        if self.camera_open:
+            self.close_camera()
+        event.accept()
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
