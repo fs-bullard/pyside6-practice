@@ -4,7 +4,7 @@ import os
 
 import numpy as np
 
-from PySide6.QtCore import Qt
+from PySide6.QtCore import Qt, Signal
 from PySide6.QtWidgets import (
     QMainWindow, 
     QApplication, 
@@ -15,8 +15,8 @@ from PySide6.QtWidgets import (
     QSizePolicy,
     QLineEdit,
     QHBoxLayout, 
-    QStatusBar, 
-    QToolBar
+    QDialog,
+    QDialogButtonBox
 )
 from PySide6.QtGui import ( 
     QPixmap, 
@@ -33,12 +33,12 @@ from SLDevicePythonWrapper import (
     SLError,
     ExposureModes,
     SLImage,
-    SLBufferInfo
+    SLBufferInfo,
 )
 
 deviceInterface = DeviceInterface.USB
 basedir = os.path.dirname(__file__)
-imageSaveDirectory = os.path.join(basedir, "\\SLDevice\\Examples\\Example_Code\\Python\\captured_images\\") 
+imageSaveDirectory = os.path.join(basedir, "\\SLDevice\\Examples\\Example_Code\\Python\\") 
 
 try:
     from ctypes import windll 
@@ -46,6 +46,41 @@ try:
     windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
 except ImportError:
     pass
+
+class ExposureControl(QWidget):
+    exposureChanged = Signal(int)
+
+    def __init__(self, min_val=10, max_val=30000, default_val=10, parent=None):
+        super().__init__(parent)
+        self.parent = parent
+
+        self.label = QLabel('Exposure Time (ms):')
+        self.input = QLineEdit(self, text=str(default_val))
+        self.button = QPushButton('Set')
+
+        # Validator
+        validator = QIntValidator(min_val, max_val, self)
+        self.input.setValidator(validator)
+
+        # Initially disabled
+        self.input.setEnabled(False)
+        self.button.setEnabled(False)
+        
+        # Layout
+        layout = QHBoxLayout()
+        layout.addWidget(self.label)
+        layout.addWidget(self.input)
+        layout.addWidget(self.button)
+        self.setLayout(layout)
+
+        # Signals
+        self.input.returnPressed.connect(self.emit_exposure)
+        self.button.clicked.connect(self.emit_exposure)
+
+    def emit_exposure(self):
+        if self.input.hasAcceptableInput():
+            value = int(self.input.text())
+            self.exposureChanged.emit(value)
 
 
 class MainWindow(QMainWindow):
@@ -70,13 +105,7 @@ class MainWindow(QMainWindow):
         self.camera_on_button = QPushButton('Camera off')
         self.camera_on_button.setCheckable(True)
 
-        self.exposure_time_label = QLabel('Exposure Time (ms):')
-        self.exposure_time_input = QLineEdit(self, text=str(self.exposureTime))
-        et_validator = QIntValidator(10, 30000, self)
-        self.exposure_time_input.setValidator(et_validator)
-        self.exposure_time_input.setEnabled(False)
-        self.exposure_time_button = QPushButton('Set')
-        self.exposure_time_button.setEnabled(False)
+        self.exposure_control = ExposureControl(default_val=self.exposureTime, parent=self)
 
         self.stream_button = QPushButton('Start stream')
         self.stream_button.setEnabled(False)
@@ -94,18 +123,14 @@ class MainWindow(QMainWindow):
         self.image_label.setMinimumSize(1, 1)
 
         self.camera_on_button.clicked.connect(self.on_button_toggled)
-        self.exposure_time_input.returnPressed.connect(self.exposure_set)
-        self.exposure_time_button.clicked.connect(self.exposure_set)
+
         self.stream_button.clicked.connect(self.stream_button_toggled)
         self.capture_button.clicked.connect(self.button_clicked)
+        self.exposure_control.exposureChanged.connect(self.set_exposure_time)
 
         layout.addWidget(self.camera_on_button)
 
-        exposure_controls = QHBoxLayout()
-        exposure_controls.addWidget(self.exposure_time_label)
-        exposure_controls.addWidget(self.exposure_time_input)
-        exposure_controls.addWidget(self.exposure_time_button)
-        layout.addLayout(exposure_controls)
+        layout.addWidget(self.exposure_control)
 
         layout.addWidget(self.stream_button)
 
@@ -135,33 +160,28 @@ class MainWindow(QMainWindow):
         corrections_menu = menu.addMenu('&Corrections')
 
         capture_dark_action = QAction('&Capture Dark Image', self)
-        capture_dark_action.triggered.connect(self.capture_dark_image)
+        capture_dark_action.triggered.connect(self.dark_dialog)
 
         corrections_menu.addAction(capture_dark_action)
     
     def save_image(self):
         print('Image saved')
 
-    def exposure_set(self):
+    def set_exposure_time(self, value: int):
         if self.camera_open and not self.streaming:
             # Set Exposure time
-            self.exposureTime = int(self.exposure_time_input.text())
-            err = self.device.SetExposureTime(self.exposureTime)
-            print(f'Exposure time set to {self.exposureTime}ms')
+            self.exposureTime = value
+            err = self.device.SetExposureTime(value)
+            print(f'Exposure time set to {value}ms')
             if err != SLError.SL_ERROR_SUCCESS:
-                print(f'Failed to set exposure time to {self.exposureTime} with error: {err}')
+                print(f'Failed to set exposure time to {value} with error: {err}')
 
 
     def on_button_toggled(self, checked):
         if checked:
-            self.camera_on_button.setText('Camera on')
             self.open_camera()
-            self.stream_button.setEnabled(True)
-            self.exposure_time_input.setEnabled(True)
-            self.exposure_time_button.setEnabled(True)
         else:
             # Turn off stream first
-            self.stream_button.setText('Start stream')
             if self.streaming:
                 self.stop_stream()
             self.streaming = False
@@ -171,13 +191,7 @@ class MainWindow(QMainWindow):
 
             # Turn off camera
             self.close_camera()
-            self.camera_on_button.setText('Camera off')
-
-            self.exposure_time_input.setEnabled(False)
-            self.exposure_time_button.setEnabled(False)
-
             
-
     def open_camera(self):
         # Open camera
         err = self.device.OpenCamera()
@@ -186,6 +200,11 @@ class MainWindow(QMainWindow):
             return -1
         print('Successfuly opened camera')
         self.camera_open = True
+
+        self.camera_on_button.setText('Camera on')
+        self.stream_button.setEnabled(True)
+        self.exposure_control.input.setEnabled(True)
+        self.exposure_control.button.setEnabled(True)
 
         print('Intialising Software Trigger')
 
@@ -218,27 +237,27 @@ class MainWindow(QMainWindow):
 
         print('Successfully closed camera')
         self.camera_open = False
+        self.camera_on_button.setText('Camera off')
+        self.exposure_control.input.setEnabled(False)
+        self.exposure_control.button.setEnabled(False)
 
     def stream_button_toggled(self, checked):
         if checked:
             self.start_stream()
-            self.stream_button.setText('Stop stream')
-            self.streaming = True
-            self.capture_button.setEnabled(True)
-            self.exposure_time_input.setEnabled(False)
-            self.exposure_time_button.setEnabled(False)
+            
         else:
             self.stop_stream()
-            self.stream_button.setText('Start stream')
-            self.streaming = False
-            self.capture_button.setEnabled(False)
-            self.exposure_time_input.setEnabled(True)
-            self.exposure_time_button.setEnabled(True)
         
     def start_stream(self):
         if not self.camera_open:
             print('Open camera before starting stream')
             return
+        
+        self.stream_button.setText('Stop stream')
+        self.streaming = True
+        self.capture_button.setEnabled(True)
+        self.exposure_control.input.setEnabled(False)
+        self.exposure_control.button.setEnabled(False)
 
          # Build SLImage object to read frames into
         self.image = SLImage(self.device.GetImageXDim(), self.device.GetImageYDim())
@@ -261,8 +280,36 @@ class MainWindow(QMainWindow):
             print(f'Failed to stop stream with error: {err}')
             return
         
+        self.stream_button.setText('Start stream')
+        self.streaming = False
+        self.capture_button.setEnabled(False)
+        self.exposure_control.input.setEnabled(True)
+        self.exposure_control.button.setEnabled(True)
+        
         print('Stopped stream')
         self.streaming = False
+
+    def dark_dialog(self):
+        dlg = QDialog(self)
+        dlg.setWindowTitle('Capture Dark Frame')
+        dlg.exec()
+
+
+    def capture_dark_image(self):
+        print('Capturing dark image')
+        if self.streaming:
+            # Stop streaming
+            self.stop_stream()
+        if self.camera_open:
+            # Close camera
+            self.close_camera()
+
+        self.open_camera()
+        self.start_stream()
+
+        # Capture image
+        filename = f"{imageSaveDirectory}\\correction_images\\dark_frame_{self.exposureTime}.tif"
+        self.capture_image(filename)
 
     def button_clicked(self):
         if not self.camera_open:
@@ -273,7 +320,7 @@ class MainWindow(QMainWindow):
             return
 
         self.frame_count += 1
-        filename = f"{imageSaveDirectory}SoftwareTriggerCapture{self.frame_count}.tif"
+        filename = f"{imageSaveDirectory}\\captured_images\\SoftwareTriggerCapture{self.frame_count}.tif"
         self.capture_image(filename)
         
     def capture_image(self, filename):    
@@ -332,19 +379,6 @@ class MainWindow(QMainWindow):
 
         return QPixmap.fromImage(q_image)
     
-    def capture_dark_image(self):
-        print('Capturing dark image')
-
-        # Open camera
-
-        # Dialog for exposure time
-
-        # Start stream
-
-        # Capture image
-
-        # Save image
-    
     def resizeEvent(self, event):
         super().resizeEvent(event)
         self.update_image_label()        
@@ -365,6 +399,25 @@ class MainWindow(QMainWindow):
         if self.camera_open:
             self.close_camera()
         event.accept()
+
+class DarkDialog(QDialog):
+    def __init__(self):
+        super().__init__()
+
+        self.setWindowTitle("Capture Dark Frame")
+
+        QBtn = (
+            QDialogButtonBox.Ok | QDialogButtonBox.Cancel
+        )
+
+        self.buttonBox = QDialogButtonBox(QBtn)
+        self.buttonBox.accepted.connect(self.accept)
+        self.buttonBox.rejected.connect(self.reject)
+
+        layout = QVBoxLayout()
+
+
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
