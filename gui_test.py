@@ -3,6 +3,7 @@ import time
 import os
 
 import numpy as np
+from PIL import Image
 
 from PySide6.QtCore import Qt, Signal
 from PySide6.QtWidgets import (
@@ -185,7 +186,10 @@ class MainWindow(QMainWindow):
         layout.addWidget(self.capture_button)
 
         # Correction settings
-
+        self.dark_subtraction_box = QCheckBox(text='Dark Subtraction')
+        settings_layout = QHBoxLayout()
+        settings_layout.addWidget(self.dark_subtraction_box)
+        layout.addLayout(settings_layout)
 
         # Image label
         self.image_label = QLabel()
@@ -224,6 +228,7 @@ class MainWindow(QMainWindow):
         capture_dark_action.triggered.connect(self.dark_dialog)
 
         corrections_menu.addAction(capture_dark_action)
+
 
     def dark_dialog(self):
         dialog = DarkDialog()
@@ -381,9 +386,9 @@ class MainWindow(QMainWindow):
 
         self.frame_count += 1
         filename = f"{imageSaveDirectory}\\captured_images\\SoftwareTriggerCapture{self.frame_count}.tif"
-        self.capture_image(filename)
+        self.capture_image(filename, offset_correction=self.dark_subtraction_box.isChecked())
         
-    def capture_image(self, filename):    
+    def capture_image(self, filename, offset_correction=False):    
         print("Capturing Image")
 
         err = self.device.SoftwareTrigger()
@@ -404,8 +409,36 @@ class MainWindow(QMainWindow):
             # Frame acquired successfully
             print(f"Read new frame #{bufferInfo.frameCount} with dims: {bufferInfo.width}x{bufferInfo.height}")
 
+            # Apply dark correction if specified
+            if offset_correction:
+                # Initialise dark image object 
+                self.dark_image = SLImage(self.device.GetImageXDim(), self.device.GetImageYDim())
+
+                # If dark image doesn't exist in directory, capture one
+                filename_dark = f'{imageSaveDirectory}\\correction_images\\dark_frame_{self.exposureTime}.tif'
+                if not os.path.exists(filename_dark):
+                    # Try and capture dark image
+                    print('No dark image found. Capturing new dark image instead.')
+                    self.capture_dark_image()
+                else:
+                    print('Dark image already exists')
+
+                # Load dark image
+                err = SLImage.ReadTiffImage(filename_dark, self.dark_image)
+                if err != True:
+                    print(f'Failed to read dark image')
+                    return
+
+                # Apply offset correction
+                err = SLImage.OffsetCorrection(self.image, self.dark_image, darkOffset=50)
+                if err != SLError.SL_ERROR_SUCCESS:
+                    print(f'Failed to apply dark correction with error: {err}')
+                    return    
+                print('Offset correction applied')
+            
             # Convert the image to QPixmap and display it
             pixmap = self.convert_image_to_pixmap(self.image)
+                
             # Scale pixmap to match window dimensions 
             if pixmap:
                 self.original_pixmap = pixmap
