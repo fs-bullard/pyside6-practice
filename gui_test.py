@@ -3,7 +3,7 @@ import time
 import os
 
 import numpy as np
-from PIL import Image
+import cv2
 
 from PySide6.QtCore import Qt, Signal
 from PySide6.QtWidgets import (
@@ -86,7 +86,7 @@ class ExposureControl(QWidget):
             self.button.setEnabled(enabled)
 
         # Set layout
-        self.setLayout(layout)        
+        self.setLayout(layout)
 
     def emit_exposure(self):
         if self.input.hasAcceptableInput():
@@ -96,12 +96,12 @@ class ExposureControl(QWidget):
 class DarkDialog(QDialog):
     exposureChanged = Signal(int)
 
-    def __init__(self):
+    def __init__(self, default_val=10):
         super().__init__()
 
         self.setWindowTitle("Capture Dark Frame")
 
-        self.exposure_control = ExposureControl(enabled=True, set_button=False)
+        self.exposure_control = ExposureControl(enabled=True, set_button=False, default_val=default_val)
 
         QBtn = (
             QDialogButtonBox.Ok | QDialogButtonBox.Cancel
@@ -152,6 +152,7 @@ class MainWindow(QMainWindow):
         self.exposureMode = ExposureModes.seq_mode
         self.dds = False
         self.frame_count = 0
+        self.current_img = None
 
         # --------------- Central Widget --------------
                 
@@ -201,6 +202,12 @@ class MainWindow(QMainWindow):
         self.image_label.setMinimumSize(1, 1)
         layout.addWidget(self.image_label, stretch=1)  
 
+        # Auto-contrast
+        self.contrast_button = QPushButton('Auto-Contrast')
+        self.contrast_button.setEnabled(False)
+        self.contrast_button.clicked.connect(self.auto_contrast)
+        layout.addWidget(self.contrast_button)
+
         # Set central widget
         central_widget = QWidget()
         central_widget.setLayout(layout)
@@ -214,7 +221,6 @@ class MainWindow(QMainWindow):
         
         save_action = QAction("&Save", self)
         save_action.setStatusTip("Save the image")
-        save_action.triggered.connect(self.save_image)
 
         file_menu.addAction(save_action)
 
@@ -231,14 +237,11 @@ class MainWindow(QMainWindow):
 
 
     def dark_dialog(self):
-        dialog = DarkDialog()
+        dialog = DarkDialog(default_val=self.exposureTime)
         dialog.setWindowTitle('Capture Dark Frame')
         dialog.exposureChanged.connect(self.set_exposure_time)
         dialog.accepted.connect(self.capture_dark_image)
         dialog.exec()
-    
-    def save_image(self):
-        print('Image saved')
 
     def set_exposure_time(self, value: int):
         self.exposureTime = value
@@ -373,7 +376,8 @@ class MainWindow(QMainWindow):
 
         # Capture image
         filename = f"{imageSaveDirectory}\\correction_images\\dark_frame_{self.exposureTime}.tif"
-        self.capture_image(filename)
+        self.capture_image()
+        self.save_image(filename)
         print('-'*50)
 
     def button_clicked(self):
@@ -385,10 +389,12 @@ class MainWindow(QMainWindow):
             return
 
         self.frame_count += 1
-        filename = f"{imageSaveDirectory}\\captured_images\\SoftwareTriggerCapture{self.frame_count}.tif"
-        self.capture_image(filename, offset_correction=self.dark_subtraction_box.isChecked())
+        filename = f"{imageSaveDirectory}\\captured_images\\capture_{self.frame_count}.tif"
+        self.capture_image(offset_correction=self.dark_subtraction_box.isChecked())
+        self.display_img()
+        self.save_image(filename)
         
-    def capture_image(self, filename, offset_correction=False):    
+    def capture_image(self, offset_correction=False):    
         print("Capturing Image")
 
         err = self.device.SoftwareTrigger()
@@ -418,8 +424,9 @@ class MainWindow(QMainWindow):
                 filename_dark = f'{imageSaveDirectory}\\correction_images\\dark_frame_{self.exposureTime}.tif'
                 if not os.path.exists(filename_dark):
                     # Try and capture dark image
-                    print('No dark image found. Capturing new dark image instead.')
-                    self.capture_dark_image()
+                    print('No dark image found. Prompting user to capture dark image.')
+                    self.dark_dialog()
+                    return
                 else:
                     print('Dark image already exists')
 
@@ -437,35 +444,34 @@ class MainWindow(QMainWindow):
                 print('Offset correction applied')
             
             # Convert the image to QPixmap and display it
-            pixmap = self.convert_image_to_pixmap(self.image)
-                
-            # Scale pixmap to match window dimensions 
-            if pixmap:
-                self.original_pixmap = pixmap
-                self.update_image_label()
-            else:
-                print("Failed to convert image to QPixmap")
-
-            if self.image.WriteTiffImage(filename) is False:
-                print("Failed to save image")
-
+            self.current_img = self.image.Frame2Array(0)
         elif bufferInfo.error == SLError.SL_ERROR_MISSING_PACKETS:
             # Frame aquired with missing packets
             print(f"Read new frame #{bufferInfo.frameCount} with dims: {bufferInfo.width}x{bufferInfo.height}")
-
-            if self.image.WriteTiffImage(filename) is False:
-                print('Failed to save image')
-
         elif bufferInfo.error == SLError.SL_ERROR_TIMEOUT:
-            print("Timed out whilst waiting for frame")
+                print("Timed out whilst waiting for frame")
         else:
             print(f'Failed to acquire image with error: {bufferInfo.error}')
 
+    def display_img(self):
+        pixmap = self.convert_image_to_pixmap(self.current_img)
+            
+        # Scale pixmap to match window dimensions 
+        if pixmap:
+            self.original_pixmap = pixmap
+            self.update_image_label()
+        else:
+            print("Failed to convert image to QPixmap")
 
-    def convert_image_to_pixmap(self, sl_image: SLImage):
-        img_array_16bit = sl_image.Frame2Array(0)
+    def save_image(self, filename):
+        if self.image.WriteTiffImage(filename) is False:
+            print('Failed to save image')
 
-        img_array = np.around(img_array_16bit.astype(np.float32) * (2**8 - 1) / (2**14 - 1)).astype(np.uint8)
+        
+
+
+    def convert_image_to_pixmap(self, img_array: np.ndarray):
+        img_array = np.around(img_array.astype(np.float32) * (2**8 - 1) / (2**14 - 1)).astype(np.uint8)
 
         height, width = img_array.shape[:2]
         q_image = QImage(img_array.data, width, height, width, QImage.Format_Grayscale8).copy()
@@ -492,6 +498,13 @@ class MainWindow(QMainWindow):
         if self.camera_open:
             self.close_camera()
         event.accept()
+
+    def auto_contrast(self):
+        print('Applying auto-contrast')
+        norm = cv2.normalize(self.current_img, None, 0, 255, cv2.NORM_MINMAX)
+
+        self.image_label.setPixmap
+        
 
 
 
