@@ -202,23 +202,28 @@ class MainWindow(QMainWindow):
         self.image_label.setMinimumSize(1, 1)
         layout.addWidget(self.image_label, stretch=1)  
 
+        # ------------------- Image Adjustments -----------------
+        adj_layout = QHBoxLayout()
+
         # Auto-contrast
         self.contrast_button = QPushButton('Auto-Contrast')
         self.contrast_button.setEnabled(False)
         self.contrast_button.clicked.connect(self.auto_contrast)
-        layout.addWidget(self.contrast_button)
+        adj_layout.addWidget(self.contrast_button)
 
         # Invert
         self.invert_button = QPushButton('Invert')
         self.invert_button.setEnabled(False)
         self.invert_button.clicked.connect(self.invert)
-        layout.addWidget(self.invert_button)
+        adj_layout.addWidget(self.invert_button)
 
         # Reset corrections
         self.reset_button = QPushButton('Reset Corrections')
         self.reset_button.setEnabled(False)
         self.reset_button.clicked.connect(self.reset_corrections)
-        layout.addWidget(self.reset_button)
+        adj_layout.addWidget(self.reset_button)
+
+        layout.addLayout(adj_layout)
 
         # Set central widget
         central_widget = QWidget()
