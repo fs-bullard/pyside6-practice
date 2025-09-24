@@ -236,10 +236,6 @@ class MainWindow(QMainWindow):
             # Turn off stream first
             if self.streaming:
                 self.stop_stream()
-            self.streaming = False
-            self.capture_button.setEnabled(False)
-            self.stream_button.setChecked(False)
-            self.stream_button.setEnabled(False)
 
             # Turn off camera
             self.close_camera()
@@ -255,6 +251,7 @@ class MainWindow(QMainWindow):
 
         self.camera_on_button.setText('Camera on')
         self.stream_button.setEnabled(True)
+        self.camera_on_button.setChecked(True)
 
         print('Intialising Software Trigger')
 
@@ -284,11 +281,11 @@ class MainWindow(QMainWindow):
         print('Successfully closed camera')
         self.camera_open = False
         self.camera_on_button.setText('Camera off')
+        self.camera_on_button.setChecked(False)
 
     def stream_button_toggled(self, checked):
         if checked:
             self.start_stream()
-            
         else:
             self.stop_stream()
         
@@ -298,6 +295,7 @@ class MainWindow(QMainWindow):
             return
         
         self.stream_button.setText('Stop stream')
+        self.stream_button.setChecked(True)
         self.streaming = True
         self.capture_button.setEnabled(True)
         self.exposure_control.input.setEnabled(False)
@@ -325,6 +323,7 @@ class MainWindow(QMainWindow):
             return
         
         self.stream_button.setText('Start stream')
+        self.stream_button.setChecked(False)
         self.streaming = False
         self.capture_button.setEnabled(False)
         self.exposure_control.input.setEnabled(True)
@@ -336,6 +335,10 @@ class MainWindow(QMainWindow):
     def capture_dark_image(self):
         print('-'*50)
         print('Capturing dark image')
+
+        # Set exposure time input to new exposure time
+        self.exposure_control.input.setText(str(self.exposureTime))
+
         if self.streaming:
             # Stop streaming
             self.stop_stream()
