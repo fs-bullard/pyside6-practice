@@ -16,7 +16,8 @@ from PySide6.QtWidgets import (
     QLineEdit,
     QHBoxLayout, 
     QDialog,
-    QDialogButtonBox
+    QDialogButtonBox,
+    QCheckBox
 )
 from PySide6.QtGui import ( 
     QPixmap, 
@@ -150,25 +151,43 @@ class MainWindow(QMainWindow):
         self.exposureMode = ExposureModes.seq_mode
         self.dds = False
         self.frame_count = 0
+
+        # --------------- Central Widget --------------
                 
         layout = QVBoxLayout()
 
+        # Camera on
         self.camera_on_button = QPushButton('Camera off')
         self.camera_on_button.setCheckable(True)
+        layout.addWidget(self.camera_on_button)
+        self.camera_on_button.clicked.connect(self.on_button_toggled)
 
+        # Exposure control
         self.exposure_control = ExposureControl(
             default_val=self.exposureTime, 
             parent=self, 
             enabled=True
         )
+        self.exposure_control.exposureChanged.connect(self.set_exposure_time)
+        layout.addWidget(self.exposure_control)
 
+        # Streaming
         self.stream_button = QPushButton('Start stream')
         self.stream_button.setEnabled(False)
         self.stream_button.setCheckable(True)
+        self.stream_button.clicked.connect(self.stream_button_toggled)
+        layout.addWidget(self.stream_button)
 
+        # Capture
         self.capture_button = QPushButton("Capture Image")
         self.capture_button.setEnabled(False)
+        self.capture_button.clicked.connect(self.button_clicked)
+        layout.addWidget(self.capture_button)
 
+        # Correction settings
+
+
+        # Image label
         self.image_label = QLabel()
         self.image_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.image_label.setSizePolicy(
@@ -176,27 +195,14 @@ class MainWindow(QMainWindow):
             QSizePolicy.Policy.Ignored
         )
         self.image_label.setMinimumSize(1, 1)
-
-        self.camera_on_button.clicked.connect(self.on_button_toggled)
-
-        self.stream_button.clicked.connect(self.stream_button_toggled)
-        self.capture_button.clicked.connect(self.button_clicked)
-        self.exposure_control.exposureChanged.connect(self.set_exposure_time)
-
-        layout.addWidget(self.camera_on_button)
-
-        layout.addWidget(self.exposure_control)
-
-        layout.addWidget(self.stream_button)
-
-        layout.addWidget(self.capture_button)
-
         layout.addWidget(self.image_label, stretch=1)  
+
+        # Set central widget
         central_widget = QWidget()
         central_widget.setLayout(layout)
         self.setCentralWidget(central_widget)
 
-        # Menu
+        # --------------- Menu Bar --------------
         menu = self.menuBar()
         
         # File
