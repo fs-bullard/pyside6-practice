@@ -14,9 +14,18 @@ from PySide6.QtWidgets import (
     QLabel, 
     QSizePolicy,
     QLineEdit,
-    QHBoxLayout
+    QHBoxLayout, 
+    QStatusBar, 
+    QToolBar
 )
-from PySide6.QtGui import QPixmap, QImage, QIntValidator, QIcon
+from PySide6.QtGui import ( 
+    QPixmap, 
+    QImage, 
+    QIntValidator, 
+    QIcon, 
+    QAction, 
+    QKeySequence
+)
 
 from SLDevicePythonWrapper import (
     SLDevice,
@@ -32,7 +41,7 @@ basedir = os.path.dirname(__file__)
 imageSaveDirectory = os.path.join(basedir, "\\SLDevice\\Examples\\Example_Code\\Python\\captured_images\\") 
 
 try:
-    from ctypes import windll  # Only exists on Windows.
+    from ctypes import windll 
     myappid = 'com.spectrumlogic.westernblot.imager.1'
     windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
 except ImportError:
@@ -54,6 +63,7 @@ class MainWindow(QMainWindow):
         self.exposureTime = 10
         self.exposureMode = ExposureModes.seq_mode
         self.dds = False
+        self.frame_count = 0
                 
         layout = QVBoxLayout()
 
@@ -105,7 +115,33 @@ class MainWindow(QMainWindow):
         central_widget = QWidget()
         central_widget.setLayout(layout)
         self.setCentralWidget(central_widget)
+
+        # Menu
+        menu = self.menuBar()
+        
+        # File
+        file_menu = menu.addMenu('&File')
+        
+        save_action = QAction("&Save", self)
+        save_action.setStatusTip("Save the image")
+        save_action.triggered.connect(self.save_image)
+
+        file_menu.addAction(save_action)
+
+        # Edit
+
+
+        # Corrections
+        corrections_menu = menu.addMenu('&Corrections')
+
+        capture_dark_action = QAction('&Capture Dark Image', self)
+        capture_dark_action.triggered.connect(self.capture_dark_image)
+
+        corrections_menu.addAction(capture_dark_action)
     
+    def save_image(self):
+        print('Image saved')
+
     def exposure_set(self):
         if self.camera_open and not self.streaming:
             # Set Exposure time
@@ -235,7 +271,12 @@ class MainWindow(QMainWindow):
         if not self.streaming:
             print("Camera must be streaming to capture an image")
             return
+
+        self.frame_count += 1
+        filename = f"{imageSaveDirectory}SoftwareTriggerCapture{self.frame_count}.tif"
+        self.capture_image(filename)
         
+    def capture_image(self, filename):    
         print("Capturing Image")
 
         err = self.device.SoftwareTrigger()
@@ -249,10 +290,8 @@ class MainWindow(QMainWindow):
             print("Image buffer not initialized. Start the stream first.")
             return
         
-        time.sleep(self.exposureTime / 1000)
-
+        time.sleep(self.exposureTime / 1000) 
         bufferInfo = self.device.AcquireImage(self.image)
-        filename = f"{imageSaveDirectory}SoftwareTriggerCapture{bufferInfo.frameCount}.tif"
 
         if bufferInfo.error == SLError.SL_ERROR_SUCCESS:
             # Frame acquired successfully
@@ -292,6 +331,19 @@ class MainWindow(QMainWindow):
         q_image = QImage(img_array.data, width, height, width, QImage.Format_Grayscale8).copy()
 
         return QPixmap.fromImage(q_image)
+    
+    def capture_dark_image(self):
+        print('Capturing dark image')
+
+        # Open camera
+
+        # Dialog for exposure time
+
+        # Start stream
+
+        # Capture image
+
+        # Save image
     
     def resizeEvent(self, event):
         super().resizeEvent(event)
