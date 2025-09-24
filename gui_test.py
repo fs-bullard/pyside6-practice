@@ -183,7 +183,7 @@ class MainWindow(QMainWindow):
         # Capture
         self.capture_button = QPushButton("Capture Image")
         self.capture_button.setEnabled(False)
-        self.capture_button.clicked.connect(self.button_clicked)
+        self.capture_button.clicked.connect(self.capture_button_clicked)
         layout.addWidget(self.capture_button)
 
         # Correction settings
@@ -207,6 +207,12 @@ class MainWindow(QMainWindow):
         self.contrast_button.setEnabled(False)
         self.contrast_button.clicked.connect(self.auto_contrast)
         layout.addWidget(self.contrast_button)
+
+        # Invert
+        self.invert_button = QPushButton('Invert')
+        self.invert_button.setEnabled(False)
+        self.invert_button.clicked.connect(self.invert)
+        layout.addWidget(self.invert_button)
 
         # Set central widget
         central_widget = QWidget()
@@ -307,6 +313,9 @@ class MainWindow(QMainWindow):
         self.camera_open = False
         self.camera_on_button.setText('Camera off')
         self.camera_on_button.setChecked(False)
+        self.stream_button.setEnabled(False)
+        
+        
 
     def stream_button_toggled(self, checked):
         if checked:
@@ -380,7 +389,7 @@ class MainWindow(QMainWindow):
         self.save_image(filename)
         print('-'*50)
 
-    def button_clicked(self):
+    def capture_button_clicked(self):
         if not self.camera_open:
             print("Camera must be on to capture an image")
             return
@@ -463,11 +472,15 @@ class MainWindow(QMainWindow):
         else:
             print("Failed to convert image to QPixmap")
 
+        self.enable_adjustment_buttons()
+    
+    def enable_adjustment_buttons(self):
+        self.contrast_button.setEnabled(True)
+        self.invert_button.setEnabled(True)
+
     def save_image(self, filename):
         if self.image.WriteTiffImage(filename) is False:
-            print('Failed to save image')
-
-        
+            print('Failed to save image')      
 
 
     def convert_image_to_pixmap(self, img_array: np.ndarray):
@@ -501,9 +514,16 @@ class MainWindow(QMainWindow):
 
     def auto_contrast(self):
         print('Applying auto-contrast')
-        norm = cv2.normalize(self.current_img, None, 0, 255, cv2.NORM_MINMAX)
+        clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
+        cl1 = clahe.apply(self.current_img)
 
-        self.image_label.setPixmap
+        self.current_img = cl1
+        self.display_img()
+
+    def invert(self):
+        print('Inverting image')
+        self.current_img = 2**14 - self.current_img
+        self.display_img()
         
 
 
