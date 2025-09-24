@@ -24,7 +24,6 @@ from PySide6.QtGui import (
     QIntValidator, 
     QIcon, 
     QAction, 
-    QKeySequence
 )
 
 from SLDevicePythonWrapper import (
@@ -50,7 +49,10 @@ except ImportError:
 class ExposureControl(QWidget):
     exposureChanged = Signal(int)
 
-    def __init__(self, min_val=10, max_val=30000, default_val=10, parent=None, enabled=False, set_button=True):
+    def __init__(
+            self, min_val=10, max_val=30000, 
+            default_val=10, parent=None, enabled=False, set_button=True
+        ):
         super().__init__(parent)
         self.parent = parent
 
@@ -73,7 +75,6 @@ class ExposureControl(QWidget):
         self.input.returnPressed.connect(self.emit_exposure) 
 
         self.input.setEnabled(enabled)
-       
         
         # Set button
         if set_button:
@@ -105,21 +106,27 @@ class DarkDialog(QDialog):
         )
 
         self.buttonBox = QDialogButtonBox(QBtn)
-        self.buttonBox.button(QDialogButtonBox.Ok).setText("Capture")
+        self.capture_button = self.buttonBox.button(QDialogButtonBox.Ok)
+        self.capture_button.setText("Capture")
+        self.capture_button.setEnabled(True)
         self.buttonBox.accepted.connect(self.accept)
         self.buttonBox.rejected.connect(self.reject)
+        self.exposure_control.input.textChanged.connect(self.validate_input)
         self.exposure_control.exposureChanged.connect(self.emit_exposure)
 
         layout = QVBoxLayout()
-
         
         layout.addWidget(self.exposure_control)
         layout.addWidget(self.buttonBox)
 
         self.setLayout(layout)
-
-    def get_exposure(self):
-        print('Get exposure from main window')
+    
+    def validate_input(self, text):
+        if (self.exposure_control.input.validator().validate(text, 0)[0]
+             == QIntValidator.Acceptable):
+            self.capture_button.setEnabled(True)
+        else: 
+            self.capture_button.setEnabled(False)
 
     def emit_exposure(self):
         if self.exposure_control.input.hasAcceptableInput():
@@ -149,7 +156,11 @@ class MainWindow(QMainWindow):
         self.camera_on_button = QPushButton('Camera off')
         self.camera_on_button.setCheckable(True)
 
-        self.exposure_control = ExposureControl(default_val=self.exposureTime, parent=self, enabled=True)
+        self.exposure_control = ExposureControl(
+            default_val=self.exposureTime, 
+            parent=self, 
+            enabled=True
+        )
 
         self.stream_button = QPushButton('Start stream')
         self.stream_button.setEnabled(False)
