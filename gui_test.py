@@ -214,6 +214,12 @@ class MainWindow(QMainWindow):
         self.invert_button.clicked.connect(self.invert)
         layout.addWidget(self.invert_button)
 
+        # Reset corrections
+        self.reset_button = QPushButton('Reset Corrections')
+        self.reset_button.setEnabled(False)
+        self.reset_button.clicked.connect(self.reset_corrections)
+        layout.addWidget(self.reset_button)
+
         # Set central widget
         central_widget = QWidget()
         central_widget.setLayout(layout)
@@ -472,16 +478,11 @@ class MainWindow(QMainWindow):
         else:
             print("Failed to convert image to QPixmap")
 
-        self.enable_adjustment_buttons()
-    
-    def enable_adjustment_buttons(self):
-        self.contrast_button.setEnabled(True)
-        self.invert_button.setEnabled(True)
+        self.enable_adjustment_buttons(True)
 
     def save_image(self, filename):
         if self.image.WriteTiffImage(filename) is False:
             print('Failed to save image')      
-
 
     def convert_image_to_pixmap(self, img_array: np.ndarray):
         img_array = np.around(img_array.astype(np.float32) * (2**8 - 1) / (2**14 - 1)).astype(np.uint8)
@@ -524,11 +525,21 @@ class MainWindow(QMainWindow):
         print('Inverting image')
         self.current_img = 2**14 - self.current_img
         self.display_img()
+
+    def enable_adjustment_buttons(self, enable):    
+        self.contrast_button.setEnabled(enable)
+        self.invert_button.setEnabled(enable)
+        self.reset_button.setEnabled(enable)
+
+    def reset_corrections(self):
+        print('Resetting corrections')
+        filename = f"{imageSaveDirectory}\\captured_images\\capture_{self.frame_count}.tif"
+        image_og = SLImage(self.device.GetImageXDim(), self.device.GetImageYDim())
+        SLImage.ReadTiffImage(filename, image_og)
+        self.current_img = image_og.Frame2Array(0)
+        self.display_img()
         
-
-
-
-
+        
 
 
 if __name__ == '__main__':
