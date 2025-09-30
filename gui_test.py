@@ -39,7 +39,7 @@ from SLDevicePythonWrapper import (
 
 deviceInterface = DeviceInterface.USB
 basedir = os.path.dirname(__file__)
-imageSaveDirectory = os.path.join(basedir, "\\SLDevice\\Examples\\Example_Code\\Python\\") 
+imageSaveDirectory = os.path.join(basedir, "Images") 
 
 try:
     from ctypes import windll 
@@ -487,7 +487,7 @@ class MainWindow(QMainWindow):
 
     def save_image(self, filename):
         if self.image.WriteTiffImage(filename) is False:
-            print('Failed to save image')      
+            print(f'Failed to save image as {filename}')      
 
     def convert_image_to_pixmap(self, img_array: np.ndarray):
         img_array = np.around(img_array.astype(np.float32) * (2**8 - 1) / (2**14 - 1)).astype(np.uint8)
