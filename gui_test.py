@@ -13,20 +13,18 @@ from PySide6.QtWidgets import (
     QVBoxLayout,
     QWidget,
     QLabel, 
-    QSizePolicy,
     QLineEdit,
     QHBoxLayout, 
     QDialog,
     QDialogButtonBox,
     QCheckBox
 )
-from PySide6.QtGui import ( 
-    QPixmap, 
-    QImage, 
+from PySide6.QtGui import (
     QIntValidator, 
     QIcon, 
     QAction, 
 )
+import pyqtgraph as pg
 
 from SLDevicePythonWrapper import (
     SLDevice,
@@ -193,14 +191,19 @@ class MainWindow(QMainWindow):
         layout.addLayout(settings_layout)
 
         # Image label
-        self.image_label = QLabel()
-        self.image_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.image_label.setSizePolicy(
-            QSizePolicy.Policy.Ignored,
-            QSizePolicy.Policy.Ignored
-        )
-        self.image_label.setMinimumSize(1, 1)
-        layout.addWidget(self.image_label, stretch=1)  
+        # self.image_label = QLabel()
+        # self.image_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        # self.image_label.setSizePolicy(
+        #     QSizePolicy.Policy.Ignored,
+        #     QSizePolicy.Policy.Ignored
+        # )
+        # self.image_label.setMinimumSize(1, 1)
+        # layout.addWidget(self.image_label, stretch=1) 
+
+        self.image_view = pg.ImageView(self)
+        # img = cv2.imread('Images/captured_images/capture_1.tif')
+        # self.image_view.setImage(img)
+        layout.addWidget(self.image_view)
 
         # ------------------- Image Adjustments -----------------
         adj_layout = QHBoxLayout()
@@ -236,18 +239,15 @@ class MainWindow(QMainWindow):
         # File
         file_menu = menu.addMenu('&File')
         
-        save_action = QAction("&Save", self)
-        save_action.setStatusTip("Save the image")
+        # save_action = QAction("&Save", self)
+        # save_action.setStatusTip("Save the image")
 
         empty_action = QAction("&Delete all captures", self)
         empty_action.setStatusTip("Deletes all captured images")
         empty_action.triggered.connect(lambda _: self.empty_captured('captured_images'))
 
-        file_menu.addAction(save_action)
+        # file_menu.addAction(save_action)
         file_menu.addAction(empty_action)
-
-        # Edit
-
 
         # Corrections
         corrections_menu = menu.addMenu('&Corrections')
@@ -259,6 +259,7 @@ class MainWindow(QMainWindow):
         empty_dark_action.setStatusTip("Deletes all dark images")
         empty_dark_action.triggered.connect(lambda _: self.empty_captured('correction_images'))
 
+        corrections_menu.addAction(capture_dark_action)
         corrections_menu.addAction(empty_dark_action)
 
     def empty_captured(self, target):
@@ -484,7 +485,7 @@ class MainWindow(QMainWindow):
                     return    
                 print('Offset correction applied')
             
-            # Convert the image to QPixmap and display it
+            # Convert the image to an array
             self.current_img = self.image.Frame2Array(0)
         elif bufferInfo.error == SLError.SL_ERROR_MISSING_PACKETS:
             # Frame aquired with missing packets
@@ -495,42 +496,13 @@ class MainWindow(QMainWindow):
             print(f'Failed to acquire image with error: {bufferInfo.error}')
 
     def display_img(self):
-        pixmap = self.convert_image_to_pixmap(self.current_img)
-            
-        # Scale pixmap to match window dimensions 
-        if pixmap:
-            self.original_pixmap = pixmap
-            self.update_image_label()
-        else:
-            print("Failed to convert image to QPixmap")
+        self.image_view.setImage(self.current_img)
 
         self.enable_adjustment_buttons(True)
 
     def save_image(self, filename):
         if self.image.WriteTiffImage(filename) is False:
-            print(f'Failed to save image as {filename}')      
-
-    def convert_image_to_pixmap(self, img_array: np.ndarray):
-        img_array = np.around(img_array.astype(np.float32) * (2**8 - 1) / (2**14 - 1)).astype(np.uint8)
-
-        height, width = img_array.shape[:2]
-        q_image = QImage(img_array.data, width, height, width, QImage.Format_Grayscale8).copy()
-
-        return QPixmap.fromImage(q_image)
-    
-    def resizeEvent(self, event):
-        super().resizeEvent(event)
-        self.update_image_label()        
-    
-    def update_image_label(self):
-        if hasattr(self, "original_pixmap"):
-            scaled_pixmap = self.original_pixmap.scaled(
-                self.image_label.size(),
-                Qt.AspectRatioMode.KeepAspectRatio,
-                Qt.TransformationMode.SmoothTransformation
-            )
-            self.image_label.setPixmap(scaled_pixmap)
-            self.image_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+            print(f'Failed to save image as {filename}')          
     
     def closeEvent(self, event):
         if self.streaming:
