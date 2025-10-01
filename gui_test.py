@@ -92,6 +92,25 @@ class ExposureControl(QWidget):
             value = int(self.input.text())
             self.exposureChanged.emit(value)
 
+class DeleteDialog(QDialog):
+    def __init__(self, target):
+        super().__init__()
+
+        self.setWindowTitle(f"Empty {target}?")
+
+        QBtn = (
+            QDialogButtonBox.Ok | QDialogButtonBox.Cancel
+        )
+        self.buttonBox = QDialogButtonBox(QBtn)
+        self.buttonBox.accepted.connect(self.accept)
+        self.buttonBox.rejected.connect(self.reject)
+
+        layout = QVBoxLayout()
+        
+        layout.addWidget(self.buttonBox)
+
+        self.setLayout(layout)
+
 class DarkDialog(QDialog):
     exposureChanged = Signal(int)
 
@@ -152,6 +171,8 @@ class MainWindow(QMainWindow):
         self.dds = False
         self.frame_count = 0
         self.current_img = None
+        self.last_save = None
+        self.xdim, self.ydim = 1030, 1536 # Hard code sensor resolution, not ideal if there's any chance of using different sensors
 
         # --------------- Central Widget --------------
                 
@@ -247,7 +268,7 @@ class MainWindow(QMainWindow):
 
         empty_action = QAction("&Delete all captures", self)
         empty_action.setStatusTip("Deletes all captured images")
-        empty_action.triggered.connect(lambda _: self.empty_captured('captured_images'))
+        empty_action.triggered.connect(lambda _: self.delete_dialog('captured_images'))
         file_menu.addAction(empty_action)       
 
         # Corrections
@@ -259,7 +280,7 @@ class MainWindow(QMainWindow):
 
         empty_dark_action = QAction("&Delete all dark images", self)
         empty_dark_action.setStatusTip("Deletes all dark images")
-        empty_dark_action.triggered.connect(lambda _: self.empty_captured('correction_images'))
+        empty_dark_action.triggered.connect(lambda _: self.delete_dialog('correction_images'))
         corrections_menu.addAction(empty_dark_action)
 
     def load_image(self):
@@ -270,7 +291,7 @@ class MainWindow(QMainWindow):
             'Tiff Files (*.tif);;All Files (*)'
         )
         if img_path:
-            self.image = SLImage(1536, 1030)
+            self.image = SLImage(self.xdim, self.ydim)
             if not SLImage.ReadTiffImage(img_path, self.image):
                 print(f'Failed to load image from path {img_path}')
                 return
@@ -279,6 +300,12 @@ class MainWindow(QMainWindow):
             # Convert the image to an array
             self.current_img = self.image.Frame2Array(0)
             self.display_img()
+
+    
+    def delete_dialog(self, target):
+        dialog = DeleteDialog(target)
+        dialog.accepted.connect(lambda: self.empty_captured(target))
+        dialog.exec()
 
     def empty_captured(self, target):
         folder = os.path.join(imageSaveDirectory, target)
@@ -387,7 +414,7 @@ class MainWindow(QMainWindow):
         self.exposure_control.button.setEnabled(False)
 
          # Build SLImage object to read frames into
-        self.image = SLImage(self.device.GetImageXDim(), self.device.GetImageYDim())
+        self.image = SLImage(self.xdim, self.ydim)
         self.bufferInfo: SLBufferInfo = None
         
         # Start Stream
@@ -478,7 +505,7 @@ class MainWindow(QMainWindow):
             # Apply dark correction if specified
             if offset_correction:
                 # Initialise dark image object 
-                self.dark_image = SLImage(self.device.GetImageXDim(), self.device.GetImageYDim())
+                self.dark_image = SLImage(self.xdim, self.ydim)
 
                 # If dark image doesn't exist in directory, capture one
                 filename_dark = f'{imageSaveDirectory}\\correction_images\\dark_frame_{self.exposureTime}.tif'
@@ -550,7 +577,7 @@ class MainWindow(QMainWindow):
 
     def reset_corrections(self):
         print('Resetting corrections')
-        image_og = SLImage(1536, 1030)
+        image_og = SLImage(self.xdim, self.ydim)
         SLImage.ReadTiffImage(self.last_save, image_og)
         self.current_img = image_og.Frame2Array(0)
         self.display_img()
