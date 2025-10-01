@@ -228,6 +228,7 @@ class MainWindow(QMainWindow):
         self.invert_button = QPushButton('Invert')
         self.invert_button.setEnabled(False)
         self.invert_button.clicked.connect(self.invert)
+        self.inverted = False
         adj_layout.addWidget(self.invert_button)
 
         # Highlight saturated pixels
@@ -294,6 +295,7 @@ class MainWindow(QMainWindow):
             self.last_save = img_path
             # Convert the image to an array
             self.current_img = self.image.Frame2Array(0)
+            self.reset_view()
             self.display_img()
 
     
@@ -473,6 +475,7 @@ class MainWindow(QMainWindow):
         self.frame_count += 1
         filename = f"{imageSaveDirectory}\\captured_images\\capture_{self.frame_count}_{self.exposureTime}ms.tif"
         self.capture_image(offset_correction=self.dark_subtraction_box.isChecked())
+        self.reset_view()
         self.display_img()
         self.save_image(filename)
         
@@ -536,7 +539,6 @@ class MainWindow(QMainWindow):
             print(f'Failed to acquire image with error: {bufferInfo.error}')
 
     def display_img(self):
-        self.reset_view()
         self.image_view.setImage(self.current_img)
         self.enable_adjustment_buttons(True)
 
@@ -563,6 +565,7 @@ class MainWindow(QMainWindow):
 
     def invert(self):
         print('Inverting image')
+        self.inverted = not self.inverted
         self.current_img = 2**14 - self.current_img
         self.display_img()
 
@@ -584,7 +587,12 @@ class MainWindow(QMainWindow):
             return
         
         overlay = np.zeros((self.ydim, self.xdim, 4), dtype=np.ubyte)
-        mask = self.current_img >= 2**14 - 1
+        print(self.inverted)
+        if self.inverted:
+            mask = self.current_img <= 1
+        else:
+            mask = self.current_img >= 2**14 - 1
+
         overlay[mask] = (255, 0, 0, 255)
         n = np.count_nonzero(mask)
 
@@ -612,6 +620,7 @@ class MainWindow(QMainWindow):
 
     def reset_view(self):
         self.remove_sat_highlights()
+        self.inverted = False
         
         
 
