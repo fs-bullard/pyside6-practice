@@ -5,7 +5,7 @@ import os
 import numpy as np
 import cv2
 
-from PySide6.QtCore import Qt, Signal
+from PySide6.QtCore import Qt, Signal, QTranslator, QLocale, QLibraryInfo
 from PySide6.QtWidgets import (
     QMainWindow, 
     QApplication, 
@@ -61,7 +61,7 @@ class ExposureControl(QWidget):
         layout = QHBoxLayout()
 
         # Label
-        self.label = QLabel('Exposure Time (ms):')
+        self.label = QLabel(self.tr('Exposure Time (ms):'))
         layout.addWidget(self.label)
 
         # Input
@@ -79,7 +79,7 @@ class ExposureControl(QWidget):
         
         # Set button
         if set_button:
-            self.button = QPushButton('Set')
+            self.button = QPushButton(self.tr('Set'))
             layout.addWidget(self.button)
             self.button.clicked.connect(self.emit_exposure)
             self.button.setEnabled(enabled)
@@ -96,7 +96,7 @@ class DeleteDialog(QDialog):
     def __init__(self, target):
         super().__init__()
 
-        self.setWindowTitle(f"Empty {target}?")
+        self.setWindowTitle(self.tr("Empty ") +   target +  "?")
 
         QBtn = (
             QDialogButtonBox.Ok | QDialogButtonBox.Cancel
@@ -117,7 +117,7 @@ class DarkDialog(QDialog):
     def __init__(self, default_val=10):
         super().__init__()
 
-        self.setWindowTitle("Capture Dark Frame")
+        self.setWindowTitle(self.tr("Capture Dark Frame"))
 
         self.exposure_control = ExposureControl(enabled=True, set_button=False, default_val=default_val)
 
@@ -127,7 +127,7 @@ class DarkDialog(QDialog):
 
         self.buttonBox = QDialogButtonBox(QBtn)
         self.capture_button = self.buttonBox.button(QDialogButtonBox.Ok)
-        self.capture_button.setText("Capture")
+        self.capture_button.setText(self.tr("Capture"))
         self.capture_button.setEnabled(True)
         self.buttonBox.accepted.connect(self.accept)
         self.buttonBox.rejected.connect(self.reject)
@@ -158,7 +158,18 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
 
-        self.setWindowTitle("Better XView")
+        self.qt_translator = QTranslator()
+        self.app_translator = QTranslator()
+
+        # Install Qt’s default translations (OK/Cancel, etc.)
+        qt_translations = QLibraryInfo.path(QLibraryInfo.TranslationsPath)
+        self.qt_translator.load(QLocale.system(), "qtbase", "_", qt_translations)
+        QApplication.instance().installTranslator(self.qt_translator)
+
+        # Try to load your app translations (optional)
+        self.load_app_translation(QLocale.system().name())
+
+        self.setWindowTitle(self.tr("Better XView"))
         self.resize(700, 800)       
 
         self.camera_open = False
@@ -179,7 +190,7 @@ class MainWindow(QMainWindow):
         layout = QVBoxLayout()
 
         # Camera on
-        self.camera_on_button = QPushButton('Camera off')
+        self.camera_on_button = QPushButton(self.tr('Camera off'))
         self.camera_on_button.setCheckable(True)
         layout.addWidget(self.camera_on_button)
         self.camera_on_button.clicked.connect(self.on_button_toggled)
@@ -194,20 +205,20 @@ class MainWindow(QMainWindow):
         layout.addWidget(self.exposure_control)
 
         # Streaming
-        self.stream_button = QPushButton('Start stream')
+        self.stream_button = QPushButton(self.tr('Start stream'))
         self.stream_button.setEnabled(False)
         self.stream_button.setCheckable(True)
         self.stream_button.clicked.connect(self.stream_button_toggled)
         layout.addWidget(self.stream_button)
 
         # Capture
-        self.capture_button = QPushButton("Capture Image")
+        self.capture_button = QPushButton(self.tr("Capture Image"))
         self.capture_button.setEnabled(False)
         self.capture_button.clicked.connect(self.capture_button_clicked)
         layout.addWidget(self.capture_button)
 
         # Correction settings
-        self.dark_subtraction_box = QCheckBox(text='Dark Subtraction')
+        self.dark_subtraction_box = QCheckBox(text=self.tr('Dark Subtraction'))
         settings_layout = QHBoxLayout()
         settings_layout.addWidget(self.dark_subtraction_box)
         layout.addLayout(settings_layout)
@@ -219,27 +230,27 @@ class MainWindow(QMainWindow):
         adj_layout = QHBoxLayout()
 
         # Auto-contrast
-        self.contrast_button = QPushButton('Auto-Contrast')
+        self.contrast_button = QPushButton(self.tr('Auto-Contrast'))
         self.contrast_button.setEnabled(False)
         self.contrast_button.clicked.connect(self.auto_contrast)
         adj_layout.addWidget(self.contrast_button)
 
         # Invert
-        self.invert_button = QPushButton('Invert')
+        self.invert_button = QPushButton(self.tr('Invert'))
         self.invert_button.setEnabled(False)
         self.invert_button.clicked.connect(self.invert)
         self.inverted = False
         adj_layout.addWidget(self.invert_button)
 
         # Highlight saturated pixels
-        self.saturation_button = QPushButton('Highlight Saturation')
+        self.saturation_button = QPushButton(self.tr('Highlight Saturation'))
         self.saturation_button.setEnabled(False)
         self.saturation_button.setCheckable(True)
         self.saturation_button.clicked.connect(self.toggle_saturation)
         adj_layout.addWidget(self.saturation_button)
 
         # Reset corrections
-        self.reset_button = QPushButton('Reset Corrections')
+        self.reset_button = QPushButton(self.tr('Reset Corrections'))
         self.reset_button.setEnabled(False)
         self.reset_button.clicked.connect(self.reset_corrections)
         adj_layout.addWidget(self.reset_button)
@@ -255,36 +266,71 @@ class MainWindow(QMainWindow):
         menu = self.menuBar()
         
         # File
-        file_menu = menu.addMenu('&File')
+        file_menu = menu.addMenu(self.tr('File'))
 
-        load_action = QAction('&Load Image', self)
-        load_action.setStatusTip('Load an image')
+        load_action = QAction(self.tr('Load Image'), self)
+        load_action.setStatusTip(self.tr('Load an image'))
         load_action.triggered.connect(self.load_image)
         file_menu.addAction(load_action)
 
-        empty_action = QAction("&Delete all captures", self)
-        empty_action.setStatusTip("Deletes all captured images")
-        empty_action.triggered.connect(lambda _: self.delete_dialog('captured_images'))
-        file_menu.addAction(empty_action)       
+        empty_action = QAction(self.tr("Delete all captures"), self)
+        empty_action.setStatusTip(self.tr("Deletes all captured images"))
+        empty_action.triggered.connect(lambda _: self.delete_dialog(self.tr('captured_images')))
+        file_menu.addAction(empty_action)
 
         # Corrections
-        corrections_menu = menu.addMenu('&Corrections')
+        corrections_menu = menu.addMenu(self.tr('Corrections'))
 
-        capture_dark_action = QAction('&Capture Dark Image', self)
+        capture_dark_action = QAction(self.tr('Capture Dark Image'), self)
         capture_dark_action.triggered.connect(self.dark_dialog)
         corrections_menu.addAction(capture_dark_action)
 
-        empty_dark_action = QAction("&Delete all dark images", self)
-        empty_dark_action.setStatusTip("Deletes all dark images")
-        empty_dark_action.triggered.connect(lambda _: self.delete_dialog('correction_images'))
+        empty_dark_action = QAction(self.tr("Delete all dark images"), self)
+        empty_dark_action.setStatusTip(self.tr("Deletes all dark images"))
+        empty_dark_action.triggered.connect(lambda _: self.delete_dialog(self.tr('correction_images')))
         corrections_menu.addAction(empty_dark_action)
+
+        # Language
+        language_menu = menu.addMenu(self.tr('Language'))
+
+        for lang, code in [("English", "en"), ("Deutsch", "de"), ("Français", "fr")]:
+            action = QAction(lang, self)
+            action.triggered.connect(lambda checked, c=code: self.switch_language(c))
+            language_menu.addAction(action)
+
+    def switch_language(self, code):
+        # Remove the old one
+        QApplication.instance().removeTranslator(self.app_translator)
+
+        # Load the new one
+        if self.app_translator.load(f"translations/{code}.qm"):
+            QApplication.instance().installTranslator(self.app_translator)
+            print(f"Switched to {code}")
+            # Retranslate the UI
+            self.retranslateUi()
+        else:
+            print(f'Could not load translator {code}.qm')
+
+    def retranslateUi(self):
+        # Update dynamic UI text after switching languages
+        self.setWindowTitle(self.tr("Better XView"))
+        self.camera_on_button.setText(self.tr("Camera off"))
+        # …do the same for other labels/buttons
+
+    def load_app_translation(self, locale_name: str):
+        """Load your app-specific translation, e.g. de.qm, fr.qm"""
+        if self.app_translator.load(f"translations/{locale_name}.qm"):
+            QApplication.instance().installTranslator(self.app_translator)
+            print(f"Loaded translation: {locale_name}")
+        else:
+            print(f"No translation found for {locale_name}")
 
     def load_image(self):
         img_path, _ = QFileDialog.getOpenFileName(
             self, 
-            'Open File',
+            self.tr('Open File'),
             imageSaveDirectory,
-            'Tiff Files (*.tif);;All Files (*)'
+            self.tr('Tiff Files (*.tif);;All Files (*)')
         )
         if img_path:
             self.image = SLImage(self.xdim, self.ydim)
