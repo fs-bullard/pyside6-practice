@@ -17,7 +17,8 @@ from PySide6.QtWidgets import (
     QHBoxLayout, 
     QDialog,
     QDialogButtonBox,
-    QCheckBox
+    QCheckBox,
+    QFileDialog
 )
 from PySide6.QtGui import (
     QIntValidator, 
@@ -238,29 +239,46 @@ class MainWindow(QMainWindow):
         
         # File
         file_menu = menu.addMenu('&File')
-        
-        # save_action = QAction("&Save", self)
-        # save_action.setStatusTip("Save the image")
+
+        load_action = QAction('&Load Image', self)
+        load_action.setStatusTip('Load an image')
+        load_action.triggered.connect(self.load_image)
+        file_menu.addAction(load_action)
 
         empty_action = QAction("&Delete all captures", self)
         empty_action.setStatusTip("Deletes all captured images")
         empty_action.triggered.connect(lambda _: self.empty_captured('captured_images'))
-
-        # file_menu.addAction(save_action)
-        file_menu.addAction(empty_action)
+        file_menu.addAction(empty_action)       
 
         # Corrections
         corrections_menu = menu.addMenu('&Corrections')
 
         capture_dark_action = QAction('&Capture Dark Image', self)
         capture_dark_action.triggered.connect(self.dark_dialog)
+        corrections_menu.addAction(capture_dark_action)
 
         empty_dark_action = QAction("&Delete all dark images", self)
         empty_dark_action.setStatusTip("Deletes all dark images")
         empty_dark_action.triggered.connect(lambda _: self.empty_captured('correction_images'))
-
-        corrections_menu.addAction(capture_dark_action)
         corrections_menu.addAction(empty_dark_action)
+
+    def load_image(self):
+        img_path, _ = QFileDialog.getOpenFileName(
+            self, 
+            'Open File',
+            imageSaveDirectory,
+            'Tiff Files (*.tif);;All Files (*)'
+        )
+        if img_path:
+            self.image = SLImage(1536, 1030)
+            if not SLImage.ReadTiffImage(img_path, self.image):
+                print(f'Failed to load image from path {img_path}')
+                return
+            
+            self.last_save = img_path
+            # Convert the image to an array
+            self.current_img = self.image.Frame2Array(0)
+            self.display_img()
 
     def empty_captured(self, target):
         folder = os.path.join(imageSaveDirectory, target)
@@ -484,9 +502,9 @@ class MainWindow(QMainWindow):
                     print(f'Failed to apply dark correction with error: {err}')
                     return    
                 print('Offset correction applied')
-            
             # Convert the image to an array
             self.current_img = self.image.Frame2Array(0)
+
         elif bufferInfo.error == SLError.SL_ERROR_MISSING_PACKETS:
             # Frame aquired with missing packets
             print(f"Read new frame #{bufferInfo.frameCount} with dims: {bufferInfo.width}x{bufferInfo.height}")
@@ -497,12 +515,13 @@ class MainWindow(QMainWindow):
 
     def display_img(self):
         self.image_view.setImage(self.current_img)
-
         self.enable_adjustment_buttons(True)
 
     def save_image(self, filename):
         if self.image.WriteTiffImage(filename) is False:
-            print(f'Failed to save image as {filename}')          
+            print(f'Failed to save image as {filename}')
+        else:
+            self.last_save = filename
     
     def closeEvent(self, event):
         if self.streaming:
@@ -531,9 +550,8 @@ class MainWindow(QMainWindow):
 
     def reset_corrections(self):
         print('Resetting corrections')
-        filename = f"{imageSaveDirectory}\\captured_images\\capture_{self.frame_count}.tif"
-        image_og = SLImage(self.device.GetImageXDim(), self.device.GetImageYDim())
-        SLImage.ReadTiffImage(filename, image_og)
+        image_og = SLImage(1536, 1030)
+        SLImage.ReadTiffImage(self.last_save, image_og)
         self.current_img = image_og.Frame2Array(0)
         self.display_img()
         
