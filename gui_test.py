@@ -241,7 +241,7 @@ class MainWindow(QMainWindow):
 
         empty_action = QAction("&Delete all captures", self)
         empty_action.setStatusTip("Deletes all captured images")
-        empty_action.triggered.connect(self.empty_captured)
+        empty_action.triggered.connect(lambda _: self.empty_captured('captured_images'))
 
         file_menu.addAction(save_action)
         file_menu.addAction(empty_action)
@@ -255,14 +255,24 @@ class MainWindow(QMainWindow):
         capture_dark_action = QAction('&Capture Dark Image', self)
         capture_dark_action.triggered.connect(self.dark_dialog)
 
-        corrections_menu.addAction(capture_dark_action)
+        empty_dark_action = QAction("&Delete all dark images", self)
+        empty_dark_action.setStatusTip("Deletes all dark images")
+        empty_dark_action.triggered.connect(lambda _: self.empty_captured('correction_images'))
 
-    def empty_captured(self):
-        folder = os.path.join(imageSaveDirectory, 'captured_images')
-        for filename in os.listdir(folder):
-            file_path = os.path.join(folder, filename)
-            if os.path.isfile(file_path):
-                os.remove(file_path)
+        corrections_menu.addAction(empty_dark_action)
+
+    def empty_captured(self, target):
+        folder = os.path.join(imageSaveDirectory, target)
+        i = 0
+        try:
+            for filename in os.listdir(folder):
+                file_path = os.path.join(folder, filename)
+                if os.path.isfile(file_path):
+                    os.remove(file_path)
+                    i += 1
+            print(f'Deleted {i} captures')
+        except:
+            print(f'Encountered an error when emptying captured_images. Succesfully deleted {i} captures.')
 
     def dark_dialog(self):
         dialog = DarkDialog(default_val=self.exposureTime)
