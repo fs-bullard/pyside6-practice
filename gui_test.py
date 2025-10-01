@@ -239,7 +239,12 @@ class MainWindow(QMainWindow):
         save_action = QAction("&Save", self)
         save_action.setStatusTip("Save the image")
 
+        empty_action = QAction("&Delete all captures", self)
+        empty_action.setStatusTip("Deletes all captured images")
+        empty_action.triggered.connect(self.empty_captured)
+
         file_menu.addAction(save_action)
+        file_menu.addAction(empty_action)
 
         # Edit
 
@@ -252,6 +257,12 @@ class MainWindow(QMainWindow):
 
         corrections_menu.addAction(capture_dark_action)
 
+    def empty_captured(self):
+        folder = os.path.join(imageSaveDirectory, 'captured_images')
+        for filename in os.listdir(folder):
+            file_path = os.path.join(folder, filename)
+            if os.path.isfile(file_path):
+                os.remove(file_path)
 
     def dark_dialog(self):
         dialog = DarkDialog(default_val=self.exposureTime)
