@@ -212,19 +212,7 @@ class MainWindow(QMainWindow):
         settings_layout.addWidget(self.dark_subtraction_box)
         layout.addLayout(settings_layout)
 
-        # Image label
-        # self.image_label = QLabel()
-        # self.image_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        # self.image_label.setSizePolicy(
-        #     QSizePolicy.Policy.Ignored,
-        #     QSizePolicy.Policy.Ignored
-        # )
-        # self.image_label.setMinimumSize(1, 1)
-        # layout.addWidget(self.image_label, stretch=1) 
-
         self.image_view = pg.ImageView(self)
-        # img = cv2.imread('Images/captured_images/capture_1.tif')
-        # self.image_view.setImage(img)
         layout.addWidget(self.image_view)
 
         # ------------------- Image Adjustments -----------------
@@ -241,6 +229,13 @@ class MainWindow(QMainWindow):
         self.invert_button.setEnabled(False)
         self.invert_button.clicked.connect(self.invert)
         adj_layout.addWidget(self.invert_button)
+
+        # Highlight saturated pixels
+        self.saturation_button = QPushButton('Highlight Saturation')
+        self.saturation_button.setEnabled(False)
+        self.saturation_button.setCheckable(True)
+        self.saturation_button.clicked.connect(self.toggle_saturation)
+        adj_layout.addWidget(self.saturation_button)
 
         # Reset corrections
         self.reset_button = QPushButton('Reset Corrections')
@@ -476,7 +471,7 @@ class MainWindow(QMainWindow):
             return
 
         self.frame_count += 1
-        filename = f"{imageSaveDirectory}\\captured_images\\capture_{self.frame_count}.tif"
+        filename = f"{imageSaveDirectory}\\captured_images\\capture_{self.frame_count}_{self.exposureTime}ms.tif"
         self.capture_image(offset_correction=self.dark_subtraction_box.isChecked())
         self.display_img()
         self.save_image(filename)
@@ -541,6 +536,7 @@ class MainWindow(QMainWindow):
             print(f'Failed to acquire image with error: {bufferInfo.error}')
 
     def display_img(self):
+        self.reset_view()
         self.image_view.setImage(self.current_img)
         self.enable_adjustment_buttons(True)
 
@@ -573,14 +569,49 @@ class MainWindow(QMainWindow):
     def enable_adjustment_buttons(self, enable):    
         self.contrast_button.setEnabled(enable)
         self.invert_button.setEnabled(enable)
+        self.saturation_button.setEnabled(enable)
         self.reset_button.setEnabled(enable)
+
+    def toggle_saturation(self):
+        if self.saturation_button.isChecked():
+            self.highlight_saturation()
+        else:
+            self.remove_sat_highlights()
+
+
+    def highlight_saturation(self):
+        if self.current_img is None:
+            return
+        
+        overlay = np.zeros((self.ydim, self.xdim, 4), dtype=np.ubyte)
+        mask = self.current_img >= 2**14 - 1
+        overlay[mask] = (255, 0, 0, 255)
+        n = np.count_nonzero(mask)
+
+        self.remove_sat_highlights()       
+
+        self.saturation_overlay = pg.ImageItem(overlay, opacity=1.0)
+        self.image_view.getView().addItem(self.saturation_overlay)
+        print(f'Highlighted {n} saturated pixels')
+
+    def remove_sat_highlights(self):
+        # If we already have an overlay, remove it
+        if hasattr(self, 'saturation_overlay') and self.saturation_overlay is not None:
+            self.image_view.getView().removeItem(self.saturation_overlay)
+            self.saturation_overlay = None
+            self.saturation_button.setChecked(False)
+            print('Removed highlights')
 
     def reset_corrections(self):
         print('Resetting corrections')
+        self.reset_view()
         image_og = SLImage(self.xdim, self.ydim)
         SLImage.ReadTiffImage(self.last_save, image_og)
         self.current_img = image_og.Frame2Array(0)
         self.display_img()
+
+    def reset_view(self):
+        self.remove_sat_highlights()
         
         
 
