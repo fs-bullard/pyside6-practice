@@ -638,7 +638,7 @@ class MainWindow(QMainWindow):
             print(f'Failed to acquire image with error: {bufferInfo.error}')
 
     def display_img(self):
-        self.image_view.setImage(self.current_img)
+        self.image_view.setImage(np.rot90(self.current_img))
         self.enable_adjustment_buttons(True)
         print('Displaying new capture')
 
