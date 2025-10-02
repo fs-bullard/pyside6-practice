@@ -219,7 +219,7 @@ class MainWindow(QMainWindow):
 
         # Multi-capture
         self.multi_capture_button = QPushButton(self.tr("Capture Sequence of Images"))
-        self.multi_capture_button.setEnabled(False)
+        self.multi_capture_button.setEnabled(True)
         self.multi_capture_button.clicked.connect(self.multi_capture_button_clicked)
         layout.addWidget(self.multi_capture_button)
 
@@ -414,7 +414,6 @@ class MainWindow(QMainWindow):
         self.camera_on_button.setText('Camera on')
         self.stream_button.setEnabled(True)
         self.camera_on_button.setChecked(True)
-        self.multi_capture_button.setEnabled(True)
 
         print(self.device.GetImageXDim(), self.device.GetImageYDim())
 
@@ -448,7 +447,6 @@ class MainWindow(QMainWindow):
         self.camera_on_button.setText('Camera off')
         self.camera_on_button.setChecked(False)
         self.stream_button.setEnabled(False)
-        self.multi_capture_button.setEnabled(False)
         
         
 
@@ -525,11 +523,17 @@ class MainWindow(QMainWindow):
         print('-'*50)
     
     def capture_many_darks(self):
+        if self.camera_open:
+            self.close_camera()
         tmp = self.exposureTime
         exposures = [10, 20, 50, 100, 200, 300, 400, 500, 1000, 2000, 5000, 10000]
         for e in exposures:
             self.exposureTime = e
+            self.open_camera()
+            self.start_stream()
             self.capture_dark_image()
+            self.stop_stream()
+            self.close_camera()
 
         self.exposureTime = tmp
 
@@ -553,6 +557,8 @@ class MainWindow(QMainWindow):
         self.save_image(filename)
 
     def multi_capture_button_clicked(self):
+        if self.camera_open:
+            self.close_camera()
         tmp = self.exposureTime
         exposure_times = [10, 20, 50, 100, 200, 300, 400, 500, 1000, 2000, 5000, 10000]
         remaining_time = np.sum(exposure_times)
@@ -560,9 +566,12 @@ class MainWindow(QMainWindow):
             print(f'Capturing frame with exposure time {e}ms')
             print(f'Time remaining: {remaining_time/1000}s')
             self.exposureTime = e
+            self.open_camera()
+            self.open_camera()
             self.start_stream()
             self.capture_button_clicked()
             self.stop_stream()
+            self.close_camera()
             print('Frame captured')
             remaining_time -= e
 
