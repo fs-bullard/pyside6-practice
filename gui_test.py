@@ -183,7 +183,7 @@ class MainWindow(QMainWindow):
         self.frame_count = 0
         self.current_img = None
         self.last_save = None
-        self.xdim, self.ydim = 1030, 1536 # Hard code sensor resolution, not ideal if there's any chance of using different sensors
+        self.xdim, self.ydim = 1031, 1536 # Hard code sensor resolution, not ideal if there's any chance of using different sensors
 
         # --------------- Central Widget --------------
                 
@@ -216,6 +216,12 @@ class MainWindow(QMainWindow):
         self.capture_button.setEnabled(False)
         self.capture_button.clicked.connect(self.capture_button_clicked)
         layout.addWidget(self.capture_button)
+
+        # Multi-capture
+        self.multi_capture_button = QPushButton(self.tr("Capture Seuence of Images"))
+        self.multi_capture_button.setEnabled(False)
+        self.multi_capture_button.clicked.connect(self.multi_capture_button_clicked)
+        layout.addWidget(self.multi_capture_button)
 
         # Correction settings
         self.dark_subtraction_box = QCheckBox(text=self.tr('Dark Subtraction'))
@@ -285,6 +291,10 @@ class MainWindow(QMainWindow):
         capture_dark_action.triggered.connect(self.dark_dialog)
         corrections_menu.addAction(capture_dark_action)
 
+        capture_many_darks_action = QAction(self.tr('Capture Many Dark Images'), self)
+        capture_many_darks_action.triggered.connect(self.capture_many_darks)
+        corrections_menu.addAction(capture_many_darks_action)
+        
         empty_dark_action = QAction(self.tr("Delete all dark images"), self)
         empty_dark_action.setStatusTip(self.tr("Deletes all dark images"))
         empty_dark_action.triggered.connect(lambda _: self.delete_dialog(self.tr('correction_images')))
@@ -404,6 +414,9 @@ class MainWindow(QMainWindow):
         self.camera_on_button.setText('Camera on')
         self.stream_button.setEnabled(True)
         self.camera_on_button.setChecked(True)
+        self.multi_capture_button.setEnabled(True)
+
+        print(self.device.GetImageXDim(), self.device.GetImageYDim())
 
         print('Intialising Software Trigger')
 
@@ -435,6 +448,7 @@ class MainWindow(QMainWindow):
         self.camera_on_button.setText('Camera off')
         self.camera_on_button.setChecked(False)
         self.stream_button.setEnabled(False)
+        self.multi_capture_button.setEnabled(False)
         
         
 
@@ -509,6 +523,15 @@ class MainWindow(QMainWindow):
         self.capture_image()
         self.save_image(filename)
         print('-'*50)
+    
+    def capture_many_darks(self):
+        tmp = self.exposureTime
+        exposures = [10, 100, 1000, 5000, 10000]
+        for e in exposures:
+            self.exposureTime = e
+            self.capture_dark_image()
+
+        self.exposureTime = tmp
 
     def capture_button_clicked(self):
         if not self.camera_open:
@@ -524,6 +547,23 @@ class MainWindow(QMainWindow):
         self.reset_view()
         self.display_img()
         self.save_image(filename)
+
+    def multi_capture_button_clicked(self):
+        tmp = self.exposureTime
+        exposure_times = [10, 20, 50, 100, 500, 1000, 2000, 5000, 10000]
+        remaining_time = np.sum(exposure_times)
+        for e in exposure_times:
+            print(f'Capturing frame with exposure time {e}ms')
+            print(f'Time remaining: {remaining_time/1000}s')
+            self.exposureTime = e
+            self.start_stream()
+            self.capture_button_clicked()
+            self.stop_stream()
+            print('Frame captured')
+            remaining_time -= e
+
+        self.exposureTime = tmp
+        
         
     def capture_image(self, offset_correction=False):    
         print("Capturing Image")
