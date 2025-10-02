@@ -161,16 +161,16 @@ class MainWindow(QMainWindow):
         self.qt_translator = QTranslator()
         self.app_translator = QTranslator()
 
-        # Install Qt’s default translations (OK/Cancel, etc.)
         qt_translations = QLibraryInfo.path(QLibraryInfo.TranslationsPath)
         self.qt_translator.load(QLocale.system(), "qtbase", "_", qt_translations)
         QApplication.instance().installTranslator(self.qt_translator)
 
         # Try to load your app translations (optional)
-        self.load_app_translation(QLocale.system().name())
+        # self.load_app_translation(QLocale.system().name())
 
         self.setWindowTitle(self.tr("Better XView"))
-        self.resize(700, 800)       
+        self.resize(800, 900)
+        self.move(250, 0)
 
         self.camera_open = False
         self.streaming = False
@@ -184,7 +184,7 @@ class MainWindow(QMainWindow):
         self.current_img = None
         self.last_save = None
         self.xdim, self.ydim = 1031, 1536 # Hard code sensor resolution, not ideal if there's any chance of using different sensors
-
+        # note: WB imager given to Belinda in York has xdim 1031 vs 1030 for ones in london - dead columns? 
         # --------------- Central Widget --------------
                 
         layout = QVBoxLayout()
@@ -218,7 +218,7 @@ class MainWindow(QMainWindow):
         layout.addWidget(self.capture_button)
 
         # Multi-capture
-        self.multi_capture_button = QPushButton(self.tr("Capture Seuence of Images"))
+        self.multi_capture_button = QPushButton(self.tr("Capture Sequence of Images"))
         self.multi_capture_button.setEnabled(False)
         self.multi_capture_button.clicked.connect(self.multi_capture_button_clicked)
         layout.addWidget(self.multi_capture_button)
@@ -526,7 +526,7 @@ class MainWindow(QMainWindow):
     
     def capture_many_darks(self):
         tmp = self.exposureTime
-        exposures = [10, 100, 1000, 5000, 10000]
+        exposures = [10, 20, 50, 100, 200, 300, 400, 500, 1000, 2000, 5000, 10000]
         for e in exposures:
             self.exposureTime = e
             self.capture_dark_image()
@@ -542,7 +542,11 @@ class MainWindow(QMainWindow):
             return
 
         self.frame_count += 1
-        filename = f"{imageSaveDirectory}\\captured_images\\capture_{self.frame_count}_{self.exposureTime}ms.tif"
+        rand_id = np.random.randint(0, 10000)
+        if self.dark_subtraction_box.isChecked():
+            filename = f"{imageSaveDirectory}\\captured_images\\corr_{self.exposureTime}ms_{rand_id}.tif"
+        else:
+            filename = f"{imageSaveDirectory}\\captured_images\\{self.exposureTime}ms_{rand_id}.tif"
         self.capture_image(offset_correction=self.dark_subtraction_box.isChecked())
         self.reset_view()
         self.display_img()
@@ -550,7 +554,7 @@ class MainWindow(QMainWindow):
 
     def multi_capture_button_clicked(self):
         tmp = self.exposureTime
-        exposure_times = [10, 20, 50, 100, 500, 1000, 2000, 5000, 10000]
+        exposure_times = [10, 20, 50, 100, 200, 300, 400, 500, 1000, 2000, 5000, 10000]
         remaining_time = np.sum(exposure_times)
         for e in exposure_times:
             print(f'Capturing frame with exposure time {e}ms')
@@ -627,6 +631,7 @@ class MainWindow(QMainWindow):
     def display_img(self):
         self.image_view.setImage(self.current_img)
         self.enable_adjustment_buttons(True)
+        print('Displaying new capture')
 
     def save_image(self, filename):
         if self.image.WriteTiffImage(filename) is False:
@@ -675,9 +680,9 @@ class MainWindow(QMainWindow):
         overlay = np.zeros((self.ydim, self.xdim, 4), dtype=np.ubyte)
         print(self.inverted)
         if self.inverted:
-            mask = self.current_img <= 1
+            mask = self.current_img <= 51
         else:
-            mask = self.current_img >= 2**14 - 1
+            mask = self.current_img >= 2**14 - 51
 
         overlay[mask] = (255, 0, 0, 255)
         n = np.count_nonzero(mask)
